@@ -18,7 +18,7 @@ const kok = m.kokYol;
   <a class="dil" id="dilDugme" href={m.digerDil.yol}>{m.digerDil.etiket}</a>
 
   <button class="menuDugme" id="menuDugme" aria-label="Menü" aria-expanded="false">
-    <span></span><span></span>
+    <span></span><span></span><span></span>
   </button>
 </header>
 
@@ -50,12 +50,14 @@ transition:transform .5s cubic-bezier(.16,.7,.2,1)}
 
 .dil{font-size:12px;letter-spacing:.1em;opacity:.7;transition:opacity .25s}
 .dil:hover{opacity:1}
-.menuDugme{display:none;background:none;border:0;padding:10px;cursor:pointer;margin:0}
-.menuDugme span{display:block;width:22px;height:1px;background:currentColor;
-transition:transform .3s,opacity .3s}
-.menuDugme span+span{margin-top:6px}
-.menuDugme[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
-.menuDugme[aria-expanded="true"] span+span{transform:translateY(-3.5px) rotate(-45deg)}
+/* küçük ekran menü düğmesi: üç çizgi, logo ile aynı hizada, rengi menüyle birlikte değişir */
+.menuDugme{display:none;background:none;border:0;padding:0;margin:0;cursor:pointer;
+width:26px;height:22px;flex-direction:column;justify-content:space-between;color:inherit}
+.menuDugme span{display:block;width:100%;height:2px;background:currentColor;border-radius:1px;
+transition:transform .3s,opacity .3s,background .35s}
+.menuDugme[aria-expanded="true"] span:nth-child(1){transform:translateY(10px) rotate(45deg)}
+.menuDugme[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menuDugme[aria-expanded="true"] span:nth-child(3){transform:translateY(-10px) rotate(-45deg)}
 
 .kucukMenu{position:fixed;inset:78px 0 auto 0;z-index:89;background:rgba(4,4,4,.98);
 color:var(--renk-kirik-beyaz);display:none;flex-direction:column;padding:28px 6vw 36px;gap:22px;
@@ -68,7 +70,7 @@ letter-spacing:.14em;opacity:.6;margin-top:6px}
 
 @media(max-width:980px){
   .menu,.dil{display:none}
-  .menuDugme{display:block}
+  .menuDugme{display:flex}
   .ust{padding:0 24px;height:72px}
   .marka img{width:190px}
   .kucukMenu{inset:72px 0 auto 0;padding:26px 24px 34px}
