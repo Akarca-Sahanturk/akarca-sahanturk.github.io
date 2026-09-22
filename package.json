@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "yayinla": "astro build && wrangler pages deploy dist --project-name akarca-sahanturk --branch main --commit-dirty=true"
+    "yayinla": "git add -A && git commit -m \"Site güncellemesi\" ; git push",
+    "yayinla:cloudflare": "astro build && wrangler pages deploy dist --project-name akarca-sahanturk --branch main --commit-dirty=true"
   },
   "dependencies": {
     "astro": "^5.6.1"

@@ -119,7 +119,10 @@ Metin hazır olunca o kutuyu silip yerine yazıyı koymak yeterli.
 
 ## 6. Siteyi yayına almak
 
-Site Cloudflare'de yayında: **https://akarca-sahanturk.pages.dev**
+Site iki yerde yayında:
+
+- **https://akarca-sahanturk.github.io** — ana adres (GitHub Pages). Türkiye'de her ağdan açılıyor.
+- https://akarca-sahanturk.pages.dev — yedek (Cloudflare). Bazı operatörlerde engelli.
 
 Bir değişiklik yapıp yayındaki siteyi güncellemek için Terminal'de:
 
@@ -127,8 +130,11 @@ Bir değişiklik yapıp yayındaki siteyi güncellemek için Terminal'de:
 cd ~/Documents/Claude/Projects/AS\ Web\ Sitesi && npm run yayinla
 ```
 
-Yaklaşık 30 saniye sürer; bitince adres aynı kalır, içerik yenilenir.
-(Cloudflare hesabına bir kez giriş yapıldı; tekrar sormaz.)
+Bu komut değişiklikleri GitHub'a gönderir; GitHub bir dakika içinde siteyi
+kendisi derleyip yayınlar. Sitenin kodu da GitHub'da yedekli durur:
+github.com/Akarca-Sahanturk/akarca-sahanturk.github.io
+
+Cloudflare'deki yedeği de güncellemek istersen: `npm run yayinla:cloudflare`
 
 Gerçek alan adını (akarcasahanturk.com gibi) bağlamak istediğinde söyle,
 Cloudflare panelinden beş dakikalık bir iş.
