@@ -272,6 +272,10 @@ color:var(--etiket);margin-bottom:7px}
       boya(b, simdi[i]);
       hareket = true;
     });
+    /* ekranın ortasındaki bölüm açık tondaysa kaydırma çubuğu siyaha dönsün */
+    var orta = innerHeight / 2, ortadaki = null;
+    bolumler.forEach(function(b){ var r = b.getBoundingClientRect(); if (r.top <= orta && r.bottom >= orta) ortadaki = b; });
+    document.documentElement.classList.toggle('acikCubuk', !!(ortadaki && ortadaki.classList.contains('acik')));
     if (hareket) requestAnimationFrame(dongu); else donguAcik = false;
   }
 

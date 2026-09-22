@@ -28,8 +28,11 @@
 
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:86px;
-color-scheme:dark;                               /* Windows/Chrome: koyu kaydırma çubuğu, koyu form alanları */
-scrollbar-color:#3a3a3a var(--renk-siyah);scrollbar-width:thin}
+color-scheme:dark;
+/* kaydırma çubuğu: bulunduğun bölümün tersi renkte —
+   koyu bölümde beyaz, açık bölümde siyah (JS "acikCubuk" sınıfını ekler) */
+scrollbar-color:#FCF9F3 var(--renk-siyah);scrollbar-width:thin}
+html.acikCubuk{scrollbar-color:#040404 var(--renk-acik-gri)}
 
 body{background:var(--zemin);color:var(--murekkep);
 font-family:var(--yazi-govde);font-size:var(--govde-boyut);line-height:var(--govde-satir);
