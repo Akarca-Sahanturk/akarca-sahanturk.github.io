@@ -1,0 +1,56 @@
+---
+import Temel from '../layouts/Temel.astro';
+import { icerik, type Dil } from '../data/icerik';
+const { dil = 'tr' as Dil, kisi } = Astro.props;
+const m = icerik[dil as Dil];
+const b = m.ekip.basliklar;
+---
+<Temel baslik={kisi.ad} aciklama={kisi.ozet} dil={dil}>
+  <section class="bolum bolum--kisa">
+    <a class="ustBaglanti gir" href={m.kokYol + '#ekibimiz'}>&larr; {m.ekip.etiket}</a>
+
+    <div class="ust">
+      <div class="portreKutu gir">
+        <img src={kisi.foto} alt={kisi.ad} width="800" height="1066" />
+      </div>
+      <div class="kimlik">
+        <div class="etiket gir">{kisi.rol}</div>
+        <h1 class="gir">{kisi.ad}</h1>
+        <p class="metin gir">{kisi.ozet}</p>
+        <div class="iletisimSatiri gir">
+          <a href={'mailto:' + kisi.eposta}>{kisi.eposta}</a>
+          <a href={'tel:' + kisi.telefon.replace(/\s/g, '')}>{kisi.telefon}</a>
+          {kisi.linkedin && <a href={kisi.linkedin} target="_blank" rel="noopener">LinkedIn</a>}
+        </div>
+      </div>
+    </div>
+
+    <div class="bloklar">
+      <div class="blok gir"><h2>{b.kariyer}</h2><ul>{kisi.kariyer.map((x: string) => <li>{x}</li>)}</ul></div>
+      <div class="blok gir"><h2>{b.egitim}</h2><ul>{kisi.egitim.map((x: string) => <li>{x}</li>)}</ul></div>
+      {kisi.diger.length > 0 && <div class="blok gir"><h2>{b.diger}</h2><ul>{kisi.diger.map((x: string) => <li>{x}</li>)}</ul></div>}
+      <div class="blok gir"><h2>{b.diller}</h2><p>{kisi.diller}</p></div>
+    </div>
+  </section>
+</Temel>
+
+<style>
+.ust{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;align-items:start;margin-top:8px}
+.portreKutu img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1);border:1px solid var(--cizgi)}
+.kimlik h1{font-size:clamp(30px,4vw,52px)}
+.iletisimSatiri{display:flex;gap:26px;flex-wrap:wrap;margin-top:28px;font-size:14px}
+.iletisimSatiri a{border-bottom:1px solid var(--cizgi-guclu);padding-bottom:3px;transition:border-color .3s}
+.iletisimSatiri a:hover{border-color:var(--murekkep)}
+.bloklar{margin-top:64px;max-width:820px;border-top:1px solid var(--cizgi)}
+.blok{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:32px;padding:30px 0;border-bottom:1px solid var(--cizgi)}
+.blok h2{font-size:clamp(19px,1.9vw,24px)}
+.blok ul{list-style:none;padding:0;margin:0}
+.blok li{color:var(--soluk);line-height:1.75;font-size:15.5px;padding:6px 0}
+.blok li+li{border-top:1px solid var(--cizgi)}
+.blok p{color:var(--soluk);line-height:1.75;font-size:15.5px}
+@media(max-width:820px){
+  .ust{grid-template-columns:1fr;gap:28px}
+  .portreKutu{max-width:220px}
+  .blok{grid-template-columns:1fr;gap:10px}
+}
+</style>

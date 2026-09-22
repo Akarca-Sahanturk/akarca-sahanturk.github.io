@@ -1,0 +1,26 @@
+---
+import Temel from '../layouts/Temel.astro';
+import { icerik, type Dil } from '../data/icerik';
+import { tarihYaz } from '../data/tarih';
+const { dil = 'tr' as Dil, yayin, Icerik } = Astro.props;
+const m = icerik[dil as Dil];
+const turAdi = m.yayinlar.turler.find((t) => t.anahtar === yayin.data.tur)?.ad ?? yayin.data.tur;
+---
+<Temel baslik={yayin.data.baslik} aciklama={yayin.data.ozet} dil={dil}>
+  <article class="bolum bolum--kisa">
+    <a class="ustBaglanti gir" href={m.yayinlar.kok}>&larr; {m.yayinlar.etiket}</a>
+    <div class="ustBilgi gir">{tarihYaz(yayin.data.tarih, dil)} · {turAdi}</div>
+    <h1 class="gir">{yayin.data.baslik}</h1>
+    <p class="metin gir" style="max-width:58ch;font-size:19px">{yayin.data.ozet}</p>
+    <div class="yazi-govde gir">
+      <Icerik />
+    </div>
+  </article>
+</Temel>
+
+<style>
+.ustBilgi{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+color:var(--etiket);margin-bottom:20px}
+h1{max-width:22ch}
+.yazi-govde{margin-top:44px;border-top:1px solid var(--cizgi);padding-top:38px}
+</style>

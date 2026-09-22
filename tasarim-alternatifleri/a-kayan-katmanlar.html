@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A — Kayan Katmanlar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--siyah:#040404;--koyu:#131313;--gri:#474747;--lacivert:#131936;--acik:#FCF9F3;
+--baslik:'Libre Baskerville',Georgia,serif;--govde:'DM Sans',-apple-system,Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--siyah);color:var(--acik);font-family:var(--govde);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* --- kaydirma yapismasi: her bolum ekrani doldurur --- */
+.sayfa{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.bolum{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;padding:120px 6vw 80px;position:relative}
+@media(max-width:820px){.sayfa{scroll-snap-type:none}.bolum{padding:100px 24px 60px}}
+
+/* --- ust menu --- */
+.ust{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+padding:0 6vw;height:76px;backdrop-filter:blur(16px);background:rgba(4,4,4,.88);border-bottom:1px solid rgba(252,249,243,.08)}
+.ust img{width:168px;filter:invert(1)}
+.menu{display:flex;gap:30px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.menu a{opacity:.72;transition:opacity .25s}
+.menu a:hover{opacity:1}
+.dil{font-size:12px;letter-spacing:.1em;opacity:.55}
+@media(max-width:980px){.menu{display:none}}
+
+/* --- sag taraftaki bolum noktalari --- */
+.noktalar{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:14px}
+.noktalar span{width:6px;height:6px;border-radius:50%;background:rgba(252,249,243,.25);transition:all .4s}
+.noktalar span.aktif{background:var(--acik);transform:scale(1.6)}
+@media(max-width:820px){.noktalar{display:none}}
+
+/* --- ortak parcalar --- */
+.etiket{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gri);margin-bottom:26px}
+h1,h2{font-family:var(--baslik);font-weight:400;letter-spacing:-.02em;line-height:1.25}
+h1{font-size:clamp(34px,5.2vw,68px);max-width:16ch}
+h2{font-size:clamp(28px,3.6vw,46px);max-width:20ch}
+.metin{color:#b7b7b7;max-width:46ch;margin-top:26px;font-size:16px;line-height:1.8}
+.baglanti{display:inline-flex;align-items:center;gap:11px;margin-top:44px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding-bottom:7px;border-bottom:1px solid rgba(252,249,243,.3);transition:border-color .3s,gap .3s}
+.baglanti:hover{border-color:var(--acik);gap:18px}
+
+/* --- belirme animasyonu --- */
+.gir{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.1,1),transform .9s cubic-bezier(.2,.7,.1,1)}
+.gir.gorundu{opacity:1;transform:none}
+.gir:nth-child(2){transition-delay:.1s}.gir:nth-child(3){transition-delay:.2s}.gir:nth-child(4){transition-delay:.3s}
+
+/* --- acilis --- */
+#acilis .cizgi{width:56px;height:1px;background:var(--gri);margin:34px 0}
+#acilis .alt{display:flex;gap:56px;flex-wrap:wrap;margin-top:56px;font-size:13px;letter-spacing:.08em;color:var(--gri)}
+
+/* --- calisma alanlari --- */
+.alanlar{border-top:1px solid rgba(252,249,243,.12);margin-top:44px}
+.alan{border-bottom:1px solid rgba(252,249,243,.12);padding:26px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) 24px;
+gap:32px;align-items:baseline;transition:padding-left .45s cubic-bezier(.2,.7,.1,1),background .45s;cursor:pointer}
+.alan:hover{padding-left:22px;background:linear-gradient(90deg,rgba(19,25,54,.85),transparent)}
+.alan h3{font-family:var(--baslik);font-weight:400;font-size:clamp(20px,2.1vw,27px)}
+.alan p{font-size:14.5px;color:#9a9a9a;line-height:1.65}
+.alan .ok{opacity:0;transform:translateX(-8px);transition:all .45s;text-align:right}
+.alan:hover .ok{opacity:1;transform:none}
+@media(max-width:820px){.alan{grid-template-columns:1fr;gap:9px}.alan .ok{display:none}}
+
+/* --- yayinlar --- */
+.turler{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin:40px 0 52px}
+.turler div{border-top:1px solid rgba(252,249,243,.2);padding-top:16px}
+.turler h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;margin-bottom:9px}
+.turler p{font-size:13.5px;color:#8c8c8c;line-height:1.6}
+.yazilar{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(252,249,243,.12);border:1px solid rgba(252,249,243,.12)}
+.yazi{background:var(--siyah);padding:30px 26px 34px;min-height:225px;display:flex;flex-direction:column;justify-content:space-between;transition:background .4s}
+.yazi:hover{background:var(--lacivert)}
+.yazi .tarih{font-size:11px;letter-spacing:.16em;color:var(--gri);transition:color .4s}
+.yazi:hover .tarih{color:#a9b0cc}
+.yazi h3{font-family:var(--baslik);font-weight:400;font-size:20px;line-height:1.4;margin-top:16px}
+@media(max-width:820px){.turler,.yazilar{grid-template-columns:1fr}}
+
+/* --- ekibimiz --- */
+.ekip{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+.kisi{border:1px solid rgba(252,249,243,.14);padding:36px 30px;transition:border-color .4s,background .4s}
+.kisi:hover{border-color:var(--acik);background:rgba(252,249,243,.03)}
+.kisi .rol{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gri)}
+.kisi h3{font-family:var(--baslik);font-weight:400;font-size:29px;margin-top:14px}
+@media(max-width:820px){.ekip{grid-template-columns:1fr}}
+
+/* --- iletisim --- */
+#iletisim .kutu{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:40px}
+.bilgi div{margin-bottom:26px}
+.bilgi span{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gri);margin-bottom:7px}
+.harita{margin-top:8px;height:170px;border:1px solid rgba(252,249,243,.16);display:grid;place-items:center;font-size:12px;letter-spacing:.14em;color:var(--gri)}
+form{display:flex;flex-direction:column;gap:18px}
+input,textarea{background:transparent;border:0;border-bottom:1px solid rgba(252,249,243,.22);color:var(--acik);font:inherit;font-size:15px;padding:12px 0;transition:border-color .3s}
+input:focus,textarea:focus{outline:none;border-color:var(--acik)}
+textarea{resize:vertical;min-height:78px}
+button{margin-top:10px;align-self:flex-start;background:var(--acik);color:var(--siyah);border:0;font:inherit;font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:15px 34px;cursor:pointer;transition:opacity .3s}
+button:hover{opacity:.82}
+@media(max-width:820px){#iletisim .kutu{grid-template-columns:1fr;gap:44px}}
+
+/* --- alt bilgi --- */
+.altbilgi{scroll-snap-align:end;padding:46px 6vw;border-top:1px solid rgba(252,249,243,.1);display:flex;justify-content:space-between;
+flex-wrap:wrap;gap:18px;font-size:12.5px;color:var(--gri)}
+.altbilgi a:hover{color:var(--acik)}
+</style></head>
+<body>
+
+<header class="ust">
+  <a href="#acilis"><img src="logo.svg" alt="AKARCA SAHANTURK"></a>
+  <nav class="menu">
+    <a href="#yaklasim">Hakkımızda</a><a href="#alanlar">Çalışma Alanları</a>
+    <a href="#yayinlar">Yayınlar</a><a href="#ekip">Ekibimiz</a>
+    <a href="#kariyer">Kariyer</a><a href="#iletisim">İletişim</a>
+  </nav>
+  <div class="dil">TR / EN</div>
+</header>
+
+<div class="noktalar" id="noktalar"></div>
+
+<div class="sayfa" id="sayfa">
+
+  <section class="bolum" id="acilis">
+    <div class="etiket gir">İstanbul · Türkiye</div>
+    <h1 class="gir">Vergi ve gümrük hukukunda, uygulanabilir çözümler.</h1>
+    <div class="cizgi gir"></div>
+    <p class="metin gir" style="margin-top:0">Vergi, gümrük ve yatırım teşvikleri alanlarında yerli ve yabancı şirketlerle çalışıyoruz.</p>
+    <div class="alt gir"><span>Türkçe ve İngilizce</span><span>Kurucu ortaklar doğrudan dahil</span><span>Levent, İstanbul</span></div>
+  </section>
+
+  <section class="bolum" id="yaklasim">
+    <div class="etiket gir">Yaklaşımımız</div>
+    <h2 class="gir">Karmaşık meselelerde net bir bakış. Her adımda aynı özen.</h2>
+    <p class="metin gir">Hukuki uzmanlığı iş dünyasının gerçekleriyle buluşturuyoruz. Her konuyu kendi dinamikleri içinde değerlendiriyor, müvekkillerimizle birlikte uygulanabilir bir yol belirliyoruz.</p>
+    <a class="baglanti gir" href="#">Bizi tanıyın</a>
+  </section>
+
+  <section class="bolum" id="alanlar">
+    <div class="etiket gir">Çalışma Alanları</div>
+    <h2 class="gir">Derinlemesine uzmanlık, bütüncül bir yaklaşım.</h2>
+    <div class="alanlar gir">
+      <div class="alan"><h3>Vergi Hukuku</h3><p>Vergi danışmanlığı, vergi incelemeleri ve uyuşmazlıkların idari ve yargısal aşamaları.</p><div class="ok">→</div></div>
+      <div class="alan"><h3>Gümrük Hukuku</h3><p>Gümrük kıymeti, tarife sınıflandırması, menşe ve ithalat vergilerine ilişkin uyuşmazlıklar.</p><div class="ok">→</div></div>
+      <div class="alan"><h3>Yatırım Teşvikleri</h3><p>Ar-Ge ve teknopark teşvikleri, yatırım teşvik belgeleri ve ihracat destekleri.</p><div class="ok">→</div></div>
+      <div class="alan"><h3>Şirketler Hukuku</h3><p>Kuruluş, yapılandırma, ortaklık ilişkileri ve genel kurul süreçleri.</p><div class="ok">→</div></div>
+      <div class="alan"><h3>Ticari Uyuşmazlıklar ve Tahkim</h3><p>Karmaşık ticari davalar, ticari ve yatırım tahkimi.</p><div class="ok">→</div></div>
+    </div>
+  </section>
+
+  <section class="bolum" id="yayinlar">
+    <div class="etiket gir">Yayınlar</div>
+    <h2 class="gir">Gelişmeleri izliyor, bakış açımızı paylaşıyoruz.</h2>
+    <div class="turler gir">
+      <div><h4>Duyurular</h4><p>Mevzuattaki değişikliklerin kısa bildirimleri.</p></div>
+      <div><h4>Bültenler</h4><p>Dönemsel derlemeler ve gündem özetleri.</p></div>
+      <div><h4>Makaleler</h4><p>Belirli bir konuyu derinlemesine ele alan yazılar.</p></div>
+    </div>
+    <div class="yazilar gir">
+      <a class="yazi" href="#"><div class="tarih">2 Eylül 2026 · Makale</div><h3>Gümrük kıymetinde royalti ve lisans ödemeleri</h3></a>
+      <a class="yazi" href="#"><div class="tarih">15 Temmuz 2026 · Bülten</div><h3>Teknopark ve Ar-Ge teşviklerinde güncel uygulama değişiklikleri</h3></a>
+      <a class="yazi" href="#"><div class="tarih">20 Mayıs 2026 · Makale</div><h3>Vergi incelemesine hazırlık: şirketler için kontrol listesi</h3></a>
+    </div>
+  </section>
+
+  <section class="bolum" id="ekip">
+    <div class="etiket gir">Ekibimiz</div>
+    <h2 class="gir">Uzmanlığın arkasındaki insanlar.</h2>
+    <p class="metin gir">Sizi dinleyen, işinizi anlayan ve sürecin her aşamasında doğrudan yanınızda olan bir ekip.</p>
+    <div class="ekip gir">
+      <a class="kisi" href="#"><div class="rol">Kurucu Ortak</div><h3>Eren Akarca</h3></a>
+      <a class="kisi" href="#"><div class="rol">Kurucu Ortak</div><h3>Ata Şahantürk</h3></a>
+    </div>
+  </section>
+
+  <section class="bolum" id="iletisim">
+    <div class="etiket gir">İletişim</div>
+    <h2 class="gir">Bir konuyu birlikte ele alalım.</h2>
+    <div class="kutu gir">
+      <div class="bilgi">
+        <div><span>E-posta</span>iletisim@akarcasahanturk.com</div>
+        <div><span>Telefon</span>+90 212 000 00 00</div>
+        <div><span>Adres</span>Büyükdere Caddesi No: 100, Kat 5<br>34394 Levent, Şişli / İstanbul</div>
+        <div class="harita">HARİTA BURAYA GELECEK</div>
+      </div>
+      <form onsubmit="event.preventDefault();alert('Örnek form — henüz bağlı değil.')">
+        <input placeholder="Ad Soyad" required><input type="email" placeholder="E-posta" required>
+        <input placeholder="Konu"><textarea placeholder="Kısaca konunuz"></textarea>
+        <button>Görüşme talebi gönder</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="altbilgi" id="kariyer">
+    <div>© 2026 Akarca Şahantürk</div>
+    <div style="display:flex;gap:26px"><a href="#">Kariyer</a><a href="#">KVKK Aydınlatma Metni</a><a href="#">Çerez Politikası</a><a href="#">LinkedIn</a></div>
+  </footer>
+</div>
+
+<script>
+const bolumler=[...document.querySelectorAll('.bolum')];
+const nk=document.getElementById('noktalar');
+bolumler.forEach(()=>nk.appendChild(document.createElement('span')));
+const nokta=[...nk.children];
+const go=new IntersectionObserver(e=>e.forEach(x=>{
+  if(x.isIntersecting){
+    x.target.querySelectorAll('.gir').forEach(g=>g.classList.add('gorundu'));
+    const i=bolumler.indexOf(x.target);
+    if(i>-1){nokta.forEach(n=>n.classList.remove('aktif'));nokta[i].classList.add('aktif')}
+  }}),{threshold:.35,root:document.getElementById('sayfa')});
+bolumler.forEach(b=>go.observe(b));
+</script>
+</body></html>

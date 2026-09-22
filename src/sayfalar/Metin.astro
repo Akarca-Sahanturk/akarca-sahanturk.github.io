@@ -1,0 +1,16 @@
+---
+import Temel from '../layouts/Temel.astro';
+import { type Dil } from '../data/icerik';
+const { dil = 'tr' as Dil, baslik, etiket, giris, uyari } = Astro.props;
+---
+<Temel baslik={baslik} aciklama={giris} dil={dil}>
+  <section class="bolum bolum--kisa">
+    <div class="etiket gir">{etiket}</div>
+    <h1 class="gir" style="max-width:20ch">{baslik}</h1>
+    <p class="metin gir">{giris}</p>
+    <div class="yer-tutucu gir">
+      <strong>{dil === 'tr' ? 'Hukuk metni bekleniyor' : 'Legal text pending'}</strong>
+      {uyari}
+    </div>
+  </section>
+</Temel>

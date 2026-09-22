@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tasarım Alternatifleri</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Libre+Baskerville&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#FCF9F3;color:#040404;font-family:'DM Sans',sans-serif;padding:8vh 5vw;line-height:1.65}
+h1{font-family:'Libre Baskerville',serif;font-weight:400;font-size:clamp(28px,3.4vw,42px);max-width:18ch;letter-spacing:-.025em}
+.giris{color:#6e6e6e;max-width:56ch;margin-top:20px}
+.kartlar{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:52px}
+a.kart{display:block;border:1px solid rgba(4,4,4,.16);padding:34px 30px;color:inherit;text-decoration:none;transition:background .4s,color .4s,transform .4s}
+a.kart:hover{background:#040404;color:#FCF9F3;transform:translateY(-4px)}
+.harf{font-size:11px;letter-spacing:.22em;opacity:.55}
+h2{font-family:'Libre Baskerville',serif;font-weight:400;font-size:26px;margin:12px 0 14px;letter-spacing:-.02em}
+.kart p{font-size:14.5px;opacity:.78}
+.kart ul{margin:16px 0 0 18px;font-size:13.5px;opacity:.7}
+.not{margin-top:52px;font-size:14px;color:#6e6e6e;max-width:60ch;border-top:1px solid rgba(4,4,4,.14);padding-top:26px}
+</style></head><body>
+<h1>Üç ana sayfa alternatifi</h1>
+<p class="giris">Üçü de aynı içeriği, aynı logoyu, aynı renkleri ve aynı yazı tiplerini kullanıyor. Fark eden tek şey: sayfanın nasıl aktığı ve animasyonun karakteri. Eren'in notlarındaki düzeltmeler üçünde de uygulandı.</p>
+<div class="kartlar">
+  <a class="kart" href="a-kayan-katmanlar.html"><div class="harf">ALTERNATİF A</div><h2>Kayan Katmanlar</h2>
+    <p>Her bölüm ekranı tam dolduruyor. Kaydırdıkça sayfa bir sonrakine kilitlenerek geçiyor — sunum gibi.</p>
+    <ul><li>Koyu zemin, en az metin</li><li>Sağda bölüm göstergesi</li><li>En "sinematik" olanı</li></ul></a>
+  <a class="kart" href="b-sabit-panel.html"><div class="harf">ALTERNATİF B</div><h2>Sabit Panel</h2>
+    <p>Sol tarafta bölüm başlığı sabit duruyor, sağdaki içerik onun yanından akıyor. Menü koyu bölümlerde renk değiştiriyor.</p>
+    <ul><li>Açık ve koyu bölümler dönüşümlü</li><li>Okuması en kolay olanı</li><li>İçerik büyüdükçe en rahat genişleyen</li></ul></a>
+  <a class="kart" href="c-yatay-gecis.html"><div class="harf">ALTERNATİF C</div><h2>Yatay Geçiş</h2>
+    <p>Çalışma alanları bölümünde sayfa duruyor, kartlar yana doğru kayıyor. Baker McKenzie'nin bant mantığına en yakın olan.</p>
+    <ul><li>Açık zemin, geniş görsel bantlar</li><li>Öne çıkan yayın vurgusu</li><li>En dikkat çekici hareket</li></ul></a>
+</div>
+<p class="not">Formlar ve harita şimdilik yer tutucu. Açılış animasyonu üçünde de yok — seçtiğimiz alternatifin önüne eklenecek.</p>
+</body></html>

@@ -1,0 +1,38 @@
+---
+import Temel from '../layouts/Temel.astro';
+import { icerik, type Dil } from '../data/icerik';
+const { dil = 'tr' as Dil, alan } = Astro.props;
+const m = icerik[dil as Dil];
+const tr = dil === 'tr';
+const kok = (tr ? '/' : '/en/') + '#calisma-alanlari';
+---
+<Temel baslik={alan.ad} aciklama={alan.ozet} dil={dil}>
+  <section class="bolum bolum--kisa">
+    <a class="ustBaglanti gir" href={kok}>&larr; {m.alanlar.etiket}</a>
+    <h1 class="gir">{alan.ad}</h1>
+    <p class="metin gir metin--giris">{alan.giris}</p>
+
+    <div class="etiket gir altBaslik">{m.alanlar.altBaslik}</div>
+    <div class="altlar">
+      {alan.alt.map((a: any) => (
+        <div class="altAlan gir">
+          <h2>{a.ad}</h2>
+          <p>{a.metin}</p>
+        </div>
+      ))}
+    </div>
+
+    <a class="baglanti gir" href={(tr ? '/' : '/en/') + '#iletisim'}>{m.iletisim.form.gonder}</a>
+  </section>
+</Temel>
+
+<style>
+.metin--giris{font-size:18px;color:var(--murekkep);max-width:56ch}
+.altBaslik{margin-top:56px}
+.altlar{border-top:1px solid var(--cizgi);max-width:900px}
+.altAlan{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:32px;
+padding:30px 0;border-bottom:1px solid var(--cizgi)}
+.altAlan h2{font-size:clamp(20px,2vw,26px)}
+.altAlan p{color:var(--soluk);line-height:1.8;font-size:15.5px}
+@media(max-width:820px){.altAlan{grid-template-columns:1fr;gap:10px}}
+</style>

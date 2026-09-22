@@ -1,0 +1,15 @@
+---
+import YayinDetay from '../../../sayfalar/YayinDetay.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const hepsi = await getCollection('yayinlar', (y) => y.data.dil === 'en');
+  return hepsi.map((y) => ({
+    params: { slug: y.id.split('/').pop() },
+    props: { yayin: y },
+  }));
+}
+const { yayin } = Astro.props;
+const { Content } = await render(yayin);
+---
+<YayinDetay dil="en" yayin={yayin} Icerik={Content} />

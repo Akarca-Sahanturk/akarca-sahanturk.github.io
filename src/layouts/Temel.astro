@@ -1,0 +1,68 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import Ust from '../components/Ust.astro';
+import Alt from '../components/Alt.astro';
+import Acilis from '../components/Acilis.astro';
+import { buro, type Dil } from '../data/icerik';
+
+interface Props {
+  baslik: string;
+  aciklama?: string;
+  dil?: Dil;
+  acilis?: boolean;
+  tema?: 'koyu' | 'acik';
+}
+const { baslik, aciklama = '', dil = 'tr', acilis = false, tema = 'koyu' } = Astro.props;
+const tamBaslik = baslik === 'Akarca Şahantürk' ? baslik : baslik + ' — Akarca Şahantürk';
+---
+<!doctype html>
+<html lang={dil}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{tamBaslik}</title>
+  {aciklama && <meta name="description" content={aciklama} />}
+  <link rel="icon" href="/marka/isaret.svg" type="image/svg+xml" />
+  <link rel="canonical" href={new URL(Astro.url.pathname, buro.alanAdi).href} />
+  <meta property="og:title" content={tamBaslik} />
+  <meta property="og:description" content={aciklama} />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body class={tema === 'acik' ? 'acik' : ''}>
+  {acilis && <Acilis />}
+  <Ust dil={dil} />
+  <main>
+    <slot />
+  </main>
+  <Alt dil={dil} />
+
+  <script is:inline>
+    (function(){
+      /* Bölüm ekrana girince içindeki .gir parçaları sırayla belirir;
+         bölüm ekrandan tamamen çıkınca sıfırlanır ki geri gelince yeniden oynasın. */
+      var bolumler = [].slice.call(document.querySelectorAll('section'));
+      var go = new IntersectionObserver(function(kayitlar){
+        kayitlar.forEach(function(k){
+          var parcalar = k.target.querySelectorAll('.gir');
+          if (k.isIntersecting && k.intersectionRatio >= 0.12) {
+            parcalar.forEach(function(g, i){
+              g.style.transitionDelay = (i * 45) + 'ms';
+              g.classList.add('gorundu');
+            });
+          } else if (!k.isIntersecting) {
+            parcalar.forEach(function(g){
+              g.style.transitionDelay = '0ms';
+              g.classList.remove('gorundu');
+            });
+          }
+        });
+      }, { threshold: [0, 0.12] });
+      bolumler.forEach(function(b){ go.observe(b); });
+    })();
+  </script>
+</body>
+</html>

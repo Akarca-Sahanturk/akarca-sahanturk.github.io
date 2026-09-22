@@ -1,0 +1,171 @@
+---
+import { icerik, type Dil } from '../data/icerik';
+const { dil = 'tr' as Dil } = Astro.props;
+const m = icerik[dil as Dil];
+const kok = m.kokYol;
+---
+<header class="ust">
+  <a href={kok} class="marka" aria-label="Akarca Şahantürk">
+    <img src="/marka/logo-tam.svg" alt="AKARCA SAHANTURK" width="201" height="22" />
+  </a>
+
+  <nav class="menu" id="menu">
+    {m.menu.map((x) => (
+      <a href={kok + '#' + x.capa} data-capa={x.capa}>{x.ad}</a>
+    ))}
+  </nav>
+
+  <a class="dil" id="dilDugme" href={m.digerDil.yol}>{m.digerDil.etiket}</a>
+
+  <button class="menuDugme" id="menuDugme" aria-label="Menü" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="kucukMenu" id="kucukMenu">
+  {m.menu.map((x) => <a href={kok + '#' + x.capa} data-capa={x.capa}>{x.ad}</a>)}
+  <a class="kucukDil" href={m.digerDil.yol}>{m.digerDil.etiket}</a>
+</div>
+
+<style>
+/* Menü, altındaki bölüm açık tondaysa açık tona geçer (JS "acikMod" ekler) */
+.ust{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;
+justify-content:space-between;padding:0 6vw;height:78px;
+backdrop-filter:blur(16px);
+background:rgba(4,4,4,.88);color:var(--renk-kirik-beyaz);
+border-bottom:1px solid rgba(252,249,243,.08);
+transition:background .35s ease,color .35s ease,border-color .35s ease}
+.ust.acikMod{background:rgba(229,229,229,.92);color:var(--renk-siyah);border-color:rgba(4,4,4,.1)}
+.marka img{width:224px;filter:invert(1);transition:filter .35s}
+.ust.acikMod .marka img{filter:none}
+
+.menu{display:flex;gap:30px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.menu a{position:relative;opacity:.78;padding-bottom:6px;transition:opacity .3s}
+.menu a:hover{opacity:1}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+background:currentColor;transform:scaleX(0);transform-origin:left;
+transition:transform .5s cubic-bezier(.16,.7,.2,1)}
+.menu a.aktif{opacity:1}
+.menu a.aktif::after{transform:scaleX(1)}
+
+.dil{font-size:12px;letter-spacing:.1em;opacity:.7;transition:opacity .25s}
+.dil:hover{opacity:1}
+.menuDugme{display:none;background:none;border:0;padding:10px;cursor:pointer;margin:0}
+.menuDugme span{display:block;width:22px;height:1px;background:currentColor;
+transition:transform .3s,opacity .3s}
+.menuDugme span+span{margin-top:6px}
+.menuDugme[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menuDugme[aria-expanded="true"] span+span{transform:translateY(-3.5px) rotate(-45deg)}
+
+.kucukMenu{position:fixed;inset:78px 0 auto 0;z-index:89;background:rgba(4,4,4,.98);
+color:var(--renk-kirik-beyaz);display:none;flex-direction:column;padding:28px 6vw 36px;gap:22px;
+border-bottom:1px solid rgba(252,249,243,.1)}
+.kucukMenu.acildi{display:flex}
+.kucukMenu a{font-family:var(--yazi-baslik);font-size:22px;opacity:.8}
+.kucukMenu a.aktif{opacity:1;text-decoration:underline;text-underline-offset:6px}
+.kucukDil{font-family:var(--yazi-govde)!important;font-size:12px!important;
+letter-spacing:.14em;opacity:.6;margin-top:6px}
+
+@media(max-width:980px){
+  .menu,.dil{display:none}
+  .menuDugme{display:block}
+  .ust{padding:0 24px;height:72px}
+  .marka img{width:190px}
+  .kucukMenu{inset:72px 0 auto 0;padding:26px 24px 34px}
+}
+</style>
+
+<script is:inline>
+/* Bu betik menünün üstünde yer aldığı için sayfanın geri kalanı
+   henüz yüklenmemiş oluyor. Bu yüzden DOM hazır olunca başlatıyoruz. */
+function asMenuBaslat(){
+  /* --- küçük ekran menüsü --- */
+  var dugme = document.getElementById('menuDugme');
+  var kucuk = document.getElementById('kucukMenu');
+  if (dugme && kucuk) {
+    dugme.addEventListener('click', function(){
+      var acik = kucuk.classList.toggle('acildi');
+      dugme.setAttribute('aria-expanded', acik ? 'true' : 'false');
+    });
+    kucuk.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        kucuk.classList.remove('acildi');
+        dugme.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  /* --- dil düğmesi aynı bölüme geçsin --- */
+  var dil = document.getElementById('dilDugme');
+  if (dil) {
+    var temel = dil.getAttribute('href');
+    addEventListener('hashchange', function(){ dil.setAttribute('href', temel + location.hash); });
+  }
+
+  /* iç sayfalarda (bölüm kimliği olmayan) sadece menü rengi takip edilir */
+  /* menünün hemen altındaki bölüm açık tondaysa menü de açık tona geçsin */
+  var ust = document.querySelector('.ust');
+  function menuRengi(){
+    var y = ust.offsetHeight + 2;
+    var el = document.elementFromPoint(Math.round(innerWidth/2), y);
+    var acik = !!(el && el.closest && el.closest('.acik'));
+    ust.classList.toggle('acikMod', acik);
+  }
+  menuRengi();
+  document.addEventListener('scroll', function(){ requestAnimationFrame(menuRengi); }, { capture: true, passive: true });
+
+  var bolumler = [].slice.call(document.querySelectorAll('section[id]'));
+  if (!bolumler.length) return;
+
+  /* --- kaydırırken menüde hangi bölümdeysen o vurgulansın --- */
+  var baglantilar = [].slice.call(document.querySelectorAll('[data-capa]'));
+  var sonCapa = null;
+
+  function isaretle(capa){
+    if (capa === sonCapa) return;
+    sonCapa = capa;
+
+    baglantilar.forEach(function(b){
+      b.classList.toggle('aktif', b.getAttribute('data-capa') === capa);
+    });
+    if (dil) dil.setAttribute('href', dil.getAttribute('href').split('#')[0] + (capa ? '#' + capa : ''));
+    /* adres çubuğunu sessizce güncelle — geri tuşunu kirletmeden */
+    var yeni = location.pathname + (capa ? '#' + capa : '');
+    if (location.pathname + location.hash !== yeni) history.replaceState(null, '', yeni);
+  }
+
+  var go = new IntersectionObserver(function(kayitlar){
+    /* ekranın ortasına en yakın bölümü seç */
+    var en = null;
+    bolumler.forEach(function(b){
+      var r = b.getBoundingClientRect();
+      if (r.top < innerHeight * 0.5 && r.bottom > innerHeight * 0.35) en = b;
+    });
+    if (en) isaretle(en.id);
+  }, { threshold: [0, 0.2, 0.5, 0.8, 1], rootMargin: '-40% 0px -40% 0px' });
+
+  bolumler.forEach(function(b){ go.observe(b); });
+
+  /* ilk yüklemede ve normal kaydırmada da çalışsın */
+  var bekliyor = false;
+  document.addEventListener('scroll', function(){
+    if (bekliyor) return;
+    bekliyor = true;
+    requestAnimationFrame(function(){
+      bekliyor = false;
+      var en = null;
+      bolumler.forEach(function(b){
+        var r = b.getBoundingClientRect();
+        if (r.top <= innerHeight * 0.45) en = b;
+      });
+      isaretle(en ? en.id : null);
+    });
+  }, { capture: true, passive: true });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', asMenuBaslat);
+} else {
+  asMenuBaslat();
+}
+</script>

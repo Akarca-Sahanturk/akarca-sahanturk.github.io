@@ -1,0 +1,300 @@
+---
+import Temel from '../layouts/Temel.astro';
+import { icerik, buro, type Dil } from '../data/icerik';
+import { tarihYaz } from '../data/tarih';
+import { getCollection } from 'astro:content';
+
+const { dil = 'tr' as Dil } = Astro.props;
+const m = icerik[dil as Dil];
+const tr = dil === 'tr';
+
+const hepsi = await getCollection('yayinlar', (y) => y.data.dil === dil);
+const sonYayinlar = hepsi.sort((a, b) => +b.data.tarih - +a.data.tarih).slice(0, 3);
+const yayinYolu = (y: any) => m.yayinlar.kok + y.id.split('/').pop() + '/';
+const alanYolu = tr ? '/calisma-alanlari/' : '/en/practice-areas/';
+const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad ?? a;
+---
+<Temel baslik="Akarca Şahantürk" aciklama={m.hero.metin} dil={dil} acilis>
+
+  <!-- AÇILIŞ -->
+  <section class="bolum bolum--tam" id="giris">
+    <div class="etiket gir">{m.hero.etiket}</div>
+    <h1 class="gir">{m.hero.baslik}</h1>
+    <div class="cizgi gir"></div>
+    <p class="metin gir" style="margin-top:0">{m.hero.metin}</p>
+    <div class="seritler gir">{m.hero.seritler.map((s) => <span>{s}</span>)}</div>
+    <a class="asagi gir" href={m.kokYol + '#hakkimizda'} aria-label="Aşağı">
+      <i></i>{tr ? 'KAYDIRIN' : 'SCROLL'}
+    </a>
+  </section>
+
+  <!-- HAKKIMIZDA -->
+  <section class="bolum bolum--canli" id="hakkimizda" data-yon="sol">
+    <div class="etiket gir">{m.yaklasim.etiket}</div>
+    <h2 class="gir">{m.yaklasim.baslik}</h2>
+    <div class="paragraflar">
+      {m.yaklasim.paragraflar.map((pr, i) => (
+        <p class={'metin gir' + (i === 0 ? ' metin--ilk' : '')}>{pr}</p>
+      ))}
+    </div>
+    <a class="baglanti gir" href={m.kokYol + '#calisma-alanlari'}>{m.yaklasim.baglanti}</a>
+  </section>
+
+  <!-- ÇALIŞMA ALANLARI -->
+  <section class="bolum bolum--canli" id="calisma-alanlari" data-yon="sag">
+    <div class="etiket gir">{m.alanlar.etiket}</div>
+    <h2 class="gir">{m.alanlar.baslik}</h2>
+    <p class="metin gir">{m.alanlar.metin}</p>
+    <div class="alanlar gir">
+      {m.alanlar.liste.map((a) => (
+        <a class="alan" href={alanYolu + a.slug + '/'}>
+          <h3>{a.ad}</h3><p class="ince">{a.ozet}</p><span class="ok">&rarr;</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- YAYINLAR -->
+  <section class="bolum bolum--canli" id="yayinlar" data-yon="sol">
+    <div class="etiket gir">{m.yayinlar.etiket}</div>
+    <h2 class="gir">{m.yayinlar.baslik}</h2>
+    <div class="turler gir">
+      {m.yayinlar.turler.map((t) => (
+        <div><h4>{t.ad}</h4><p class="ince">{t.tanim}</p></div>
+      ))}
+    </div>
+    <div class="kartlar gir">
+      {sonYayinlar.map((y) => (
+        <a class="kart" href={yayinYolu(y)}>
+          <div class="tarih">{tarihYaz(y.data.tarih, dil)} · {turAdi(y.data.tur)}</div>
+          <h3>{y.data.baslik}</h3>
+        </a>
+      ))}
+    </div>
+    <a class="baglanti gir" href={m.yayinlar.kok}>{m.yayinlar.hepsi}</a>
+  </section>
+
+  <!-- EKİBİMİZ -->
+  <section class="bolum bolum--canli" id="ekibimiz" data-yon="sag">
+    <div class="etiket gir">{m.ekip.etiket}</div>
+    <h2 class="gir">{m.ekip.baslik}</h2>
+    <p class="metin gir">{m.ekip.metin}</p>
+    <div class="ekip gir">
+      {m.ekip.liste.map((k) => (
+        <a class="kisi" href={m.ekip.kok + k.slug + '/'}>
+          <img class="portre" src={k.foto} alt={k.ad} width="800" height="1066" loading="lazy" />
+          <div class="kisiMetin">
+            <div class="rol">{k.rol}</div><h3>{k.kisaAd}</h3>
+            <span class="ok">&rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- KARİYER -->
+  <section class="bolum bolum--canli" id="kariyer" data-yon="sol">
+    <div class="etiket gir">{m.kariyer.etiket}</div>
+    <h2 class="gir">{m.kariyer.baslik}</h2>
+    <p class="metin gir">{m.kariyer.metin}</p>
+    <div class="yer-tutucu gir">
+      <strong>{tr ? 'Hazırlanıyor' : 'In preparation'}</strong>
+      {tr
+        ? 'Açık pozisyonlar ve staj programı burada listelenecek. Şu an açık bir ilan bulunmuyor; başvurular e-posta ile alınıyor.'
+        : 'Open positions and the internship programme will be listed here. There is no open posting at the moment; applications are received by email.'}
+    </div>
+    <a class="baglanti gir" href={m.kokYol + '#iletisim'}>{m.iletisim.etiket}</a>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="bolum bolum--canli" id="iletisim" data-yon="sag">
+    <div class="etiket gir">{m.iletisim.etiket}</div>
+    <h2 class="gir">{m.iletisim.baslik}</h2>
+    <p class="metin gir">{m.iletisim.metin}</p>
+
+    <div class="kutu gir">
+      <div>
+        <div class="bilgi">
+          <div><span>{m.iletisim.alanlar.eposta}</span>
+            {m.ekip.liste.map((k) => <div><a href={'mailto:' + k.eposta}>{k.eposta}</a></div>)}
+          </div>
+          <div><span>{m.iletisim.alanlar.telefon}</span><a href={'tel:' + buro.telefon.replace(/\s/g, '')}>{buro.telefon}</a></div>
+          <div><span>{m.iletisim.alanlar.adres}</span>{buro.adresSatirlari.map((s) => <div>{s}</div>)}</div>
+        </div>
+        <div class="harita">
+          <iframe
+            src={'https://www.google.com/maps?q=' + encodeURIComponent(buro.haritaSorgu) + '&output=embed&hl=' + dil}
+            title={m.iletisim.harita} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+      <form id="form" data-eposta={m.ekip.liste.map((k) => k.eposta).join(',')}>
+        <input name="ad" placeholder={m.iletisim.form.ad} required />
+        <input name="eposta" type="email" placeholder={m.iletisim.form.eposta} required />
+        <input name="konu" placeholder={m.iletisim.form.konu} />
+        <textarea name="mesaj" placeholder={m.iletisim.form.mesaj}></textarea>
+        <button type="submit">{m.iletisim.form.gonder}</button>
+        <p class="formNot">{tr
+          ? 'Form henüz bir e-posta servisine bağlı değil; şimdilik butona basınca e-posta uygulaman açılır.'
+          : 'The form is not connected to a mail service yet; the button opens your email app for now.'}</p>
+      </form>
+    </div>
+  </section>
+
+</Temel>
+
+<style>
+#giris{justify-content:center}
+.paragraflar{max-width:62ch}
+.paragraflar .metin{margin-top:18px;max-width:none}
+.paragraflar .metin--ilk{margin-top:26px;color:var(--murekkep);font-size:17.5px}
+#giris .cizgi{width:56px;height:1px;background:var(--etiket);margin:34px 0}
+.seritler{display:flex;gap:56px;flex-wrap:wrap;margin-top:56px;
+font-size:13px;letter-spacing:.08em;color:var(--etiket)}
+@media(max-width:820px){.seritler{flex-direction:column;gap:10px;margin-top:38px}}
+.asagi{display:inline-flex;align-items:center;gap:12px;margin-top:64px;
+font-size:11.5px;letter-spacing:.2em;color:var(--etiket);width:fit-content}
+.asagi i{display:block;width:1px;height:34px;background:var(--etiket);
+animation:iner 2s ease-in-out infinite}
+@keyframes iner{0%,100%{transform:scaleY(.25);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+@media(prefers-reduced-motion:reduce){.asagi i{animation:none}}
+
+/* çalışma alanları */
+.alanlar{border-top:1px solid var(--cizgi);margin-top:44px}
+.alan{border-bottom:1px solid var(--cizgi);padding:26px 0;display:grid;padding-right:12px;
+grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) 24px;gap:32px;align-items:baseline;
+transition:padding-left .5s cubic-bezier(.16,.7,.2,1)}
+.alan:hover{padding-left:22px;background:#fff;color:var(--renk-siyah)}
+.alan:hover .ince{color:#4d4d4d}
+.alan h3{font-size:clamp(20px,2.1vw,27px)}
+.alan .ok{opacity:0;transform:translateX(-8px);transition:all .5s;text-align:right}
+.alan:hover .ok{opacity:1;transform:none}
+@media(max-width:820px){.alan{grid-template-columns:1fr;gap:9px}.alan .ok{display:none}}
+
+/* yayınlar */
+.turler{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin:40px 0 46px}
+.turler div{border-top:1px solid var(--cizgi-guclu);padding-top:16px}
+.turler h4{font-family:var(--yazi-govde);font-size:13px;letter-spacing:.14em;
+text-transform:uppercase;font-weight:500;margin-bottom:9px}
+.kartlar{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.kart{border:1px solid var(--cizgi);margin:0 0 -1px -1px;padding:30px 26px 34px;min-height:210px;
+display:flex;flex-direction:column;justify-content:space-between}
+.kart:hover{background:#fff;color:var(--renk-siyah)}
+.kart .tarih{font-size:11px;letter-spacing:.16em;color:var(--etiket)}
+.kart:hover .tarih{color:#707070}
+.kart h3{font-size:20px;line-height:1.4;margin-top:16px}
+@media(max-width:820px){.turler,.kartlar{grid-template-columns:1fr}}
+
+/* ekibimiz */
+.ekip{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px;max-width:920px}
+.kisi{border:1px solid var(--cizgi);position:relative;display:grid;grid-template-columns:150px 1fr;overflow:hidden}
+.kisi .portre{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;filter:grayscale(1)}
+.kisiMetin{padding:30px 28px;position:relative;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:520px){.kisi{grid-template-columns:110px 1fr}.kisiMetin{padding:20px 18px}.kisi h3{font-size:22px}}
+.kisi:hover{border-color:var(--murekkep);background:var(--hover-zemin)}
+.kisi .rol{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--etiket)}
+.kisi h3{font-size:29px;margin-top:14px}
+.kisi .ok{position:absolute;right:28px;bottom:32px;opacity:0;transform:translateX(-8px);transition:all .5s}
+.kisi:hover .ok{opacity:1;transform:none}
+@media(max-width:820px){.ekip{grid-template-columns:1fr}}
+
+/* iletişim */
+.kutu{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:48px}
+.bilgi > div{margin-bottom:24px}
+.bilgi div div{margin:0}
+.bilgi span{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+color:var(--etiket);margin-bottom:7px}
+.bilgi a:hover{text-decoration:underline}
+.harita{height:240px;border:1px solid var(--cizgi);margin-top:10px;overflow:hidden;background:#111}
+.harita iframe{width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
+.formNot{margin-top:18px;font-size:13px;color:var(--etiket);line-height:1.7;max-width:46ch}
+@media(max-width:820px){.kutu{grid-template-columns:1fr;gap:44px}}
+</style>
+
+<script is:inline>
+/* BULUNDUĞUN BÖLÜM AYDINLANIR
+   Bölüm ekranın ortasına doğru gelirken siyahtan açık griye,
+   ortadan yukarı çıkarken açık griden siyaha döner.
+   Renk doğrudan kaydırma konumuna bağlıdır; kaydırma durursa renk de durur.
+   Eşikler kısa tutuldu ki ara tonlarda uzun süre kalınmasın. */
+(function(){
+  var bolumler = [].slice.call(document.querySelectorAll('.bolum--canli'));
+  if (!bolumler.length) return;
+
+  var K = { zemin:[4,4,4],       murekkep:[252,249,243], soluk:[218,215,209], soluk2:[195,192,186], etiket:[154,151,146], cizgi:[252,249,243] };
+  var A = { zemin:[229,229,229], murekkep:[4,4,4],       soluk:[68,68,68],    soluk2:[102,102,102], etiket:[125,125,125], cizgi:[4,4,4] };
+  function mix(a,b,t){ return Math.round(a+(b-a)*t); }
+  function rgb(a,b,t){ return 'rgb('+mix(a[0],b[0],t)+','+mix(a[1],b[1],t)+','+mix(a[2],b[2],t)+')'; }
+  function rgba(a,b,t,al){ return 'rgba('+mix(a[0],b[0],t)+','+mix(a[1],b[1],t)+','+mix(a[2],b[2],t)+','+al+')'; }
+  function sinirla(v){ return Math.max(0, Math.min(1, v)); }
+  function yumusat(t){ return t*t*(3-2*t); }
+  /* Eşikler (ekran yüksekliğine göre):
+     giriş: bölümün üstü %85'ten %45'e gelirken açılır
+     çıkış: bölümün altı %55'ten %15'e inerken kararır
+
+     YUMUŞATMA: Mac'te izleme yüzeyi sürekli kaydırır, Windows'ta fare tekerleği
+     100 piksellik adımlarla atlar. Renk doğrudan konuma bağlansa Windows'ta
+     kesik kesik görünür. Bu yüzden renk hedefe her karede biraz yaklaşır
+     (~120 ms); Mac'te fark edilmez, Windows'ta adımlar akıcıya döner. */
+  var hedef = bolumler.map(function(){ return 0; });
+  var simdi = bolumler.map(function(){ return -1; });
+  var donguAcik = false;
+
+  function hedefleriGuncelle(){
+    var vh = innerHeight;
+    bolumler.forEach(function(b, i){
+      var r = b.getBoundingClientRect();
+      var giris = sinirla((vh*0.85 - r.top) / (vh*0.40));
+      var cikis = sinirla((r.bottom - vh*0.15) / (vh*0.40));
+      hedef[i] = yumusat(Math.min(giris, cikis));
+    });
+  }
+
+  function boya(b, t){
+    var s = b.style;
+    s.setProperty('--zemin', rgb(K.zemin,A.zemin,t));
+    s.setProperty('--murekkep', rgb(K.murekkep,A.murekkep,t));
+    s.setProperty('--soluk', rgb(K.soluk,A.soluk,t));
+    s.setProperty('--soluk2', rgb(K.soluk2,A.soluk2,t));
+    s.setProperty('--etiket', rgb(K.etiket,A.etiket,t));
+    s.setProperty('--cizgi', rgba(K.cizgi,A.cizgi,t,0.12));
+    s.setProperty('--cizgi-guclu', rgba(K.cizgi,A.cizgi,t,0.36));
+    s.setProperty('--hover-zemin', rgba(K.cizgi,A.cizgi,t,0.03));
+    b.classList.toggle('acik', t > 0.5);   /* menü rengi bunu okur */
+  }
+
+  function dongu(){
+    var hareket = false;
+    bolumler.forEach(function(b, i){
+      var fark = hedef[i] - simdi[i];
+      if (simdi[i] < 0) { simdi[i] = hedef[i]; boya(b, simdi[i]); return; }   /* ilk kare: doğrudan */
+      if (Math.abs(fark) < 0.002) { if (simdi[i] !== hedef[i]) { simdi[i] = hedef[i]; boya(b, simdi[i]); } return; }
+      simdi[i] += fark * 0.22;
+      boya(b, simdi[i]);
+      hareket = true;
+    });
+    if (hareket) requestAnimationFrame(dongu); else donguAcik = false;
+  }
+
+  function iste(){
+    hedefleriGuncelle();
+    if (!donguAcik) { donguAcik = true; requestAnimationFrame(dongu); }
+  }
+  document.addEventListener('scroll', iste, { capture: true, passive: true });
+  addEventListener('resize', iste);
+  iste();
+})();
+
+(function(){
+  var f = document.getElementById('form');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = new FormData(f);
+    var hedef = f.getAttribute('data-eposta');
+    var govde = (v.get('ad')||'') + '\n' + (v.get('eposta')||'') + '\n\n' + (v.get('mesaj')||'');
+    location.href = 'mailto:' + hedef
+      + '?subject=' + encodeURIComponent(v.get('konu') || 'Görüşme talebi')
+      + '&body=' + encodeURIComponent(govde);
+  });
+})();
+</script>

@@ -1,0 +1,13 @@
+---
+import AlanDetay from '../../sayfalar/AlanDetay.astro';
+import { icerik } from '../../data/icerik';
+
+export async function getStaticPaths() {
+  return icerik.tr.alanlar.liste.map((a) => ({
+    params: { slug: a.slug },
+    props: { alan: a },
+  }));
+}
+const { alan } = Astro.props;
+---
+<AlanDetay dil="tr" alan={alan} />

@@ -1,0 +1,13 @@
+---
+import EkipDetay from '../../../sayfalar/EkipDetay.astro';
+import { icerik } from '../../../data/icerik';
+
+export async function getStaticPaths() {
+  return icerik.en.ekip.liste.map((k) => ({
+    params: { slug: k.slug },
+    props: { kisi: k },
+  }));
+}
+const { kisi } = Astro.props;
+---
+<EkipDetay dil="en" kisi={kisi} />

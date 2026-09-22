@@ -1,0 +1,27 @@
+/* Akarca Şahantürk — marka değişkenleri
+   Kaynak: Figma "A|S 3" marka kimliği dosyası.
+   Renk veya ölçü değiştirmek istersen tek yer burası. */
+
+:root {
+  /* Renkler — V1 Black */
+  --renk-siyah: #040404;
+  --renk-koyu-gri: #131313;
+  --renk-orta-gri: #474747;
+  --renk-acik-gri: #E5E5E5;
+
+  /* Renkler — V2 Black & Midnight */
+  --renk-lacivert: #131936;
+  --renk-koyu-gri-2: #232323;
+  --renk-kirik-beyaz: #FCF9F3;
+
+  /* Yazı tipleri — SEÇENEK A aktif (taslak sitenin kullandığı eşleşme).
+     B seçeneğine (Space Grotesk + Inter) geçilecekse bu iki satır değişir. */
+  --yazi-baslik: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --yazi-govde: 'DM Sans', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Ölçüler */
+  --govde-boyut: 16px;
+  --govde-satir: 1.6;
+  --kucuk-boyut: 12px;
+  --ui-boyut: 14px;
+}
