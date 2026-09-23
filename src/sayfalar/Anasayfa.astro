@@ -148,11 +148,8 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
 <style>
 #giris{justify-content:center}
 /* dönen başlık: üst satır bir tambur gibi yukarı kayarak değişir, alt satır sabit */
-.donen{display:block;position:relative;overflow:hidden;transition:height .55s cubic-bezier(.2,.7,.1,1)}
-.donen__ic{display:block;transition:transform .55s cubic-bezier(.2,.7,.1,1),opacity .4s}
-.donen__ic.cikan{position:absolute;left:0;top:0;width:100%;transform:translateY(-100%);opacity:0}
-.donen__ic.giren{position:absolute;left:0;top:0;width:100%;transform:translateY(100%);opacity:0}
-.donen__ic.giren.yerinde{transform:none;opacity:1}
+.donen{display:block;position:relative;overflow:hidden}
+.donen__ic{display:block;position:absolute;left:0;top:0;width:100%;will-change:transform,opacity}
 .sabit{display:block}
 .paragraflar{max-width:62ch}
 .paragraflar .metin{margin-top:18px;max-width:none}
@@ -221,52 +218,66 @@ color:var(--etiket);margin-bottom:7px}
 </style>
 
 <script is:inline>
-/* DÖNEN BAŞLIK: üst satır 2,5 saniyede bir sıradaki ifadeye geçer */
+/* DÖNEN BAŞLIK: üst satır 2,5 saniyede bir sıradaki ifadeye geçer.
+   Her iki ifade de mutlak konumda durur; yalnızca kayma ve saydamlık animasyonu yapılır.
+   Animasyon, tarayıcıların ortak API'siyle (Web Animations) sürülür — Safari dahil aynı davranır. */
 (function(){
   var h1 = document.getElementById('donenBaslik');
   if (!h1) return;
   var ifadeler = JSON.parse(h1.getAttribute('data-ifadeler') || '[]');
   if (ifadeler.length < 2) return;
   var kutu = h1.querySelector('.donen');
+  var aktif = kutu.querySelector('.donen__ic');
   var i = 0, zamanlayici = null, mesgul = false;
+  var SURE = 550, EGRI = 'cubic-bezier(.2,.7,.1,1)';
 
-  function yukseklikSabitle(){ var ic = kutu.querySelector('.donen__ic:not(.cikan):not(.giren)'); if (ic) kutu.style.height = ic.offsetHeight + 'px'; }
+  function yukseklik(el){ return el.getBoundingClientRect().height; }
+  function kutuyuAyarla(){ kutu.style.height = yukseklik(aktif) + 'px'; }
 
   function dondur(){
     if (mesgul || document.hidden) return;
     mesgul = true;
-    var eski = kutu.querySelector('.donen__ic:not(.cikan):not(.giren)');
     i = (i + 1) % ifadeler.length;
-    var yeni = document.createElement('span');
-    yeni.className = 'donen__ic giren';
+    /* aktif öğeyi kopyalıyoruz ki Astro'nun bileşene özel stil etiketi (data-astro-cid) yeni öğede de bulunsun;
+       aksi hâlde .donen__ic stili uygulanmaz ve öğe satır içinde akarak yüksekliği bozar */
+    var yeni = aktif.cloneNode(false);
+    yeni.removeAttribute('style');
+    yeni.getAnimations && yeni.getAnimations().forEach(function(a){ a.cancel(); });
     yeni.textContent = ifadeler[i];
+    yeni.style.transform = 'translateY(100%)';
+    yeni.style.opacity = '0';
     kutu.appendChild(yeni);
-    var yeniYukseklik = yeni.offsetHeight;         /* ölçüm (reflow) */
-    void yeni.offsetWidth;
-    kutu.style.height = yeniYukseklik + 'px';
-    eski.classList.add('cikan');
-    yeni.classList.add('yerinde');
+
+    var eskiY = yukseklik(aktif), yeniY = yukseklik(yeni);
+    var eski = aktif; aktif = yeni;
+
+    eski.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: 'translateY(-100%)', opacity: 0 }],
+                 { duration: SURE, easing: EGRI, fill: 'forwards' });
+    yeni.animate([{ transform: 'translateY(100%)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }],
+                 { duration: SURE, easing: EGRI, fill: 'forwards' });
+    if (Math.abs(eskiY - yeniY) > 1) {
+      kutu.animate([{ height: eskiY + 'px' }, { height: yeniY + 'px' }], { duration: SURE, easing: EGRI, fill: 'forwards' });
+    }
     setTimeout(function(){
       eski.remove();
-      yeni.classList.remove('giren', 'yerinde');
-      yeni.style.position = ''; yeni.style.transform = '';
+      yeni.style.transform = ''; yeni.style.opacity = '';
+      kutu.style.height = yeniY + 'px';
       mesgul = false;
-    }, 600);
+    }, SURE + 40);
   }
 
   function baslat(){
-    yukseklikSabitle();
+    kutuyuAyarla();
     if (zamanlayici) clearInterval(zamanlayici);
     zamanlayici = setInterval(dondur, 2500);
   }
-  addEventListener('resize', yukseklikSabitle);
-  document.addEventListener('visibilitychange', function(){ if (!document.hidden) yukseklikSabitle(); });
-  document.fonts && document.fonts.ready.then(yukseklikSabitle);
+  addEventListener('resize', kutuyuAyarla);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(kutuyuAyarla);
 
   /* açılış animasyonu varsa o bitince başla, yoksa hemen */
   if (document.getElementById('acilis')) {
     document.addEventListener('acilis:bitti', baslat, { once: true });
-    setTimeout(function(){ if (!zamanlayici) baslat(); }, 5000);   /* emniyet */
+    setTimeout(function(){ if (!zamanlayici) baslat(); }, 5000);
   } else {
     baslat();
   }
