@@ -61,7 +61,14 @@ const tamBaslik = baslik === 'Akarca Şahantürk' ? baslik : baslik + ' — Akar
           }
         });
       }, { threshold: [0, 0.12] });
-      bolumler.forEach(function(b){ go.observe(b); });
+      function basla(){ bolumler.forEach(function(b){ go.observe(b); }); }
+      /* açılış animasyonu varsa, içerik logo yerleşirken belirsin */
+      if (document.getElementById('acilis')) {
+        var basladi = false;
+        var bir = function(){ if (!basladi) { basladi = true; basla(); } };
+        document.addEventListener('acilis:bitti', bir, { once: true });
+        setTimeout(bir, 5000);
+      } else basla();
     })();
   </script>
 </body>

@@ -19,7 +19,10 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
   <!-- AÇILIŞ -->
   <section class="bolum bolum--tam" id="giris">
     <div class="etiket gir">{m.hero.etiket}</div>
-    <h1 class="gir">{m.hero.baslik}</h1>
+    <h1 class="gir" id="donenBaslik" data-ifadeler={JSON.stringify(m.hero.donen)}>
+      <span class="donen"><span class="donen__ic">{m.hero.donen[0]}</span></span>
+      <span class="sabit">{m.hero.sabit}</span>
+    </h1>
     <div class="cizgi gir"></div>
     <p class="metin gir" style="margin-top:0">{m.hero.metin}</p>
     <div class="seritler gir">{m.hero.seritler.map((s) => <span>{s}</span>)}</div>
@@ -144,6 +147,13 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
 
 <style>
 #giris{justify-content:center}
+/* dönen başlık: üst satır bir tambur gibi yukarı kayarak değişir, alt satır sabit */
+.donen{display:block;position:relative;overflow:hidden;transition:height .55s cubic-bezier(.2,.7,.1,1)}
+.donen__ic{display:block;transition:transform .55s cubic-bezier(.2,.7,.1,1),opacity .4s}
+.donen__ic.cikan{position:absolute;left:0;top:0;width:100%;transform:translateY(-100%);opacity:0}
+.donen__ic.giren{position:absolute;left:0;top:0;width:100%;transform:translateY(100%);opacity:0}
+.donen__ic.giren.yerinde{transform:none;opacity:1}
+.sabit{display:block}
 .paragraflar{max-width:62ch}
 .paragraflar .metin{margin-top:18px;max-width:none}
 .paragraflar .metin--ilk{margin-top:26px;color:var(--murekkep);font-size:17.5px}
@@ -211,6 +221,57 @@ color:var(--etiket);margin-bottom:7px}
 </style>
 
 <script is:inline>
+/* DÖNEN BAŞLIK: üst satır 2,5 saniyede bir sıradaki ifadeye geçer */
+(function(){
+  var h1 = document.getElementById('donenBaslik');
+  if (!h1) return;
+  var ifadeler = JSON.parse(h1.getAttribute('data-ifadeler') || '[]');
+  if (ifadeler.length < 2) return;
+  var kutu = h1.querySelector('.donen');
+  var i = 0, zamanlayici = null, mesgul = false;
+
+  function yukseklikSabitle(){ var ic = kutu.querySelector('.donen__ic:not(.cikan):not(.giren)'); if (ic) kutu.style.height = ic.offsetHeight + 'px'; }
+
+  function dondur(){
+    if (mesgul || document.hidden) return;
+    mesgul = true;
+    var eski = kutu.querySelector('.donen__ic:not(.cikan):not(.giren)');
+    i = (i + 1) % ifadeler.length;
+    var yeni = document.createElement('span');
+    yeni.className = 'donen__ic giren';
+    yeni.textContent = ifadeler[i];
+    kutu.appendChild(yeni);
+    var yeniYukseklik = yeni.offsetHeight;         /* ölçüm (reflow) */
+    void yeni.offsetWidth;
+    kutu.style.height = yeniYukseklik + 'px';
+    eski.classList.add('cikan');
+    yeni.classList.add('yerinde');
+    setTimeout(function(){
+      eski.remove();
+      yeni.classList.remove('giren', 'yerinde');
+      yeni.style.position = ''; yeni.style.transform = '';
+      mesgul = false;
+    }, 600);
+  }
+
+  function baslat(){
+    yukseklikSabitle();
+    if (zamanlayici) clearInterval(zamanlayici);
+    zamanlayici = setInterval(dondur, 2500);
+  }
+  addEventListener('resize', yukseklikSabitle);
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) yukseklikSabitle(); });
+  document.fonts && document.fonts.ready.then(yukseklikSabitle);
+
+  /* açılış animasyonu varsa o bitince başla, yoksa hemen */
+  if (document.getElementById('acilis')) {
+    document.addEventListener('acilis:bitti', baslat, { once: true });
+    setTimeout(function(){ if (!zamanlayici) baslat(); }, 5000);   /* emniyet */
+  } else {
+    baslat();
+  }
+})();
+
 /* BULUNDUĞUN BÖLÜM AYDINLANIR
    Bölüm ekranın ortasına doğru gelirken siyahtan açık griye,
    ortadan yukarı çıkarken açık griden siyaha döner.

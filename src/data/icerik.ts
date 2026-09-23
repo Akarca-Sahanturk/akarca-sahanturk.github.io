@@ -21,6 +21,9 @@ export const icerik = {
     hero: {
       etiket: 'İstanbul · Türkiye',
       baslik: 'Vergi ve gümrük hukukunda, uygulanabilir çözümler.',
+      // Üst satır 2,5 saniyede bir sırayla değişir; alt satır sabit.
+      donen: ['Vergi ve gümrük hukukunda,', 'Yatırım teşviklerinde,', 'Şirketler hukukunda,', 'Ticari uyuşmazlıklarda ve tahkimde,'],
+      sabit: 'uygulanabilir çözümler.',
       metin: 'Yerli ve yabancı müvekkillerimize, yurt içi ve yurt dışındaki faaliyetleri için danışmanlık ve uyuşmazlık çözümü hizmeti veriyoruz.',
       seritler: ['Türkçe ve İngilizce', 'Kurucu ortaklar doğrudan dahil', 'Şişli, İstanbul'],
     },
@@ -201,6 +204,8 @@ export const icerik = {
     hero: {
       etiket: 'Istanbul · Türkiye',
       baslik: 'Practical solutions in tax and customs law.',
+      donen: ['Tax and customs law.', 'Investment incentives.', 'Corporate law.', 'Commercial disputes and arbitration.'],
+      sabit: 'Practical solutions.',
       metin: 'We advise domestic and international clients on their operations in Türkiye and abroad, and represent them in disputes.',
       seritler: ['Turkish and English', 'Founding partners directly involved', 'Şişli, Istanbul'],
     },
