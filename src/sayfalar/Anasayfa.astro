@@ -148,8 +148,10 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
 <style>
 #giris{justify-content:center}
 /* dönen başlık: üst satır bir tambur gibi yukarı kayarak değişir, alt satır sabit */
-.donen{display:block;position:relative;overflow:hidden}
-.donen__ic{display:block;position:absolute;left:0;top:0;width:100%;will-change:transform,opacity}
+.donen{display:block;position:relative;overflow:hidden;box-sizing:content-box;
+  /* kırpma alanını harf kuyrukları (ş, ğ, y) ve üst noktalar (İ) için biraz geniş tutuyoruz; eksi kenar boşluğu yerleşimi aynı bırakır */
+  padding:.12em 0 .24em;margin:-.12em 0 -.24em}
+.donen__ic{display:block;position:absolute;left:0;top:.12em;width:100%;will-change:transform,opacity}
 .sabit{display:block}
 .paragraflar{max-width:62ch}
 .paragraflar .metin{margin-top:18px;max-width:none}
@@ -244,16 +246,16 @@ color:var(--etiket);margin-bottom:7px}
     yeni.removeAttribute('style');
     yeni.getAnimations && yeni.getAnimations().forEach(function(a){ a.cancel(); });
     yeni.textContent = ifadeler[i];
-    yeni.style.transform = 'translateY(100%)';
+    yeni.style.transform = 'translateY(calc(100% + .24em))';
     yeni.style.opacity = '0';
     kutu.appendChild(yeni);
 
     var eskiY = yukseklik(aktif), yeniY = yukseklik(yeni);
     var eski = aktif; aktif = yeni;
 
-    eski.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: 'translateY(-100%)', opacity: 0 }],
+    eski.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: 'translateY(calc(-100% - .12em))', opacity: 0 }],
                  { duration: SURE, easing: EGRI, fill: 'forwards' });
-    yeni.animate([{ transform: 'translateY(100%)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }],
+    yeni.animate([{ transform: 'translateY(calc(100% + .24em))', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }],
                  { duration: SURE, easing: EGRI, fill: 'forwards' });
     if (Math.abs(eskiY - yeniY) > 1) {
       kutu.animate([{ height: eskiY + 'px' }, { height: yeniY + 'px' }], { duration: SURE, easing: EGRI, fill: 'forwards' });
