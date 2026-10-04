@@ -143,10 +143,31 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
     </div>
   </section>
 
+  <!-- KAPANIŞ: İstanbul fotoğrafı (Galata Kulesi). Menüde yer almaz; harita ile çakışmasın diye ayrı, tam genişlikte bir bant. -->
+  <section class="kapanis" aria-label={m.hero.etiket}>
+    <div class="kapanis__foto gir">
+      <img src="/marka/istanbul-galata.jpg" srcset="/marka/istanbul-galata-1200.jpg 1200w, /marka/istanbul-galata.jpg 2000w"
+        sizes="100vw" alt={tr ? 'Galata Kulesi ve İstanbul silüeti' : 'Galata Tower and the Istanbul skyline'} loading="lazy" decoding="async" />
+    </div>
+    <div class="kapanis__etiket gir">{m.hero.etiket}</div>
+  </section>
+
 </Temel>
 
 <style>
 #giris{justify-content:center}
+/* kapanış bandı: fotoğraf üstte ve altta siyaha eriyerek iletişim bölümü ile alt bilgi arasına oturur */
+.kapanis{position:relative;height:clamp(380px,62vh,720px);overflow:hidden;background:var(--renk-siyah);
+  display:flex;align-items:flex-end;justify-content:center;padding-bottom:clamp(40px,7vh,72px)}
+.kapanis__foto{position:absolute;inset:0;transform:scale(1.06);opacity:0;
+  transition:opacity 1.6s ease,transform 3.2s cubic-bezier(.2,.7,.1,1)}
+.kapanis__foto.gorundu{opacity:1;transform:scale(1)}
+.kapanis__foto img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block;filter:grayscale(1) brightness(.78) contrast(1.05)}
+.kapanis__foto::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,var(--renk-siyah) 0%,rgba(4,4,4,.55) 22%,rgba(4,4,4,.25) 50%,rgba(4,4,4,.6) 78%,var(--renk-siyah) 100%)}
+.kapanis__etiket{position:relative;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(252,249,243,.72);
+  transition-delay:.5s}
+@media(max-width:820px){.kapanis{height:clamp(280px,48vh,460px)}.kapanis__foto img{object-position:42% 40%}}
 /* dönen başlık: üst satır bir tambur gibi yukarı kayarak değişir, alt satır sabit */
 .donen{display:block;position:relative;overflow:hidden;box-sizing:content-box;
   /* kırpma alanını harf kuyrukları (ş, ğ, y) ve üst noktalar (İ) için biraz geniş tutuyoruz; eksi kenar boşluğu yerleşimi aynı bırakır */
