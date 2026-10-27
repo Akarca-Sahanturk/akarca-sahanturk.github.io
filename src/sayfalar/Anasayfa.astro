@@ -95,22 +95,8 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
     </div>
   </section>
 
-  <!-- KARİYER -->
-  <section class="bolum bolum--canli" id="kariyer" data-yon="sol">
-    <div class="etiket gir">{m.kariyer.etiket}</div>
-    <h2 class="gir">{m.kariyer.baslik}</h2>
-    <p class="metin gir">{m.kariyer.metin}</p>
-    <div class="yer-tutucu gir">
-      <strong>{tr ? 'Hazırlanıyor' : 'In preparation'}</strong>
-      {tr
-        ? 'Açık pozisyonlar ve staj programı burada listelenecek. Şu an açık bir ilan bulunmuyor; başvurular e-posta ile alınıyor.'
-        : 'Open positions and the internship programme will be listed here. There is no open posting at the moment; applications are received by email.'}
-    </div>
-    <a class="baglanti gir" href={m.kokYol + '#iletisim'}>{m.iletisim.etiket}</a>
-  </section>
-
   <!-- İLETİŞİM -->
-  <section class="bolum bolum--canli" id="iletisim" data-yon="sag">
+  <section class="bolum bolum--canli" id="iletisim" data-yon="sol">
     <div class="etiket gir">{m.iletisim.etiket}</div>
     <h2 class="gir">{m.iletisim.baslik}</h2>
     <p class="metin gir">{m.iletisim.metin}</p>
@@ -140,6 +126,19 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
           ? 'Form henüz bir e-posta servisine bağlı değil; şimdilik butona basınca e-posta uygulaman açılır.'
           : 'The form is not connected to a mail service yet; the button opens your email app for now.'}</p>
       </form>
+    </div>
+  </section>
+
+  <!-- KARİYER -->
+  <section class="bolum bolum--canli" id="kariyer" data-yon="sag">
+    <div class="etiket gir">{m.kariyer.etiket}</div>
+    <h2 class="gir">{m.kariyer.baslik}</h2>
+    <p class="metin gir">{m.kariyer.metin}</p>
+    <div class="yer-tutucu gir">
+      <strong>{tr ? 'Hazırlanıyor' : 'In preparation'}</strong>
+      {tr
+        ? 'Açık pozisyonlar ve staj programı burada listelenecek. Şu an açık bir ilan bulunmuyor; başvurular e-posta ile alınıyor.'
+        : 'Open positions and the internship programme will be listed here. There is no open posting at the moment; applications are received by email.'}
     </div>
   </section>
 

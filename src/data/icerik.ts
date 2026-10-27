@@ -15,8 +15,8 @@ export const icerik = {
       { ad: 'Çalışma Alanları', capa: 'calisma-alanlari' },
       { ad: 'Yayınlar', capa: 'yayinlar' },
       { ad: 'Ekibimiz', capa: 'ekibimiz' },
-      { ad: 'Kariyer', capa: 'kariyer' },
       { ad: 'İletişim', capa: 'iletisim' },
+      { ad: 'Kariyer', capa: 'kariyer' },
     ],
     hero: {
       etiket: 'İstanbul · Türkiye',
@@ -198,8 +198,8 @@ export const icerik = {
       { ad: 'Practice Areas', capa: 'calisma-alanlari' },
       { ad: 'Publications', capa: 'yayinlar' },
       { ad: 'Our Team', capa: 'ekibimiz' },
-      { ad: 'Careers', capa: 'kariyer' },
       { ad: 'Contact', capa: 'iletisim' },
+      { ad: 'Careers', capa: 'kariyer' },
     ],
     hero: {
       etiket: 'Istanbul · Türkiye',
