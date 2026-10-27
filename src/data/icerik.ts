@@ -197,7 +197,7 @@ export const icerik = {
         eposta: 'Geçerli bir e-posta adresi yazın.',
         cvTur: 'Yalnızca PDF, DOC veya DOCX yükleyebilirsiniz.',
         cvBoyut: 'Dosya 10 MB’tan büyük olamaz.',
-        genel: 'Başvuru gönderilemedi. Lütfen tekrar deneyin ya da özgeçmişinizi e-posta ile iletin: ',
+        genel: 'Başvuru gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin.',
       },
       tesekkur: {
         baslik: 'Başvurunuz bize ulaştı.',
@@ -411,7 +411,7 @@ export const icerik = {
         eposta: 'Please enter a valid email address.',
         cvTur: 'Only PDF, DOC or DOCX files are accepted.',
         cvBoyut: 'The file cannot exceed 10 MB.',
-        genel: 'The application could not be sent. Please try again or email your CV to: ',
+        genel: 'The application could not be sent. Please try again in a few minutes.',
       },
       tesekkur: {
         baslik: 'We have received your application.',
@@ -444,5 +444,5 @@ export const buro = {
   haritaSorgu: 'Ferko Signature, Büyükdere Caddesi No:175, 34394 Şişli, İstanbul',
   linkedin: 'https://www.linkedin.com/',
   alanAdi: 'https://akarcasahanturk.com',
-  basvuruApi: 'https://as-basvuru.akarca-sahanturk.workers.dev', // Cloudflare Worker adresi; boşsa form e-posta uygulamasını açar
+  basvuruApi: 'https://as-basvuru.akarca-sahanturk.workers.dev', // Cloudflare Worker adresi (başvuru formu)
 };

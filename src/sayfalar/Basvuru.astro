@@ -1,7 +1,7 @@
 ---
 /* BAŞVURU SAYFASI
    Solda başlık ve kısa açıklama, sağda başvuru formu (ad, e-posta, telefon, pozisyon, ön yazı, CV).
-   Form, Cloudflare Worker'a (buro.basvuruApi) gönderilir; adres boşsa e-posta uygulaması açılır. */
+   Form, Cloudflare Worker'a (buro.basvuruApi) gönderilir. */
 import Temel from '../layouts/Temel.astro';
 import { icerik, buro, type Dil } from '../data/icerik';
 const { dil = 'tr' as Dil } = Astro.props;
@@ -9,7 +9,6 @@ const m = icerik[dil as Dil];
 const b = m.basvuru;
 const a = b.alanlar;
 const kvkkYol = m.altbilgi.baglantilar[1].yol;
-const epostalar = m.ekip.liste.map((k) => k.eposta).join(',');
 ---
 <Temel baslik={b.baslik} aciklama={b.metin} dil={dil}>
   <section class="basvuru" id="basvuru">
@@ -18,14 +17,11 @@ const epostalar = m.ekip.liste.map((k) => k.eposta).join(',');
       <div class="etiket gir">{b.etiket}</div>
       <h1 class="gir">{b.baslik}</h1>
       <p class="metin gir">{b.metin}</p>
-      <div class="basvuru__kisiler gir">
-        {m.ekip.liste.map((k) => <a href={'mailto:' + k.eposta}>{k.eposta}</a>)}
-      </div>
     </div>
 
     <div class="basvuru__sag gir">
       <form id="basvuruForm" class="kart" novalidate
-        data-api={buro.basvuruApi} data-dil={dil} data-epostalar={epostalar}
+        data-api={buro.basvuruApi} data-dil={dil}
         data-hata-genel={b.hatalar.genel} data-zorunlu={b.zorunlu}
         data-hata-eposta={b.hatalar.eposta} data-hata-cvtur={b.hatalar.cvTur} data-hata-cvboyut={b.hatalar.cvBoyut}
         data-gonder={a.gonder} data-gonderiliyor={a.gonderiliyor}>
@@ -109,8 +105,6 @@ const epostalar = m.ekip.liste.map((k) => k.eposta).join(',');
 .basvuru__sol{position:sticky;top:140px;align-self:start}
 .basvuru__sol h1{max-width:12ch;margin-top:6px}
 .basvuru__sol .metin{margin-top:26px;max-width:46ch;color:var(--soluk)}
-.basvuru__kisiler{margin-top:44px;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--soluk2)}
-.basvuru__kisiler a:hover{color:var(--renk-kirik-beyaz)}
 .ustBaglanti{display:inline-block;margin-bottom:38px;color:var(--soluk2)}
 .ustBaglanti:hover{color:var(--renk-kirik-beyaz)}
 
@@ -227,19 +221,7 @@ const epostalar = m.ekip.liste.map((k) => k.eposta).join(',');
     var t = document.getElementById('tesekkur'); t.hidden = false;
     t.scrollIntoView({ behavior:'smooth', block:'center' });
   }
-  function genelHataGoster(){
-    var ep = d.epostalar.split(',')[0];
-    genelHata.innerHTML = d.hataGenel + '<a href="mailto:' + ep + '">' + ep + '</a>';
-    genelHata.hidden = false;
-  }
-  function epostaUygulamasi(fd){
-    /* sunucu yoksa: alanlar dolu bir e-posta taslağı açılır (CV'yi kullanıcı ekler) */
-    var satirlar = [];
-    ['ad','eposta','telefon','pozisyon','mesaj'].forEach(function(k){ if (fd.get(k)) satirlar.push(k + ': ' + fd.get(k)); });
-    satirlar.push('', d.dil === 'tr' ? 'Özgeçmişimi bu e-postaya ekliyorum.' : 'My CV is attached to this email.');
-    location.href = 'mailto:' + d.epostalar + '?subject=' + encodeURIComponent((d.dil === 'tr' ? 'İş başvurusu — ' : 'Job application — ') + fd.get('ad'))
-      + '&body=' + encodeURIComponent(satirlar.join('\n'));
-  }
+  function genelHataGoster(){ genelHata.textContent = d.hataGenel; genelHata.hidden = false; }
 
   form.addEventListener('submit', function(ev){
     ev.preventDefault();
@@ -248,7 +230,7 @@ const epostalar = m.ekip.liste.map((k) => k.eposta).join(',');
     var fd = new FormData(form);
     fd.append('dil', d.dil);
     fd.append('sayfa', location.href);
-    if (!d.api) { epostaUygulamasi(fd); return; }
+    if (!d.api) { genelHataGoster(); return; }
     dugme.disabled = true; dugme.firstChild.textContent = d.gonderiliyor + ' ';
     fetch(d.api, { method:'POST', body: fd })
       .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok && j.ok !== false, j: j }; }); })
