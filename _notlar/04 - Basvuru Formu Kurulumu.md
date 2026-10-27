@@ -7,18 +7,9 @@ Form gönderilince:
 1. Worker başvuruyu ve CV'yi Cloudflare KV'de 180 gün saklar (yedek).
 2. Resend üzerinden CV ekli e-postayı eren@ ve atahan@ adreslerine gönderir.
 
-## Kalan kurulum (bir kez, ~15 dk)
-E-posta gönderimi için Resend hesabı ve alan adı doğrulaması gerekiyor. Yapılana kadar form çalışır, başvurular KV'ye düşer ama e-posta gitmez.
-
-1. https://resend.com → ücretsiz üye ol (atahan@akarcasahanturk.com ile).
-2. Resend'de **Domains → Add domain → akarcasahanturk.com**. Çıkan 3 DNS kaydını (1 MX, 2 TXT; `send.` ve `resend._domainkey` alt alan adlarında) alan adının DNS paneline ekle. Mevcut e-postanı etkilemez. Doğrulama birkaç dakika sürer.
-3. Resend'de **API Keys → Create** (Sending access yeterli). Anahtarı kopyala.
-4. Terminal'de:
-   ```
-   cd "/Users/ata/Documents/Claude/Projects/AS Web Sitesi/worker"
-   npx wrangler secret put RESEND_API_KEY
-   ```
-   Anahtarı yapıştır, Enter. Bu kadar.
+## Kurulum durumu (27.10.2026)
+Tamamlandı: Resend hesabı (atahan@…), alan adı doğrulandı (İsimtescil DNS'ine `resend._domainkey` TXT, `rsend` ve `send` CNAME eklendi), API anahtarı worker'a secret olarak yüklendi, canlı test başvurusu ikinize de ulaştı.
+Gönderen adres: basvuru@akarcasahanturk.com (sadece gönderir; cevaplar başvurucunun adresine gider — "yanıtla" doğrudan ona yazar).
 
 ## Başvuruları görmek (yedek kayıt)
 ```
