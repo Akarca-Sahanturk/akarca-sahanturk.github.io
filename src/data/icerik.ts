@@ -170,7 +170,39 @@ export const icerik = {
     kariyer: {
       etiket: 'Kariyer',
       baslik: 'Birlikte çalışmak ister misiniz?',
-      metin: 'Açık pozisyonlar ve staj başvuruları için bize yazabilirsiniz.',
+      metin: 'Açık pozisyon olmasa da avukat, stajyer avukat ve yaz stajı başvurularını her zaman değerlendiriyoruz.',
+      dugme: 'Bize Katılın',
+      yol: '/basvuru/',
+    },
+    basvuru: {
+      etiket: 'Kariyer',
+      baslik: 'Birlikte çalışmak ister misiniz?',
+      metin: 'Formu doldurun, özgeçmişinizi ekleyin. Başvurunuz doğrudan kurucu ortaklara ulaşır; uygun bir pozisyon olduğunda sizinle iletişime geçeriz.',
+      geri: 'Ana sayfaya dön',
+      alanlar: {
+        ad: 'Ad Soyad', adIpucu: 'Adınız ve soyadınız',
+        eposta: 'E-posta', epostaIpucu: 'ad@ornek.com',
+        telefon: 'Telefon', telefonIpucu: '05xx xxx xx xx',
+        pozisyon: 'Başvurduğunuz pozisyon', pozisyonSec: 'Seçiniz',
+        pozisyonlar: ['Avukat', 'Stajyer avukat', 'Yaz stajı / öğrenci', 'Diğer'],
+        mesaj: 'Ön yazı', mesajIpucu: 'Kendinizden ve neden bizimle çalışmak istediğinizden kısaca söz edin.',
+        cv: 'Özgeçmiş (CV)', cvIpucu: 'PDF, DOC veya DOCX · en fazla 10 MB', cvSec: 'Dosya seç', cvYok: 'Henüz dosya seçilmedi',
+        onay: 'Başvurumun değerlendirilmesi amacıyla kişisel verilerimin işlenmesine ilişkin',
+        onayBaglanti: 'KVKK Aydınlatma Metni',
+        onaySon: "'ni okudum.",
+        gonder: 'Başvuruyu gönder', gonderiliyor: 'Gönderiliyor…',
+      },
+      zorunlu: 'Bu alan zorunludur.',
+      hatalar: {
+        eposta: 'Geçerli bir e-posta adresi yazın.',
+        cvTur: 'Yalnızca PDF, DOC veya DOCX yükleyebilirsiniz.',
+        cvBoyut: 'Dosya 10 MB’tan büyük olamaz.',
+        genel: 'Başvuru gönderilemedi. Lütfen tekrar deneyin ya da özgeçmişinizi e-posta ile iletin: ',
+      },
+      tesekkur: {
+        baslik: 'Başvurunuz bize ulaştı.',
+        metin: 'İlginiz için teşekkür ederiz. Başvurunuzu inceleyip uygun olduğunda sizinle iletişime geçeceğiz.',
+      },
     },
     altbilgi: {
       haklar: '© 2026 Akarca Şahantürk Avukatlık Ortaklığı. Tüm hakları saklıdır.',
@@ -352,7 +384,39 @@ export const icerik = {
     kariyer: {
       etiket: 'Careers',
       baslik: 'Would you like to work with us?',
-      metin: 'Write to us about open positions and internship applications.',
+      metin: 'Even without an open position, we always consider applications from lawyers, trainee lawyers and summer interns.',
+      dugme: 'Join Us',
+      yol: '/en/apply/',
+    },
+    basvuru: {
+      etiket: 'Careers',
+      baslik: 'Would you like to work with us?',
+      metin: 'Fill in the form and attach your CV. Your application goes directly to the founding partners; we will get in touch when a suitable position opens.',
+      geri: 'Back to home',
+      alanlar: {
+        ad: 'Full name', adIpucu: 'Your first and last name',
+        eposta: 'Email', epostaIpucu: 'name@example.com',
+        telefon: 'Phone', telefonIpucu: '+90 5xx xxx xx xx',
+        pozisyon: 'Position you are applying for', pozisyonSec: 'Select',
+        pozisyonlar: ['Lawyer', 'Trainee lawyer', 'Summer internship / student', 'Other'],
+        mesaj: 'Cover note', mesajIpucu: 'Tell us briefly about yourself and why you would like to work with us.',
+        cv: 'CV / résumé', cvIpucu: 'PDF, DOC or DOCX · up to 10 MB', cvSec: 'Choose file', cvYok: 'No file selected yet',
+        onay: 'I have read the',
+        onayBaglanti: 'Privacy Notice',
+        onaySon: ' on the processing of my personal data for the purpose of evaluating my application.',
+        gonder: 'Submit application', gonderiliyor: 'Sending…',
+      },
+      zorunlu: 'This field is required.',
+      hatalar: {
+        eposta: 'Please enter a valid email address.',
+        cvTur: 'Only PDF, DOC or DOCX files are accepted.',
+        cvBoyut: 'The file cannot exceed 10 MB.',
+        genel: 'The application could not be sent. Please try again or email your CV to: ',
+      },
+      tesekkur: {
+        baslik: 'We have received your application.',
+        metin: 'Thank you for your interest. We will review your application and contact you when there is a suitable opening.',
+      },
     },
     altbilgi: {
       haklar: '© 2026 Akarca Şahantürk Attorney Partnership. All rights reserved.',
@@ -380,4 +444,5 @@ export const buro = {
   haritaSorgu: 'Ferko Signature, Büyükdere Caddesi No:175, 34394 Şişli, İstanbul',
   linkedin: 'https://www.linkedin.com/',
   alanAdi: 'https://akarcasahanturk.com',
+  basvuruApi: 'https://as-basvuru.akarca-sahanturk.workers.dev', // Cloudflare Worker adresi; boşsa form e-posta uygulamasını açar
 };

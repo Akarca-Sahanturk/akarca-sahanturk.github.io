@@ -1,0 +1,15 @@
+{
+  // Başvuru formu servisi — dağıtım: cd worker && npx wrangler deploy
+  "name": "as-basvuru",
+  "main": "src/index.js",
+  "compatibility_date": "2025-09-01",
+  "vars": {
+    "ALICILAR": "eren@akarcasahanturk.com,atahan@akarcasahanturk.com",
+    "GONDEREN": "Akarca Şahantürk Kariyer <basvuru@akarcasahanturk.com>",
+    "IZINLI_KAYNAKLAR": "https://akarca-sahanturk.github.io,https://akarca-sahanturk.pages.dev,*.akarca-sahanturk.pages.dev,https://akarcasahanturk.com,https://www.akarcasahanturk.com,http://localhost:4321"
+  },
+  "kv_namespaces": [
+    { "binding": "BASVURULAR", "id": "914e69e1852648b48a340174d5443edf" }
+  ],
+  "observability": { "enabled": true }
+}

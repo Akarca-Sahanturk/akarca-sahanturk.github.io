@@ -1,0 +1,260 @@
+---
+/* BAŞVURU SAYFASI
+   Solda başlık ve kısa açıklama, sağda başvuru formu (ad, e-posta, telefon, pozisyon, ön yazı, CV).
+   Form, Cloudflare Worker'a (buro.basvuruApi) gönderilir; adres boşsa e-posta uygulaması açılır. */
+import Temel from '../layouts/Temel.astro';
+import { icerik, buro, type Dil } from '../data/icerik';
+const { dil = 'tr' as Dil } = Astro.props;
+const m = icerik[dil as Dil];
+const b = m.basvuru;
+const a = b.alanlar;
+const kvkkYol = m.altbilgi.baglantilar[1].yol;
+const epostalar = m.ekip.liste.map((k) => k.eposta).join(',');
+---
+<Temel baslik={b.baslik} aciklama={b.metin} dil={dil}>
+  <section class="basvuru" id="basvuru">
+    <div class="basvuru__sol">
+      <a class="ustBaglanti gir" href={m.kokYol}>← {b.geri}</a>
+      <div class="etiket gir">{b.etiket}</div>
+      <h1 class="gir">{b.baslik}</h1>
+      <p class="metin gir">{b.metin}</p>
+      <div class="basvuru__kisiler gir">
+        {m.ekip.liste.map((k) => <a href={'mailto:' + k.eposta}>{k.eposta}</a>)}
+      </div>
+    </div>
+
+    <div class="basvuru__sag gir">
+      <form id="basvuruForm" class="kart" novalidate
+        data-api={buro.basvuruApi} data-dil={dil} data-epostalar={epostalar}
+        data-hata-genel={b.hatalar.genel} data-zorunlu={b.zorunlu}
+        data-hata-eposta={b.hatalar.eposta} data-hata-cvtur={b.hatalar.cvTur} data-hata-cvboyut={b.hatalar.cvBoyut}
+        data-gonder={a.gonder} data-gonderiliyor={a.gonderiliyor}>
+
+        <div class="satir ikili">
+          <label class="alan">
+            <span class="alanAd">{a.ad} <i>*</i></span>
+            <input name="ad" type="text" autocomplete="name" placeholder={a.adIpucu} required />
+            <small class="hata"></small>
+          </label>
+          <label class="alan">
+            <span class="alanAd">{a.eposta} <i>*</i></span>
+            <input name="eposta" type="email" autocomplete="email" placeholder={a.epostaIpucu} required />
+            <small class="hata"></small>
+          </label>
+        </div>
+
+        <div class="satir ikili">
+          <label class="alan">
+            <span class="alanAd">{a.telefon}</span>
+            <input name="telefon" type="tel" autocomplete="tel" placeholder={a.telefonIpucu} />
+            <small class="hata"></small>
+          </label>
+          <label class="alan">
+            <span class="alanAd">{a.pozisyon} <i>*</i></span>
+            <span class="secimKutu">
+              <select name="pozisyon" required>
+                <option value="" selected disabled>{a.pozisyonSec}</option>
+                {a.pozisyonlar.map((p) => <option value={p}>{p}</option>)}
+              </select>
+            </span>
+            <small class="hata"></small>
+          </label>
+        </div>
+
+        <label class="alan">
+          <span class="alanAd">{a.mesaj}</span>
+          <textarea name="mesaj" rows="5" placeholder={a.mesajIpucu}></textarea>
+          <small class="hata"></small>
+        </label>
+
+        <div class="alan">
+          <span class="alanAd">{a.cv} <i>*</i></span>
+          <label class="dosya" id="dosyaKutu">
+            <input name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required />
+            <span class="dosya__dugme">{a.cvSec}</span>
+            <span class="dosya__ad" id="dosyaAd" data-bos={a.cvYok}>{a.cvYok}</span>
+          </label>
+          <small class="ipucu">{a.cvIpucu}</small>
+          <small class="hata"></small>
+        </div>
+
+        <label class="onay alan">
+          <input name="onay" type="checkbox" required />
+          <span>{a.onay} <a href={kvkkYol} target="_blank" rel="noopener">{a.onayBaglanti}</a>{a.onaySon}</span>
+          <small class="hata"></small>
+        </label>
+
+        <!-- bal küpü: botların doldurduğu gizli alan -->
+        <input name="web" type="text" tabindex="-1" autocomplete="off" class="gizli" aria-hidden="true" />
+
+        <div class="gonderSatir">
+          <button type="submit" id="gonderDugme">{a.gonder} <span aria-hidden="true">→</span></button>
+          <p class="genelHata" id="genelHata" hidden></p>
+        </div>
+      </form>
+
+      <div class="kart tesekkur" id="tesekkur" hidden>
+        <div class="etiket">{b.etiket}</div>
+        <h2>{b.tesekkur.baslik}</h2>
+        <p class="metin">{b.tesekkur.metin}</p>
+        <a class="baglanti" href={m.kokYol}>{b.geri}</a>
+      </div>
+    </div>
+  </section>
+</Temel>
+
+<style>
+.basvuru{min-height:100vh;padding:150px 6vw 110px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,110px);
+  background:var(--renk-siyah);color:var(--renk-kirik-beyaz)}
+.basvuru__sol{position:sticky;top:140px;align-self:start}
+.basvuru__sol h1{max-width:12ch;margin-top:6px}
+.basvuru__sol .metin{margin-top:26px;max-width:46ch;color:var(--soluk)}
+.basvuru__kisiler{margin-top:44px;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:var(--soluk2)}
+.basvuru__kisiler a:hover{color:var(--renk-kirik-beyaz)}
+.ustBaglanti{display:inline-block;margin-bottom:38px;color:var(--soluk2)}
+.ustBaglanti:hover{color:var(--renk-kirik-beyaz)}
+
+.kart{background:#0d0d0d;border:1px solid rgba(252,249,243,.12);padding:clamp(26px,3.4vw,48px);max-width:none;gap:26px}
+.satir.ikili{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.alan{display:flex;flex-direction:column;gap:9px;min-width:0}
+.alanAd{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--etiket)}
+.alanAd i{font-style:normal;color:#b9b6b0}
+.kart input[type="text"],.kart input[type="email"],.kart input[type="tel"],.kart textarea,.kart select{
+  width:100%;background:#040404;border:1px solid rgba(252,249,243,.16);padding:14px 16px;color:var(--renk-kirik-beyaz);
+  font-size:15px;transition:border-color .25s;border-radius:0}
+.kart input:focus,.kart textarea:focus,.kart select:focus{outline:none;border-color:rgba(252,249,243,.6)}
+.kart textarea{min-height:130px}
+.secimKutu{position:relative}
+.secimKutu::after{content:"";position:absolute;right:18px;top:50%;width:7px;height:7px;border-right:1px solid #b9b6b0;border-bottom:1px solid #b9b6b0;transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.kart select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:44px}
+.kart select:invalid{color:var(--soluk2)}
+.kart option{background:#0d0d0d;color:var(--renk-kirik-beyaz)}
+
+.dosya{display:flex;align-items:center;gap:16px;border:1px dashed rgba(252,249,243,.28);padding:12px 12px 12px 12px;cursor:pointer;transition:border-color .25s}
+.dosya:hover,.dosya.surukle{border-color:rgba(252,249,243,.7)}
+.dosya input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.dosya__dugme{flex:none;font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(252,249,243,.5);padding:10px 16px}
+.dosya__ad{font-size:14px;color:var(--soluk2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dosya.secildi .dosya__ad{color:var(--renk-kirik-beyaz)}
+.ipucu{font-size:12px;color:var(--soluk2)}
+
+.onay{flex-direction:row;flex-wrap:wrap;gap:12px;align-items:flex-start;font-size:13.5px;line-height:1.6;color:var(--soluk);cursor:pointer}
+.onay input{margin-top:5px;width:15px;height:15px;accent-color:var(--renk-kirik-beyaz);flex:none}
+.onay span{flex:1;min-width:0}
+.onay a{text-decoration:underline;text-underline-offset:3px;color:var(--renk-kirik-beyaz)}
+.onay .hata{flex-basis:100%}
+
+.hata{display:none;font-size:12px;color:#e3a69a}
+.alan.hatali .hata{display:block}
+.alan.hatali input,.alan.hatali textarea,.alan.hatali select,.alan.hatali .dosya{border-color:#c9786a}
+
+.gizli{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.gonderSatir{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:6px}
+.kart button{margin:0;padding:16px 30px;display:inline-flex;gap:12px;align-items:center}
+.kart button[disabled]{opacity:.55;cursor:default}
+.genelHata{font-size:13px;color:#e3a69a;max-width:48ch}
+.genelHata a{text-decoration:underline}
+
+.tesekkur{gap:0}
+.tesekkur h2{margin-top:4px}
+.tesekkur .metin{margin-top:18px;max-width:46ch;color:var(--soluk)}
+
+@media(max-width:980px){
+  .basvuru{grid-template-columns:1fr;padding:120px 24px 80px;gap:44px}
+  .basvuru__sol{position:static}
+  .satir.ikili{grid-template-columns:1fr}
+}
+</style>
+
+<script is:inline>
+(function(){
+  var form = document.getElementById('basvuruForm');
+  if (!form) return;
+  var d = form.dataset;
+  var dugme = document.getElementById('gonderDugme');
+  var genelHata = document.getElementById('genelHata');
+  var dosyaKutu = document.getElementById('dosyaKutu');
+  var dosyaAd = document.getElementById('dosyaAd');
+  var cvGirdi = form.querySelector('input[name="cv"]');
+  var AZAMI = 10 * 1024 * 1024;
+  var UZANTI = /\.(pdf|docx?)$/i;
+
+  function alanKutusu(el){ return el.closest('.alan'); }
+  function hataYaz(el, mesaj){
+    var k = alanKutusu(el); if (!k) return;
+    k.classList.toggle('hatali', !!mesaj);
+    var h = k.querySelector('.hata'); if (h) h.textContent = mesaj || '';
+  }
+  function dosyaGoster(){
+    var f = cvGirdi.files && cvGirdi.files[0];
+    dosyaKutu.classList.toggle('secildi', !!f);
+    dosyaAd.textContent = f ? f.name + ' · ' + (f.size/1024/1024).toFixed(1) + ' MB' : dosyaAd.dataset.bos;
+  }
+  cvGirdi.addEventListener('change', function(){ dosyaGoster(); hataYaz(cvGirdi, cvHatasi()); });
+  ['dragenter','dragover'].forEach(function(e){ dosyaKutu.addEventListener(e, function(ev){ ev.preventDefault(); dosyaKutu.classList.add('surukle'); }); });
+  ['dragleave','drop'].forEach(function(e){ dosyaKutu.addEventListener(e, function(ev){ ev.preventDefault(); dosyaKutu.classList.remove('surukle'); }); });
+  dosyaKutu.addEventListener('drop', function(ev){
+    if (ev.dataTransfer && ev.dataTransfer.files.length) { cvGirdi.files = ev.dataTransfer.files; dosyaGoster(); hataYaz(cvGirdi, cvHatasi()); }
+  });
+
+  function cvHatasi(){
+    var f = cvGirdi.files && cvGirdi.files[0];
+    if (!f) return d.zorunlu;
+    if (!UZANTI.test(f.name)) return d.hataCvtur;
+    if (f.size > AZAMI) return d.hataCvboyut;
+    return '';
+  }
+  function dogrula(){
+    var ilkHata = null;
+    form.querySelectorAll('[required]').forEach(function(el){
+      var mesaj = '';
+      if (el === cvGirdi) mesaj = cvHatasi();
+      else if (el.type === 'checkbox') mesaj = el.checked ? '' : d.zorunlu;
+      else if (!el.value.trim()) mesaj = d.zorunlu;
+      else if (el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value)) mesaj = d.hataEposta;
+      hataYaz(el, mesaj);
+      if (mesaj && !ilkHata) ilkHata = el;
+    });
+    if (ilkHata) { (ilkHata === cvGirdi ? dosyaKutu : ilkHata).scrollIntoView({ behavior:'smooth', block:'center' }); if (ilkHata !== cvGirdi) ilkHata.focus({ preventScroll:true }); }
+    return !ilkHata;
+  }
+  form.querySelectorAll('input,select,textarea').forEach(function(el){
+    el.addEventListener('input', function(){ if (alanKutusu(el) && alanKutusu(el).classList.contains('hatali')) hataYaz(el, ''); });
+  });
+
+  function basarili(){
+    form.hidden = true;
+    var t = document.getElementById('tesekkur'); t.hidden = false;
+    t.scrollIntoView({ behavior:'smooth', block:'center' });
+  }
+  function genelHataGoster(){
+    var ep = d.epostalar.split(',')[0];
+    genelHata.innerHTML = d.hataGenel + '<a href="mailto:' + ep + '">' + ep + '</a>';
+    genelHata.hidden = false;
+  }
+  function epostaUygulamasi(fd){
+    /* sunucu yoksa: alanlar dolu bir e-posta taslağı açılır (CV'yi kullanıcı ekler) */
+    var satirlar = [];
+    ['ad','eposta','telefon','pozisyon','mesaj'].forEach(function(k){ if (fd.get(k)) satirlar.push(k + ': ' + fd.get(k)); });
+    satirlar.push('', d.dil === 'tr' ? 'Özgeçmişimi bu e-postaya ekliyorum.' : 'My CV is attached to this email.');
+    location.href = 'mailto:' + d.epostalar + '?subject=' + encodeURIComponent((d.dil === 'tr' ? 'İş başvurusu — ' : 'Job application — ') + fd.get('ad'))
+      + '&body=' + encodeURIComponent(satirlar.join('\n'));
+  }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    genelHata.hidden = true;
+    if (!dogrula()) return;
+    var fd = new FormData(form);
+    fd.append('dil', d.dil);
+    fd.append('sayfa', location.href);
+    if (!d.api) { epostaUygulamasi(fd); return; }
+    dugme.disabled = true; dugme.firstChild.textContent = d.gonderiliyor + ' ';
+    fetch(d.api, { method:'POST', body: fd })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok && j.ok !== false, j: j }; }); })
+      .then(function(s){ if (s.ok) basarili(); else throw new Error(s.j && s.j.hata || 'hata'); })
+      .catch(function(){ genelHataGoster(); })
+      .finally(function(){ dugme.disabled = false; dugme.firstChild.textContent = d.gonder + ' '; });
+  });
+})();
+</script>

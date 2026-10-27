@@ -134,12 +134,7 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
     <div class="etiket gir">{m.kariyer.etiket}</div>
     <h2 class="gir">{m.kariyer.baslik}</h2>
     <p class="metin gir">{m.kariyer.metin}</p>
-    <div class="yer-tutucu gir">
-      <strong>{tr ? 'Hazırlanıyor' : 'In preparation'}</strong>
-      {tr
-        ? 'Açık pozisyonlar ve staj programı burada listelenecek. Şu an açık bir ilan bulunmuyor; başvurular e-posta ile alınıyor.'
-        : 'Open positions and the internship programme will be listed here. There is no open posting at the moment; applications are received by email.'}
-    </div>
+    <a class="dugme gir" href={m.kariyer.yol}>{m.kariyer.dugme} <span aria-hidden="true">→</span></a>
   </section>
 
   <!-- KAPANIŞ: İstanbul fotoğrafı (Galata Kulesi). Menüde yer almaz; harita ile çakışmasın diye ayrı, tam genişlikte bir bant. -->
@@ -155,6 +150,11 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
 
 <style>
 #giris{justify-content:center}
+/* kariyer: "Bize Katılın" düğmesi — bölüm aydınlandığında renkler değişkenlerle tersine döner */
+.dugme{display:inline-flex;align-self:flex-start;align-items:center;gap:14px;margin-top:40px;padding:17px 34px;
+  background:var(--murekkep);color:var(--zemin);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  transition:gap .3s,opacity .3s,background .4s,color .4s}
+.dugme:hover{gap:22px;opacity:.88}
 /* kapanış bandı: fotoğraf üstte ve altta siyaha eriyerek iletişim bölümü ile alt bilgi arasına oturur */
 .kapanis{position:relative;height:clamp(380px,62vh,720px);overflow:hidden;background:var(--renk-siyah);
   display:flex;align-items:flex-end;justify-content:center;padding-bottom:clamp(40px,7vh,72px)}
