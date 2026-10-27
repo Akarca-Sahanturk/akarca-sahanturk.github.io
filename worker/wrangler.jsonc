@@ -6,6 +6,8 @@
   "vars": {
     "ALICILAR": "eren@akarcasahanturk.com,atahan@akarcasahanturk.com",
     "GONDEREN": "Akarca Şahantürk Kariyer <basvuru@akarcasahanturk.com>",
+    "ILETISIM_ALICILAR": "info@akarcasahanturk.com",
+    "ILETISIM_GONDEREN": "Akarca Şahantürk Web <site@akarcasahanturk.com>",
     "IZINLI_KAYNAKLAR": "https://akarca-sahanturk.github.io,https://akarca-sahanturk.pages.dev,*.akarca-sahanturk.pages.dev,https://akarcasahanturk.com,https://www.akarcasahanturk.com,http://localhost:4321"
   },
   "kv_namespaces": [

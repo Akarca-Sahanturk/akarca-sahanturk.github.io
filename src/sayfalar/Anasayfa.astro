@@ -104,9 +104,7 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
     <div class="kutu gir">
       <div>
         <div class="bilgi">
-          <div><span>{m.iletisim.alanlar.eposta}</span>
-            {m.ekip.liste.map((k) => <div><a href={'mailto:' + k.eposta}>{k.eposta}</a></div>)}
-          </div>
+          <div><span>{m.iletisim.alanlar.eposta}</span><a href={'mailto:' + buro.eposta}>{buro.eposta}</a></div>
           <div><span>{m.iletisim.alanlar.telefon}</span><a href={'tel:' + buro.telefon.replace(/\s/g, '')}>{buro.telefon}</a></div>
           <div><span>{m.iletisim.alanlar.adres}</span>{buro.adresSatirlari.map((s) => <div>{s}</div>)}</div>
         </div>
@@ -116,15 +114,16 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
             title={m.iletisim.harita} loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
-      <form id="form" data-eposta={m.ekip.liste.map((k) => k.eposta).join(',')}>
-        <input name="ad" placeholder={m.iletisim.form.ad} required />
-        <input name="eposta" type="email" placeholder={m.iletisim.form.eposta} required />
+      <form id="form" novalidate data-api={buro.basvuruApi} data-dil={dil}
+        data-gonder={m.iletisim.form.gonder} data-gonderiliyor={m.iletisim.form.gonderiliyor}
+        data-tesekkur={m.iletisim.form.tesekkur} data-hata={m.iletisim.form.hata} data-zorunlu={m.iletisim.form.zorunlu}>
+        <input name="ad" placeholder={m.iletisim.form.ad} autocomplete="name" required />
+        <input name="eposta" type="email" placeholder={m.iletisim.form.eposta} autocomplete="email" required />
         <input name="konu" placeholder={m.iletisim.form.konu} />
-        <textarea name="mesaj" placeholder={m.iletisim.form.mesaj}></textarea>
-        <button type="submit">{m.iletisim.form.gonder}</button>
-        <p class="formNot">{tr
-          ? 'Form henüz bir e-posta servisine bağlı değil; şimdilik butona basınca e-posta uygulaman açılır.'
-          : 'The form is not connected to a mail service yet; the button opens your email app for now.'}</p>
+        <textarea name="mesaj" placeholder={m.iletisim.form.mesaj} required></textarea>
+        <input name="web" type="text" tabindex="-1" autocomplete="off" class="gizli" aria-hidden="true" />
+        <button type="submit" id="formDugme">{m.iletisim.form.gonder}</button>
+        <p class="formNot" id="formNot" hidden></p>
       </form>
     </div>
   </section>
@@ -236,6 +235,9 @@ color:var(--etiket);margin-bottom:7px}
 .harita{height:240px;border:1px solid var(--cizgi);margin-top:10px;overflow:hidden;background:#111}
 .harita iframe{width:100%;height:100%;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
 .formNot{margin-top:18px;font-size:13px;color:var(--etiket);line-height:1.7;max-width:46ch}
+.formNot--hata{color:#c9786a}
+#form .gizli{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+#form button[disabled]{opacity:.55;cursor:default}
 @media(max-width:820px){.kutu{grid-template-columns:1fr;gap:44px}}
 </style>
 
@@ -382,17 +384,27 @@ color:var(--etiket);margin-bottom:7px}
   iste();
 })();
 
+/* İLETİŞİM FORMU: başvuru formuyla aynı servise (Cloudflare Worker) gönderilir; tur=iletisim */
 (function(){
   var f = document.getElementById('form');
   if(!f) return;
+  var d = f.dataset, dugme = document.getElementById('formDugme'), not = document.getElementById('formNot');
+  function mesaj(metin, hata){ not.textContent = metin; not.hidden = false; not.classList.toggle('formNot--hata', !!hata); }
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var v = new FormData(f);
-    var hedef = f.getAttribute('data-eposta');
-    var govde = (v.get('ad')||'') + '\n' + (v.get('eposta')||'') + '\n\n' + (v.get('mesaj')||'');
-    location.href = 'mailto:' + hedef
-      + '?subject=' + encodeURIComponent(v.get('konu') || 'Görüşme talebi')
-      + '&body=' + encodeURIComponent(govde);
+    var ad = (v.get('ad')||'').trim(), ep = (v.get('eposta')||'').trim(), ms = (v.get('mesaj')||'').trim();
+    if (!ad || !ms || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ep)) { mesaj(d.zorunlu, true); return; }
+    v.append('tur', 'iletisim'); v.append('dil', d.dil); v.append('sayfa', location.href);
+    dugme.disabled = true; dugme.textContent = d.gonderiliyor; not.hidden = true;
+    fetch(d.api, { method:'POST', body:v })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return r.ok && j.ok !== false; }); })
+      .then(function(ok){
+        if (!ok) throw new Error('hata');
+        f.reset(); mesaj(d.tesekkur, false);
+      })
+      .catch(function(){ mesaj(d.hata, true); })
+      .finally(function(){ dugme.disabled = false; dugme.textContent = d.gonder; });
   });
 })();
 </script>
