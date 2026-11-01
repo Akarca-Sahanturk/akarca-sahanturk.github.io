@@ -285,7 +285,7 @@ export const icerik = {
     },
     iletisim: {
       etiket: 'İletişim',
-      baslik: 'Bir konuyu birlikte ele alalım.',
+      baslik: 'Konuyu birlikte ele alalım.',
       metin: 'Görüşme talepleri için formu doldurabilir, bize e-posta gönderebilir veya ofisimizi arayabilirsiniz.',
       alanlar: { eposta: 'E-posta', telefon: 'Telefon', adres: 'Adres' },
       form: { ad: 'Ad Soyad', eposta: 'E-posta', konu: 'Konu', mesaj: 'Kısaca konunuz', gonder: 'Görüşme talebi gönder', dugme: 'Görüşme talebi', gonderiliyor: 'Gönderiliyor…', tesekkur: 'Mesajınız bize ulaştı; en kısa sürede dönüş yapacağız.', hata: 'Mesaj gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin ya da bizi arayın.', zorunlu: 'Lütfen ad, e-posta ve mesaj alanlarını doldurun.' },

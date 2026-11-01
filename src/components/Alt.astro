@@ -1,14 +1,19 @@
 ---
 import { icerik, buro, type Dil } from '../data/icerik';
+import logoSvg from '../../public/marka/logo-tam.svg?raw';
 const { dil = 'tr' as Dil } = Astro.props;
 const m = icerik[dil as Dil];
 ---
 <footer class="altbilgi">
-  <div>{m.altbilgi.haklar}</div>
-  <nav>
-    {m.altbilgi.baglantilar.map((x) => <a href={x.yol}>{x.ad}</a>)}
-    <a href={buro.linkedin} target="_blank" rel="noopener">{m.altbilgi.linkedin}</a>
-  </nav>
+  <div class="altbilgi__ust">
+    <div>{m.altbilgi.haklar}</div>
+    <nav>
+      {m.altbilgi.baglantilar.map((x) => <a href={x.yol}>{x.ad}</a>)}
+      <a href={buro.linkedin} target="_blank" rel="noopener">{m.altbilgi.linkedin}</a>
+    </nav>
+  </div>
+  <!-- sayfanın en altında kenardan kenara, silik ve alttan kırpılmış marka yazısı -->
+  <div class="devMarka" aria-hidden="true" set:html={logoSvg} />
 </footer>
 
 <div class="cerez" id="cerez" hidden>
@@ -20,13 +25,17 @@ const m = icerik[dil as Dil];
 </div>
 
 <style>
-.altbilgi{background:var(--renk-siyah);color:#a3a09b;padding:48px 6vw;border-top:1px solid rgba(252,249,243,.1);
-display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;
-font-size:12.5px}
+.altbilgi{background:var(--renk-siyah);color:#a3a09b;padding:48px 6vw 0;border-top:1px solid rgba(252,249,243,.1);font-size:12.5px;overflow:hidden}
+.altbilgi__ust{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.devMarka{margin:clamp(56px,9vh,110px) auto 0;width:100%;color:var(--renk-kirik-beyaz);opacity:.16;line-height:0;
+  /* alt kısmı kırpılır: yazının yaklaşık %40'ı sayfanın altında kalır */
+  margin-bottom:calc(-0.4 * 100vw * 93 / 850)}
+.devMarka svg{display:block;width:100%;height:auto}
+@media(max-width:820px){.devMarka{margin-top:48px}}
 .altbilgi nav{display:flex;gap:26px;flex-wrap:wrap}
 .altbilgi a{transition:color .25s}
 .altbilgi a:hover{color:var(--renk-kirik-beyaz)}
-@media(max-width:820px){.altbilgi{padding:40px 24px}}
+@media(max-width:820px){.altbilgi{padding:40px 24px 0}}
 
 .cerez{position:fixed;left:24px;bottom:24px;z-index:95;max-width:400px;
 background:rgba(19,19,19,.97);border:1px solid rgba(252,249,243,.16);

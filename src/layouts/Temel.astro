@@ -35,6 +35,8 @@ const tamBaslik = baslik === 'Akarca Şahantürk' ? baslik : baslik + ' — Akar
 <body class={tema === 'acik' ? 'acik' : ''}>
   {acilis && <Acilis />}
   <Ust dil={dil} />
+  <!-- film greni: düz dijital siyahı kırar; %3 civarı görünürlük, hareketsiz -->
+  <div class="gren" aria-hidden="true"></div>
   <main>
     <slot />
   </main>
