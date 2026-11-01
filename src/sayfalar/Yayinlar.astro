@@ -16,8 +16,7 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
 <Temel baslik={m.yayinlar.etiket} aciklama={m.yayinlar.baslik} dil={dil}>
   <section class="bolum bolum--kisa">
     <a class="ustBaglanti gir" href={m.kokYol + '#yayinlar'}>&larr; {m.kokYol === '/' ? 'Ana sayfa' : 'Home'}</a>
-    <div class="etiket gir">{m.yayinlar.etiket}</div>
-    <h1 class="gir">{m.yayinlar.baslik}</h1>
+    <h1 class="etiket sayfaBasligi gir">{m.yayinlar.etiket}</h1>
 
     <div class="turler gir">
       {m.yayinlar.turler.map((t) => (
@@ -34,6 +33,7 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
         <div class="tarih">{tarihYaz(oneCikan.data.tarih, dil)} · {turAdi(oneCikan.data.tur)}</div>
         <h2>{oneCikan.data.baslik}</h2>
         <p class="ince">{oneCikan.data.ozet}</p>
+        <span class="ok" aria-hidden="true">&rarr;</span>
       </a>
     )}
 
@@ -43,6 +43,7 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
           <div class="tarih">{tarihYaz(y.data.tarih, dil)} · {turAdi(y.data.tur)}</div>
           <h3>{y.data.baslik}</h3>
           <p class="ince">{y.data.ozet}</p>
+          <span class="ok" aria-hidden="true">&rarr;</span>
         </a>
       ))}
     </div>
@@ -64,17 +65,21 @@ font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
 text-decoration:underline;align-self:flex-start}
 .hepsiDugme:hover{color:var(--murekkep)}
 
-.oneCikan{display:block;transition:background .5s,color .5s,border-color .5s;border:1px solid var(--cizgi);padding:44px 40px;
-margin:38px 0 26px;transition:background .45s,border-color .45s}
-.oneCikan:hover{background:#fff;border-color:var(--cizgi-guclu);color:var(--renk-siyah)}
+.sayfaBasligi{font-family:var(--yazi-govde);font-weight:500;font-size:14px;margin:0 0 8px}
+.oneCikan{display:block;border:1px solid var(--cizgi);padding:44px 40px;margin:38px 0 26px;
+transition:background .3s,border-color .3s,transform .45s cubic-bezier(.22,1,.36,1)}
+.oneCikan:hover{background:rgba(252,249,243,.05);border-color:var(--cizgi-guclu);transform:translateY(-3px)}
 .oneCikan h2{font-size:clamp(24px,2.8vw,36px);margin:14px 0 14px;max-width:24ch}
 .oneCikan p{max-width:60ch}
 
 .liste{display:grid;grid-template-columns:1fr 1fr;gap:1px;
 background:var(--cizgi);border:1px solid var(--cizgi)}
-.kart{background:var(--zemin);padding:32px 28px 36px;min-height:200px;
-transition:background .4s}
-.kart:hover{background:#fff;color:var(--renk-siyah)}
+.kart{background:var(--zemin);padding:32px 28px 36px;min-height:200px;position:relative;
+transition:background .3s,transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s}
+.kart:hover{background:rgba(252,249,243,.05);transform:translateY(-3px);box-shadow:0 26px 54px -18px rgba(0,0,0,.6);z-index:1}
+.kart .ok,.oneCikan .ok{position:absolute;right:24px;bottom:26px;opacity:0;transform:translateX(-8px);transition:all .4s}
+.kart:hover .ok,.oneCikan:hover .ok{opacity:1;transform:none}
+.oneCikan{position:relative}
 .kart h3{font-size:21px;margin:14px 0 12px;line-height:1.4}
 .tarih{font-size:11px;letter-spacing:.16em;color:var(--etiket)}
 .gizli{display:none!important}

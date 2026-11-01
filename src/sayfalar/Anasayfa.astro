@@ -67,6 +67,7 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
         <a class="kart" href={yayinYolu(y)}>
           <div class="tarih">{tarihYaz(y.data.tarih, dil)} · {turAdi(y.data.tur)}</div>
           <h3>{y.data.baslik}</h3>
+          <span class="ok" aria-hidden="true">&rarr;</span>
         </a>
       ))}
     </div>
@@ -158,7 +159,9 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
 .kapanis__foto.gorundu{opacity:1;transform:scale(1)}
 .kapanis__foto img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block;filter:grayscale(1) brightness(.78) contrast(1.05)}
 .kapanis__foto::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(to bottom,var(--renk-siyah) 0%,rgba(4,4,4,.55) 22%,rgba(4,4,4,.25) 50%,rgba(4,4,4,.6) 78%,var(--renk-siyah) 100%)}
+  background:linear-gradient(to bottom,
+    var(--renk-siyah) 0%, rgba(4,4,4,.92) 8%, rgba(4,4,4,.7) 18%, rgba(4,4,4,.42) 30%, rgba(4,4,4,.22) 45%,
+    rgba(4,4,4,.3) 60%, rgba(4,4,4,.55) 74%, rgba(4,4,4,.85) 88%, var(--renk-siyah) 100%)}
 .kapanis__etiket{position:relative;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(252,249,243,.72);
   transition-delay:.5s}
 @media(max-width:820px){.kapanis{height:clamp(280px,48vh,460px)}.kapanis__foto img{object-position:42% 40%}}
@@ -184,11 +187,10 @@ animation:iner 2s ease-in-out infinite}
 grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) 24px;gap:32px;align-items:baseline;
 position:relative;z-index:0;transition:color .4s}
 /* vurgu: beyaz zemin satırın dışına (sola/sağa) taşan bir katman olarak belirir; yazıların yeri hiç değişmez */
-.alan::before{content:"";position:absolute;inset:0 -14px 0 -22px;background:#fff;opacity:0;z-index:-1;
-transition:opacity .4s cubic-bezier(.16,.7,.2,1)}
-.alan:hover{color:var(--renk-siyah)}
+.alan::before{content:"";position:absolute;inset:0 -14px 0 -22px;background:rgba(252,249,243,.05);opacity:0;z-index:-1;
+transition:opacity .35s cubic-bezier(.16,.7,.2,1)}
+.acik .alan::before{background:#fff}
 .alan:hover::before{opacity:1}
-.alan:hover .ince{color:#4d4d4d}
 .alan h3{font-size:clamp(20px,2.1vw,27px)}
 .alan .ok{opacity:0;transform:translateX(-8px);transition:all .5s;text-align:right}
 .alan:hover .ok{opacity:1;transform:none}
@@ -202,9 +204,13 @@ text-transform:uppercase;font-weight:500;margin-bottom:9px}
 .kartlar{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .kart{border:1px solid var(--cizgi);margin:0 0 -1px -1px;padding:30px 26px 34px;min-height:210px;
 display:flex;flex-direction:column;justify-content:space-between}
-.kart:hover{background:#fff;color:var(--renk-siyah)}
+.kart{position:relative;transition:transform .45s cubic-bezier(.16,.7,.2,1),background .35s,color .35s,box-shadow .45s}
+.kart:hover{background:rgba(252,249,243,.05);transform:translateY(-4px);box-shadow:0 26px 54px -18px rgba(0,0,0,.6);z-index:1}
+.acik .kart:hover{background:#fff}
+.kart .ok{position:absolute;right:22px;bottom:26px;opacity:0;transform:translateX(-8px);transition:all .5s}
+.kart:hover .ok{opacity:1;transform:none}
 .kart .tarih{font-size:11px;letter-spacing:.16em;color:var(--etiket)}
-.kart:hover .tarih{color:#707070}
+
 .kart h3{font-size:20px;line-height:1.4;margin-top:16px}
 @media(max-width:820px){.turler,.kartlar{grid-template-columns:1fr}}
 
@@ -214,7 +220,11 @@ display:flex;flex-direction:column;justify-content:space-between}
 .kisi .portre{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;filter:grayscale(1)}
 .kisiMetin{padding:30px 28px;position:relative;display:flex;flex-direction:column;justify-content:center}
 @media(max-width:520px){.kisi{grid-template-columns:110px 1fr}.kisiMetin{padding:20px 18px}.kisi h3{font-size:22px}}
-.kisi:hover{border-color:var(--murekkep);background:var(--hover-zemin)}
+.kisi{transition:transform .45s cubic-bezier(.16,.7,.2,1),border-color .35s,background .35s,box-shadow .45s}
+.kisi:hover{background:var(--hover-zemin);transform:translateY(-4px);box-shadow:0 26px 54px -18px rgba(0,0,0,.6)}
+.kisi:hover .portre{filter:grayscale(1) contrast(1.05)}
+.kisi .portre{transition:transform .8s cubic-bezier(.16,.7,.2,1),filter .5s}
+.kisi:hover .portre{transform:scale(1.03)}
 .kisi .rol{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--etiket)}
 .kisi h3{font-size:29px;margin-top:14px}
 .kisi .ok{position:absolute;right:28px;bottom:32px;opacity:0;transform:translateX(-8px);transition:all .5s}
@@ -238,6 +248,29 @@ color:var(--etiket);margin-bottom:7px}
 </style>
 
 <script is:inline>
+/* KELİME KELİME BELİRME: hero başlığı ve bölüm başlıklarındaki kelimeler ayrı ayrı sarılır;
+   .gorundu geldiğinde sırayla (65 ms arayla) netleşir. */
+(function(){
+  function sar(el, baslangic){
+    var i = baslangic || 0;
+    [].slice.call(el.childNodes).forEach(function(n){
+      if (n.nodeType === 3) {
+        var parcalar = n.textContent.split(/(\s+)/), f = document.createDocumentFragment();
+        parcalar.forEach(function(p){
+          if (!p) return;
+          if (/^\s+$/.test(p)) { f.appendChild(document.createTextNode(p)); return; }
+          var k = document.createElement('span'); k.className = 'kelime'; k.style.setProperty('--i', i++); k.textContent = p; f.appendChild(k);
+        });
+        el.replaceChild(f, n);
+      } else if (n.nodeType === 1 && !n.classList.contains('kelime')) { i = sar(n, i); }
+    });
+    return i;
+  }
+  var h1 = document.getElementById('donenBaslik');
+  if (h1) { var ic = h1.querySelector('.donen__ic'), sb = h1.querySelector('.sabit'); var n = ic ? sar(ic, 0) : 0; if (sb) sar(sb, n); }
+  document.querySelectorAll('section h2.gir').forEach(function(h){ sar(h, 0); });
+})();
+
 /* DÖNEN BAŞLIK: üst satır 2,5 saniyede bir sıradaki ifadeye geçer.
    Her iki ifade de mutlak konumda durur; yalnızca kayma ve saydamlık animasyonu yapılır.
    Animasyon, tarayıcıların ortak API'siyle (Web Animations) sürülür — Safari dahil aynı davranır. */
@@ -335,8 +368,11 @@ color:var(--etiket);margin-bottom:7px}
     var vh = innerHeight;
     bolumler.forEach(function(b, i){
       var r = b.getBoundingClientRect();
-      var giris = sinirla((vh*0.85 - r.top) / (vh*0.34));
-      var cikis = sinirla((r.bottom - vh*0.15) / (vh*0.34));
+      /* bölüm, ekranın ortasını kapladığı ölçüde aydınlanır: üst kenar %67→%33 arasında inerken açılır,
+         alt kenar %67→%33 arasında çıkarken kararır. İki komşu bölümün değerleri her an toplam 1 eder;
+         yani ikisi birden aydınlık olamaz. */
+      var giris = sinirla((vh*0.67 - r.top) / (vh*0.34));
+      var cikis = sinirla((r.bottom - vh*0.33) / (vh*0.34));
       hedef[i] = yumusat(Math.min(giris, cikis));
     });
   }
