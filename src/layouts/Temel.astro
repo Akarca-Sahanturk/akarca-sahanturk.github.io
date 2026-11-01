@@ -56,6 +56,7 @@ const yapisalVeri = {
   <title>{tamBaslik}</title>
   {aciklama && <meta name="description" content={aciklama} />}
   <link rel="icon" href="/marka/isaret.svg" type="image/svg+xml" />
+  {!buro.aramaMotorlarinaAcik && <meta name="robots" content="noindex, nofollow" />}
   <link rel="canonical" href={tamAdres} />
   {trYolu && <link rel="alternate" hreflang="tr" href={kok + trYolu} />}
   {enYolu && <link rel="alternate" hreflang="en" href={kok + enYolu} />}

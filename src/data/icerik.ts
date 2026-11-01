@@ -569,4 +569,5 @@ export const buro = {
   linkedin: 'https://www.linkedin.com/',
   alanAdi: 'https://akarcasahanturk.com',
   basvuruApi: 'https://as-basvuru.akarca-sahanturk.workers.dev', // Cloudflare Worker adresi (başvuru formu)
+  aramaMotorlarinaAcik: false, // false: Google vb. siteyi listelemez (robots + noindex). Final hazır olunca true yapılacak.
 };

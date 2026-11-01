@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://akarca-sahanturk.github.io/sitemap.xml
