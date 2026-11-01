@@ -12,8 +12,8 @@ export const icerik = {
     digerDil: { etiket: 'EN', yol: '/en/' },
     menu: [
       { ad: 'Hakkımızda', capa: 'hakkimizda' },
-      { ad: 'Çalışma Alanları', capa: 'calisma-alanlari' },
-      { ad: 'Yayınlar', capa: 'yayinlar' },
+      { ad: 'Çalışma Alanlarımız', capa: 'calisma-alanlari' },
+      { ad: 'Yayınlarımız', capa: 'yayinlar' },
       { ad: 'Ekibimiz', capa: 'ekibimiz' },
       { ad: 'İletişim', capa: 'iletisim' },
       { ad: 'Kariyer', capa: 'kariyer' },
@@ -22,25 +22,23 @@ export const icerik = {
       etiket: 'İstanbul · Türkiye',
       baslik: 'Vergi ve gümrük hukukunda, uygulanabilir çözümler.',
       // Üst satır 2,5 saniyede bir sırayla değişir; alt satır sabit.
-      donen: ['Vergi ve gümrük hukukunda,', 'Yatırım teşviklerinde,', 'Şirketler hukukunda,', 'Ticari uyuşmazlıklarda ve tahkimde,'],
+      donen: ['Vergi planlamasında,', 'Vergi incelemelerinde,', 'Gümrük ve dış ticarette,', 'Şirketler hukukunda,', 'Birleşme ve devralmalarda,', 'Uyuşmazlık çözümünde,'],
       sabit: 'uygulanabilir çözümler.',
-      metin: 'Yerli ve yabancı müvekkillerimize, yurt içi ve yurt dışındaki faaliyetleri için danışmanlık ve uyuşmazlık çözümü hizmeti veriyoruz.',
-      seritler: ['Türkçe ve İngilizce', 'Kurucu ortaklar doğrudan dahil', 'Şişli, İstanbul'],
+      metin: 'Bağımsız bir hukuk bürosu olarak yerli ve yabancı müvekkillerimize, yurt içi ve yurt dışındaki faaliyetleri için danışmanlık ve uyuşmazlık çözümü hizmeti veriyoruz.',
     },
     yaklasim: {
       etiket: 'Hakkımızda',
-      baslik: 'Karmaşık meselelerde net bir bakış. Her adımda aynı özen.',
+      baslik: 'Karmaşık meselelerde net bir bakış. Her aşamada aynı titizlik, aynı sorumluluk.',
       paragraflar: [
-        'Akarca Şahantürk, yerli ve yabancı müvekkillerine, yurt içi ve yurt dışındaki faaliyetlerine ve işlemlerine yönelik danışmanlık ve uyuşmazlık çözümü hizmeti veren bir hukuk bürosudur.',
         'Akarca Şahantürk, vergi ve gümrük hukuku başta olmak üzere; birleşme ve devralmalar, şirketler ve ticaret hukuku, özel müvekkiller ve servet yönetimi, rekabet hukuku, kişisel verilerin korunması, uyum ve kurum içi soruşturmalar ile uyuşmazlık çözümü alanlarında müvekkillerine destek olmaktadır.',
         'Hizmetlerinin odağında müvekkilin menfaati olan Akarca Şahantürk, teknik uzmanlık gerektiren ticari süreçlerde ve uyuşmazlıklarda Türkçe ve İngilizce dillerinde sağladığı özgün çözümlerle müvekkillerinin yolculuğunun bir parçası olmaktadır.',
       ],
       baglanti: 'Çalışma alanlarımız',
     },
     alanlar: {
-      etiket: 'Çalışma Alanları',
+      etiket: 'Çalışma Alanlarımız',
       baslik: 'Derinlemesine uzmanlık, bütüncül bir yaklaşım.',
-      metin: 'Danışmanlıktan uyuşmazlık çözümüne, işinizin her aşamasında.',
+      metin: 'Danışmanlıktan uyuşmazlık çözümüne, işinizin her aşamasında yanınızdayız.',
       hepsi: 'Tüm çalışma alanları',
       altBaslik: 'Bu kapsamda özellikle',
       liste: [
@@ -222,21 +220,21 @@ export const icerik = {
       ],
     },
     yayinlar: {
-      etiket: 'Yayınlar',
+      etiket: 'Yayınlarımız',
       baslik: 'Gelişmeleri izliyor, bakış açımızı paylaşıyoruz.',
       hepsi: 'Tüm yayınlar',
       kok: '/yayinlar/',
       turler: [
-        { anahtar: 'duyuru', ad: 'Duyurular', tanim: 'Mevzuattaki değişikliklerin kısa bildirimleri.' },
-        { anahtar: 'bulten', ad: 'Bültenler', tanim: 'Dönemsel derlemeler ve gündem özetleri.' },
-        { anahtar: 'makale', ad: 'Makaleler', tanim: 'Bir konuyu derinlemesine ele alan yazılar.' },
+        { anahtar: 'duyuru', ad: 'Duyurular', tanim: 'Güncel gelişmeler hakkında özet yayınlar.' },
+        { anahtar: 'bulten', ad: 'Bültenler', tanim: 'Güncel gelişmeler hakkında kapsamlı yayınlar.' },
+        { anahtar: 'makale', ad: 'Makaleler', tanim: 'Belirli bir konu özelinde yayınlar.' },
       ],
       bos: 'Bu başlıkta henüz yayın yok.',
     },
     ekip: {
       etiket: 'Ekibimiz',
       baslik: 'Uzmanlığın arkasındaki insanlar.',
-      metin: 'Sizi dinleyen, işinizi anlayan ve sürecin her aşamasında doğrudan yanınızda olan bir ekip.',
+      metin: 'Sizi dinleyen, anlayan ve daima yanınızda olan bir ekip.',
       hepsi: 'Ekibimiz',
       kok: '/ekip/',
       basliklar: { ozet: 'Kısaca', kariyer: 'Kariyer', egitim: 'Eğitim', diger: 'Yayınlar ve diğer', diller: 'Diller' },
@@ -296,7 +294,7 @@ export const icerik = {
     kariyer: {
       etiket: 'Kariyer',
       baslik: 'Birlikte çalışmak ister misiniz?',
-      metin: 'Açık pozisyon olmasa da avukat, stajyer avukat ve yaz stajı başvurularını her zaman değerlendiriyoruz.',
+      metin: 'Sorumluluk sahibi meslektaşlarımızı ekibimizin bir parçası olmaya davet ediyoruz.',
       dugme: 'Bize Katılın',
       yol: '/basvuru/',
     },
@@ -362,14 +360,13 @@ export const icerik = {
     hero: {
       etiket: 'Istanbul · Türkiye',
       baslik: 'Practical solutions in tax and customs law.',
-      donen: ['Tax and customs law.', 'Investment incentives.', 'Corporate law.', 'Commercial disputes and arbitration.'],
+      donen: ['Tax planning.', 'Tax audits.', 'Customs and trade.', 'Corporate law.', 'Mergers and acquisitions.', 'Dispute resolution.'],
       sabit: 'Practical solutions.',
-      metin: 'We advise domestic and international clients on their operations in Türkiye and abroad, and represent them in disputes.',
-      seritler: ['Turkish and English', 'Founding partners directly involved', 'Şişli, Istanbul'],
+      metin: 'As an independent law firm, we advise domestic and international clients on their operations in Türkiye and abroad, and represent them in disputes.',
     },
     yaklasim: {
       etiket: 'About',
-      baslik: 'A clear view on complex matters. The same care at every step.',
+      baslik: 'A clear view on complex matters. The same rigour and responsibility at every stage.',
       paragraflar: [
         'Akarca Şahantürk is a law partnership focused on tax and customs law. Both partners built their careers in Türkiye\'s top-ranked tax practices, working to the standard of international law firms.',
         'Beyond tax and customs, we support clients in corporate and commercial law, mergers and acquisitions, investment law and dispute resolution.',
@@ -380,7 +377,7 @@ export const icerik = {
     alanlar: {
       etiket: 'Practice Areas',
       baslik: 'Deep expertise, an integrated approach.',
-      metin: 'From advisory work to dispute resolution, at every stage of your business.',
+      metin: 'From advisory work to dispute resolution, we are by your side at every stage of your business.',
       hepsi: 'All practice areas',
       altBaslik: 'What we do in this area',
       liste: [
@@ -450,7 +447,7 @@ export const icerik = {
     ekip: {
       etiket: 'Our Team',
       baslik: 'The people behind the expertise.',
-      metin: 'A team that listens, understands your business and stays directly involved at every stage.',
+      metin: 'A team that listens, understands and is always by your side.',
       hepsi: 'Our team',
       kok: '/en/team/',
       basliklar: { ozet: 'In brief', kariyer: 'Career', egitim: 'Education', diger: 'Publications and other', diller: 'Languages' },
@@ -510,7 +507,7 @@ export const icerik = {
     kariyer: {
       etiket: 'Careers',
       baslik: 'Would you like to work with us?',
-      metin: 'Even without an open position, we always consider applications from lawyers, trainee lawyers and summer interns.',
+      metin: 'We invite colleagues who take ownership of their work to become part of our team.',
       dugme: 'Join Us',
       yol: '/en/apply/',
     },

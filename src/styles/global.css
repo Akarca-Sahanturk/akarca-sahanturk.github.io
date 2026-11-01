@@ -10,7 +10,7 @@
   --murekkep:var(--renk-kirik-beyaz);
   --soluk:#dad7d1;      /* gövde metni: kırık beyaza yakın */
   --soluk2:#c3c0ba;     /* ikincil metin */
-  --etiket:#9a9792;     /* küçük etiketler */
+  --etiket:#b2afaa;     /* küçük etiketler */
   --cizgi:rgba(252,249,243,.12);
   --cizgi-guclu:rgba(252,249,243,.32);
   --hover-zemin:rgba(252,249,243,.03);
@@ -20,7 +20,7 @@
   --murekkep:var(--renk-siyah);
   --soluk:#444;
   --soluk2:#666;
-  --etiket:#7d7d7d;
+  --etiket:#626262;
   --cizgi:rgba(4,4,4,.12);
   --cizgi-guclu:rgba(4,4,4,.38);
   --hover-zemin:rgba(4,4,4,.03);
@@ -58,7 +58,7 @@ background:var(--zemin);color:var(--murekkep)}
   .bolum--tam{padding-top:0;padding-bottom:0}
 }
 
-.etiket{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--etiket);margin-bottom:26px}
+.etiket{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--etiket);margin-bottom:26px}
 .metin{color:var(--soluk);max-width:46ch;margin-top:26px;font-size:16px;line-height:1.8}
 .ince{color:var(--soluk2);font-size:14.5px;line-height:1.7}
 
