@@ -288,7 +288,7 @@ export const icerik = {
       baslik: 'Bir konuyu birlikte ele alalım.',
       metin: 'Görüşme talepleri için formu doldurabilir, bize e-posta gönderebilir veya ofisimizi arayabilirsiniz.',
       alanlar: { eposta: 'E-posta', telefon: 'Telefon', adres: 'Adres' },
-      form: { ad: 'Ad Soyad', eposta: 'E-posta', konu: 'Konu', mesaj: 'Kısaca konunuz', gonder: 'Görüşme talebi gönder', gonderiliyor: 'Gönderiliyor…', tesekkur: 'Mesajınız bize ulaştı; en kısa sürede dönüş yapacağız.', hata: 'Mesaj gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin ya da bizi arayın.', zorunlu: 'Lütfen ad, e-posta ve mesaj alanlarını doldurun.' },
+      form: { ad: 'Ad Soyad', eposta: 'E-posta', konu: 'Konu', mesaj: 'Kısaca konunuz', gonder: 'Görüşme talebi gönder', dugme: 'Görüşme talebi', gonderiliyor: 'Gönderiliyor…', tesekkur: 'Mesajınız bize ulaştı; en kısa sürede dönüş yapacağız.', hata: 'Mesaj gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin ya da bizi arayın.', zorunlu: 'Lütfen ad, e-posta ve mesaj alanlarını doldurun.' },
       harita: 'Haritada göster',
     },
     kariyer: {
@@ -501,7 +501,7 @@ export const icerik = {
       baslik: 'Let us look at the matter together.',
       metin: 'Use the form, email us, or call the office.',
       alanlar: { eposta: 'Email', telefon: 'Telephone', adres: 'Address' },
-      form: { ad: 'Full name', eposta: 'Email', konu: 'Subject', mesaj: 'Briefly, your matter', gonder: 'Request a meeting', gonderiliyor: 'Sending…', tesekkur: 'Your message has reached us; we will get back to you shortly.', hata: 'The message could not be sent. Please try again in a few minutes or call us.', zorunlu: 'Please fill in the name, email and message fields.' },
+      form: { ad: 'Full name', eposta: 'Email', konu: 'Subject', mesaj: 'Briefly, your matter', gonder: 'Request a meeting', dugme: 'Meeting request', gonderiliyor: 'Sending…', tesekkur: 'Your message has reached us; we will get back to you shortly.', hata: 'The message could not be sent. Please try again in a few minutes or call us.', zorunlu: 'Please fill in the name, email and message fields.' },
       harita: 'Show on map',
     },
     kariyer: {

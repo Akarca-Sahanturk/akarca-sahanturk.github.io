@@ -172,13 +172,11 @@ const turAdi = (a: string) => m.yayinlar.turler.find((t) => t.anahtar === a)?.ad
 .paragraflar .metin{margin-top:18px;max-width:none}
 .paragraflar .metin--ilk{margin-top:26px;color:var(--murekkep);font-size:17.5px}
 #giris .cizgi{width:56px;height:1px;background:var(--etiket);margin:34px 0}
-.asagi{display:block;position:relative;margin-top:64px;width:14px;height:48px;color:var(--etiket);
-animation:iner 2.2s ease-in-out infinite}
-/* aşağı ok: ince çizgi + uç; bütün ok hafifçe aşağı yukarı salınır */
-.asagi i{display:block;position:absolute;left:6px;top:0;width:1px;height:40px;background:currentColor}
-.asagi::after{content:"";position:absolute;left:2px;top:33px;width:8px;height:8px;
-border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg)}
-@keyframes iner{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.asagi{display:block;margin-top:64px;width:1px;height:34px;color:var(--etiket)}
+/* önceki hâli: yalnızca ince çizgi, nefes alır gibi uzayıp kısalır (yazı yok) */
+.asagi i{display:block;width:1px;height:34px;background:currentColor;
+animation:iner 2s ease-in-out infinite}
+@keyframes iner{0%,100%{transform:scaleY(.25);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
 
 /* çalışma alanları */
 .alanlar{border-top:1px solid var(--cizgi);margin-top:44px}
