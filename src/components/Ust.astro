@@ -62,6 +62,7 @@ transition:transform .3s,opacity .3s,background .35s}
 .menuDugme[aria-expanded="true"] span:nth-child(2){opacity:0}
 .menuDugme[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.75px) rotate(-45deg)}
 
+:global(html.menuAcik){overflow:hidden}
 .kucukMenu{position:fixed;inset:78px 0 auto 0;z-index:89;background:rgba(4,4,4,.98);
 color:var(--renk-kirik-beyaz);display:none;flex-direction:column;padding:28px 6vw 36px;gap:22px;
 border-bottom:1px solid rgba(252,249,243,.1)}
@@ -91,11 +92,13 @@ function asMenuBaslat(){
     dugme.addEventListener('click', function(){
       var acik = kucuk.classList.toggle('acildi');
       dugme.setAttribute('aria-expanded', acik ? 'true' : 'false');
+      document.documentElement.classList.toggle('menuAcik', acik);   /* menü açıkken arkadaki sayfa kaymaz */
     });
     kucuk.addEventListener('click', function(e){
       if (e.target.tagName === 'A') {
         kucuk.classList.remove('acildi');
         dugme.setAttribute('aria-expanded','false');
+        document.documentElement.classList.remove('menuAcik');
       }
     });
   }

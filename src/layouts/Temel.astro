@@ -1,5 +1,6 @@
 ---
 import '../styles/tokens.css';
+import '../styles/yazi.css';
 import '../styles/global.css';
 import Ust from '../components/Ust.astro';
 import Alt from '../components/Alt.astro';
@@ -12,9 +13,40 @@ interface Props {
   dil?: Dil;
   acilis?: boolean;
   tema?: 'koyu' | 'acik';
+  alternatif?: string;   /* diğer dildeki karşılık sayfanın yolu (hreflang) */
 }
-const { baslik, aciklama = '', dil = 'tr', acilis = false, tema = 'koyu' } = Astro.props;
+const { baslik, aciklama = '', dil = 'tr', acilis = false, tema = 'koyu', alternatif } = Astro.props;
 const tamBaslik = baslik === 'Akarca Şahantürk' ? baslik : baslik + ' — Akarca Şahantürk';
+
+/* Site adresi: astro.config'teki `site` (şimdilik GitHub Pages). Alan adı bağlanınca yalnızca orası değişir. */
+const kok = (Astro.site ?? new URL(buro.alanAdi)).href.replace(/\/$/, '');
+const yol = Astro.url.pathname;
+const tamAdres = kok + yol;
+
+/* Dil karşılıkları (hreflang): sabit sayfalar + ekip sayfaları. Bire bir karşılığı olmayan sayfalar yalnızca kendini bildirir. */
+const esler: Record<string, string> = { '/': '/en/', '/yayinlar/': '/en/publications/', '/kvkk/': '/en/privacy/',
+  '/cerez-politikasi/': '/en/cookie-policy/', '/basvuru/': '/en/apply/' };
+const tersEsler: Record<string, string> = Object.fromEntries(Object.entries(esler).map(([a, b]) => [b, a]));
+let digerDilYolu: string | undefined = alternatif;
+if (!digerDilYolu) {
+  if (esler[yol]) digerDilYolu = esler[yol];
+  else if (tersEsler[yol]) digerDilYolu = tersEsler[yol];
+  else if (yol.startsWith('/ekip/')) digerDilYolu = yol.replace('/ekip/', '/en/team/');
+  else if (yol.startsWith('/en/team/')) digerDilYolu = yol.replace('/en/team/', '/ekip/');
+}
+const trYolu = dil === 'tr' ? yol : digerDilYolu;
+const enYolu = dil === 'en' ? yol : digerDilYolu;
+
+/* Yapılandırılmış veri: Google'ın büroyu tanıması için */
+const yapisalVeri = {
+  '@context': 'https://schema.org', '@type': 'LegalService',
+  name: buro.ad, url: kok + '/', image: kok + '/marka/paylasim.jpg', logo: kok + '/marka/isaret.svg',
+  telephone: buro.telefon, email: buro.eposta,
+  address: { '@type': 'PostalAddress', streetAddress: buro.adresSatirlari[0], postalCode: '34394', addressLocality: 'Şişli', addressRegion: 'İstanbul', addressCountry: 'TR' },
+  areaServed: 'TR', priceRange: '$$$', sameAs: [buro.linkedin],
+  founder: [{ '@type': 'Person', name: 'Hüseyin Eren Akarca' }, { '@type': 'Person', name: 'Atahan Şahantürk' }],
+  knowsAbout: ['Vergi hukuku', 'Gümrük hukuku', 'Şirketler hukuku', 'Birleşme ve devralmalar', 'Uyuşmazlık çözümü'],
+};
 ---
 <!doctype html>
 <html lang={dil}>
@@ -24,13 +56,28 @@ const tamBaslik = baslik === 'Akarca Şahantürk' ? baslik : baslik + ' — Akar
   <title>{tamBaslik}</title>
   {aciklama && <meta name="description" content={aciklama} />}
   <link rel="icon" href="/marka/isaret.svg" type="image/svg+xml" />
-  <link rel="canonical" href={new URL(Astro.url.pathname, buro.alanAdi).href} />
+  <link rel="canonical" href={tamAdres} />
+  {trYolu && <link rel="alternate" hreflang="tr" href={kok + trYolu} />}
+  {enYolu && <link rel="alternate" hreflang="en" href={kok + enYolu} />}
+  {trYolu && <link rel="alternate" hreflang="x-default" href={kok + trYolu} />}
+  <meta property="og:site_name" content="Akarca Şahantürk" />
   <meta property="og:title" content={tamBaslik} />
   <meta property="og:description" content={aciklama} />
   <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+  <meta property="og:url" content={tamAdres} />
+  <meta property="og:image" content={kok + '/marka/paylasim.jpg'} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content={dil === 'tr' ? 'tr_TR' : 'en_US'} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={tamBaslik} />
+  <meta name="twitter:description" content={aciklama} />
+  <meta name="twitter:image" content={kok + '/marka/paylasim.jpg'} />
+  <link rel="preload" href="/yazi/libre-baskerville-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/yazi/libre-baskerville-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/yazi/dm-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/yazi/dm-sans-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="application/ld+json" set:html={JSON.stringify(yapisalVeri)} />
 </head>
 <body class={tema === 'acik' ? 'acik' : ''}>
   {acilis && <Acilis />}
