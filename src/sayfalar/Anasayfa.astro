@@ -182,8 +182,12 @@ animation:iner 2s ease-in-out infinite}
 .alanlar{border-top:1px solid var(--cizgi);margin-top:44px}
 .alan{border-bottom:1px solid var(--cizgi);padding:26px 0;display:grid;padding-right:12px;
 grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) 24px;gap:32px;align-items:baseline;
-transition:padding-left .5s cubic-bezier(.16,.7,.2,1)}
-.alan:hover{padding-left:22px;background:#fff;color:var(--renk-siyah)}
+position:relative;z-index:0;transition:color .4s}
+/* vurgu: beyaz zemin satırın dışına (sola/sağa) taşan bir katman olarak belirir; yazıların yeri hiç değişmez */
+.alan::before{content:"";position:absolute;inset:0 -14px 0 -22px;background:#fff;opacity:0;z-index:-1;
+transition:opacity .4s cubic-bezier(.16,.7,.2,1)}
+.alan:hover{color:var(--renk-siyah)}
+.alan:hover::before{opacity:1}
 .alan:hover .ince{color:#4d4d4d}
 .alan h3{font-size:clamp(20px,2.1vw,27px)}
 .alan .ok{opacity:0;transform:translateX(-8px);transition:all .5s;text-align:right}
