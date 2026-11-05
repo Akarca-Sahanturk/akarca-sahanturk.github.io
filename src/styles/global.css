@@ -56,6 +56,8 @@ padding:13vh 6vw;position:relative;scroll-margin-top:86px;
 background:var(--zemin);color:var(--murekkep)}
 .bolum--tam{min-height:100vh;padding-top:0;padding-bottom:0}
 .bolum--kisa{padding:120px 6vw 90px}
+/* kısa ekranlar (ör. 768 px yükseklikteki dizüstüler): bölüm üst boşluğu küçülür ki menüden gelince bölümün daha büyük kısmı görünsün */
+@media(max-height:820px){.bolum{padding-top:7vh;padding-bottom:9vh}.bolum--tam{padding-top:0;padding-bottom:0}}
 @media(max-width:820px){
   .bolum{padding:11vh 24px}
   .bolum--kisa{padding:110px 24px 70px}

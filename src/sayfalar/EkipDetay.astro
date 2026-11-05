@@ -16,7 +16,9 @@ const b = m.ekip.basliklar;
       <div class="kimlik">
         <div class="etiket gir">{kisi.rol}</div>
         <h1 class="gir">{kisi.ad}</h1>
-        <p class="metin gir">{kisi.ozet}</p>
+        {(kisi.paragraflar ?? [kisi.ozet]).map((pr: string, i: number) => (
+          <p class={'metin gir' + (i === 0 ? ' metin--ilk' : '')}>{pr}</p>
+        ))}
         <div class="iletisimSatiri gir">
           <a href={'mailto:' + kisi.eposta}>{kisi.eposta}</a>
           <a href={'tel:' + kisi.telefon.replace(/\s/g, '')}>{kisi.telefon}</a>
@@ -26,10 +28,8 @@ const b = m.ekip.basliklar;
     </div>
 
     <div class="bloklar">
-      <div class="blok gir"><h2>{b.kariyer}</h2><ul>{kisi.kariyer.map((x: string) => <li>{x}</li>)}</ul></div>
       <div class="blok gir"><h2>{b.egitim}</h2><ul>{kisi.egitim.map((x: string) => <li>{x}</li>)}</ul></div>
-      {kisi.diger.length > 0 && <div class="blok gir"><h2>{b.diger}</h2><ul>{kisi.diger.map((x: string) => <li>{x}</li>)}</ul></div>}
-      <div class="blok gir"><h2>{b.diller}</h2><p>{kisi.diller}</p></div>
+      <div class="blok gir"><h2>{b.diger}</h2><ul>{kisi.diger.map((x: string) => <li>{x}</li>)}</ul></div>
     </div>
   </section>
 </Temel>
@@ -38,6 +38,8 @@ const b = m.ekip.basliklar;
 .ust{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;align-items:start;margin-top:8px}
 .portreKutu img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1);border:1px solid var(--cizgi)}
 .kimlik h1{font-size:clamp(30px,4vw,52px)}
+.kimlik .metin{max-width:64ch;margin-top:16px}
+.kimlik .metin--ilk{margin-top:26px;color:var(--murekkep);font-size:17px}
 .iletisimSatiri{display:flex;gap:26px;flex-wrap:wrap;margin-top:28px;font-size:14px}
 .iletisimSatiri a{border-bottom:1px solid var(--cizgi-guclu);padding-bottom:3px;transition:border-color .3s}
 .iletisimSatiri a:hover{border-color:var(--murekkep)}

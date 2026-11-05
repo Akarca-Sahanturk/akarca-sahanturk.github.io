@@ -237,16 +237,18 @@ export const icerik = {
       metin: 'Sizi dinleyen, anlayan ve daima yanınızda olan bir ekip.',
       hepsi: 'Ekibimiz',
       kok: '/ekip/',
-      basliklar: { ozet: 'Kısaca', kariyer: 'Kariyer', egitim: 'Eğitim', diger: 'Yayınlar ve diğer', diller: 'Diller' },
+      basliklar: { ozet: 'Kısaca', egitim: 'Eğitim', diger: 'Yayınlar ve diğer çalışmalar' },
       liste: [
         {
           slug: 'eren-akarca', ad: 'Hüseyin Eren Akarca', kisaAd: 'Eren Akarca', rol: 'Kurucu Ortak',
           eposta: 'eren@akarcasahanturk.com', telefon: '+90 541 584 24 89',
           foto: '/marka/ekip/eren-akarca.jpg', linkedin: 'https://www.linkedin.com/in/hüseyin-eren-akarca/',
-          ozet: 'Vergi ve gümrük uyuşmazlıkları ile uluslararası vergi danışmanlığı alanlarında çalışıyor. Çok uluslu şirketleri dijital iş yeri, gerçek lehtar, transfer fiyatlandırması ve dijital hizmet vergisi uyuşmazlıklarında idari yargının tüm dereceleri, Anayasa Mahkemesi ve Avrupa İnsan Hakları Mahkemesi önünde temsil etti.',
-          kariyer: [
-            'Esin Avukatlık Ortaklığı (Baker McKenzie International üyesi) — Avukat, vergi uyuşmazlıkları ve danışmanlık',
-            'PwC Türkiye / GSG Avukatlık Ortaklığı — Avukat ve stajyer avukat, vergi uyuşmazlıkları',
+          ozet: 'Vergi hukuku, uluslararası vergilendirme, şirketler hukuku ve birleşme-devralmalar alanlarında çalışıyor; çok uluslu şirketlerin Türkiye\'deki yatırım, yeniden yapılandırma, vergi incelemesi ve yargılama süreçlerinde kapsamlı deneyime sahip.',
+          paragraflar: [
+            'Hüseyin Eren Akarca, Ankara Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığı\'nda başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığı\'nda çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
+            'Uzmanlık alanları arasında vergi hukuku, uluslararası vergilendirme, yatırım teşvikleri, dijital ekonomi, transfer fiyatlandırması, doğrudan ve dolaylı vergiler, şirketler hukuku, sözleşmeler hukuku, birleşme ve devralmalar, rekabet hukuku ile kişisel verilerin korunması hukuku yer almaktadır. Çok uluslu şirketlerin Türkiye\'deki yatırım süreçleri, yeniden yapılandırmaları, vergi incelemeleri, idari başvuru süreçleri ve yargılamalarında kapsamlı deneyime sahiptir.',
+            'Uluslararası vergilendirmede matrah aşındırma ve kâr kaydırmanın önlenmesi, gerçek lehtarlık ve dijital hizmetlerin vergilendirilmesi konularında yayınları ve akademik konferans sunumları bulunmaktadır. Vergi hukuku, rekabet hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler vermektedir.',
+            'Mesleki çalışmalarının yanı sıra ulusal ve uluslararası kurgusal dava yarışmalarında Ankara Üniversitesi takımlarına uzun yıllardır koçluk ve mentörlük yapmaktadır.',
           ],
           egitim: [
             'İstanbul Bilgi Üniversitesi — İşletme Hukuku yüksek lisansı (LL.M.)',
@@ -256,30 +258,31 @@ export const icerik = {
           diger: [
             'Gerçek Lehtar: Ortaya Çıkışı, Gelişimi ve Türkiye\'deki Vergi İncelemeleri ile Yargı Kararlarında Konuya Bakış — Vergi Dünyası, Aralık 2023',
             'Aile Şirketi Hisselerinin Yatırım Fonuna Devri — Nisan 2023',
+            'Uluslararası vergilendirme, gerçek lehtarlık ve dijital hizmetlerin vergilendirilmesi konularında akademik konferans sunumları',
             'Willem C. Vis Uluslararası Ticari Tahkim Yarışması — Ankara Üniversitesi takım koçu (2021–2025), yarışmacı (2016–2018)',
             'ISTAC Geleceğin Tahkim Avukatı Yarışması — takım koçu (2019–2022)',
           ],
-          diller: 'Türkçe (ana dil), İngilizce (ileri)',
         },
         {
           slug: 'ata-sahanturk', ad: 'Atahan Şahantürk', kisaAd: 'Ata Şahantürk', rol: 'Kurucu Ortak',
           eposta: 'atahan@akarcasahanturk.com', telefon: '+90 532 130 18 99',
-          foto: '/marka/ekip/ata-sahanturk.jpg', linkedin: '',
-          ozet: 'Dijital ekonominin vergilendirilmesi, transfer fiyatlandırması ve vergi incelemeleri alanlarında çalışıyor. Küresel teknoloji şirketlerini dijital hizmet vergisi, KDV-3 ve sanal iş yeri iddialarına dayanan tarhiyatlara karşı temsil etti; peşin fiyatlandırma anlaşması süreçleri ve OECD Pillar II düzenlemeleri konusunda danışmanlık verdi.',
-          kariyer: [
-            'PwC Türkiye / GSG Avukatlık Ortaklığı — Kıdemli Avukat, Uyuşmazlık Çözümü (2023–)',
-            'PwC Türkiye / GSG Avukatlık Ortaklığı — Avukat, Vergi Uyuşmazlıkları (2021–2023)',
-            'PwC Türkiye / GSG Avukatlık Ortaklığı — Stajyer Avukat (2020–2021)',
+          foto: '/marka/ekip/ata-sahanturk.jpg', linkedin: '', // TODO: Ata'nın LinkedIn adresi girilecek
+          ozet: 'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması ve gümrük hukuku alanlarında çalışıyor; çok uluslu dijital şirketlerin vergi uyum süreçleri, vergi incelemeleri ve vergi davalarında kapsamlı deneyime sahip.',
+          paragraflar: [
+            'Atahan Şahantürk, Dokuz Eylül Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığı\'nda başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığı\'nda çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
+            'Uzmanlık alanları arasında uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması, doğrudan ve dolaylı vergiler, gümrük hukuku, sözleşmeler hukuku ile kişisel verilerin korunması hukuku yer almaktadır. Çok uluslu dijital şirketlerin Türkiye\'deki vergi uyum süreçlerinde, sanal iş yeri ve daimi temsilci tartışmalarında, transfer fiyatlandırması konulu vergi incelemelerinde, vergi davalarında ve küresel tamamlayıcı kurumlar vergisi (OECD Pillar II) düzenlemelerine uyum süreçlerinde kapsamlı deneyime sahiptir.',
+            'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi ve gümrük hukuku başta olmak üzere uzmanlık alanlarına ilişkin kurum içi sunumlar gerçekleştirmiş; vergi hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler vermiştir.',
+            'Yapay zekâ projeleriyle hukuk pratiğini modernize eden çalışmalar yürütmekte; edindiği teknolojik birikimi uygulamalı öğrenme süreçlerine ve yeni nesil hukuk teknolojilerine yansıtmaktadır.',
           ],
           egitim: [
-            'Marmara Üniversitesi — Mali Hukuk yüksek lisansı (2021)',
-            'Dokuz Eylül Üniversitesi Hukuk Fakültesi (2018)',
-            'London School of English — Hukuk İngilizcesi programı',
+            'Marmara Üniversitesi — Mali Hukuk yüksek lisansı',
+            'Dokuz Eylül Üniversitesi Hukuk Fakültesi',
           ],
           diger: [
+            'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi ve gümrük hukuku konularında kurum içi sunumlar',
+            'Vergi hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler',
             'PwC Türkiye Xpedition Programı — seçilen dokuz kıdemli avukattan biri',
           ],
-          diller: 'Türkçe (ana dil), İngilizce (ileri)',
         },
       ],
     },
@@ -450,7 +453,7 @@ export const icerik = {
       metin: 'A team that listens, understands and is always by your side.',
       hepsi: 'Our team',
       kok: '/en/team/',
-      basliklar: { ozet: 'In brief', kariyer: 'Career', egitim: 'Education', diger: 'Publications and other', diller: 'Languages' },
+      basliklar: { ozet: 'In brief', egitim: 'Education', diger: 'Publications and other work' },
       liste: [
         {
           slug: 'eren-akarca', ad: 'Hüseyin Eren Akarca', kisaAd: 'Eren Akarca', rol: 'Founding Partner',
