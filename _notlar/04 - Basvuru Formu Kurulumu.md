@@ -1,4 +1,4 @@
-# Başvuru formu — nasıl çalışır, ne kaldı
+   # Başvuru formu — nasıl çalışır, ne kaldı
 
 **Sayfa:** `/basvuru/` (TR) ve `/en/apply/` (EN). Ana sayfadaki Kariyer bölümündeki "Bize Katılın" düğmesi buraya gider.
 **Servis:** Cloudflare Worker `as-basvuru` → https://as-basvuru.akarca-sahanturk.workers.dev (kod: `worker/`).

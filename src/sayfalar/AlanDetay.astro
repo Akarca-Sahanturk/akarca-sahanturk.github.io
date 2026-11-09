@@ -1,10 +1,9 @@
 ---
 /* ÇALIŞMA ALANI DETAYI
-   Yeni içerik (TR): giriş paragrafları + "Bu kapsamda özellikle" listesi (Faaliyet Alanları Çalışması v-5).
-   Eski içerik (EN, şimdilik): giriş + alt alanlar. */
+   Giriş paragrafları + "Bu kapsamda özellikle" listesi (Faaliyet Alanları Çalışması v-5). TR ve EN aynı yapıda. */
 import Temel from '../layouts/Temel.astro';
 import { icerik, type Dil } from '../data/icerik';
-const { dil = 'tr' as Dil, alan } = Astro.props;
+const { dil = 'tr' as Dil, alan, alternatif } = Astro.props;
 const m = icerik[dil as Dil];
 const tr = dil === 'tr';
 const kok = (tr ? '/' : '/en/') + '#calisma-alanlari';
@@ -15,7 +14,7 @@ const onceki = sira > 0 ? liste[sira - 1] : null;
 const sonraki = sira < liste.length - 1 ? liste[sira + 1] : null;
 const alanYolu = tr ? '/calisma-alanlari/' : '/en/practice-areas/';
 ---
-<Temel baslik={alan.ad} aciklama={alan.ozet} dil={dil}>
+<Temel baslik={alan.ad} aciklama={alan.ozet} dil={dil} alternatif={alternatif}>
   <section class="bolum bolum--kisa">
     <a class="ustBaglanti gir" href={kok}>&larr; {m.alanlar.etiket}</a>
     <h1 class="gir">{alan.ad}</h1>

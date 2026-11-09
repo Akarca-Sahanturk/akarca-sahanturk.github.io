@@ -68,7 +68,7 @@ export const icerik = {
           paragraflar: [
             'Vergi incelemesi, şirketlerin karşılaşabileceği en önemli mali ve hukuki risklerden biridir. Artan inceleme yoğunluğu ve vergi uygulamalarına ilişkin yorum farklılıkları, mükelleflerin yüksek tutarlı tarhiyatlar ve idari para cezalarıyla karşılaşmasına neden olabilmektedir. Her tarhiyatın dayanağını, mevcut idari ve yargısal çözüm yollarını, ispat durumunu ve olası mali sonuçlarını birlikte değerlendiriyor; müvekkilin ticari önceliklerine ve risk profiline uygun stratejiyi geliştiriyoruz.',
             'İnceleme sırasında sunulan bilgi ve belgeler, yapılan açıklamalar ve oluşturulan savunma yaklaşımı, yalnızca incelemenin sonucunu değil, sonrasında doğabilecek idari ve yargısal uyuşmazlıkların seyrini de belirler. Bu nedenle vergi incelemesini, olası bir uyuşmazlığın başlangıç noktası olarak ele alıyor ve buna uygun bir stratejinin geliştirilmesini ve uygulanmasını sağlıyoruz.',
-            'Vergi incelemesi sonrasında doğan uyuşmazlıklarda, dava öncesi çözüm yollarından vergi yargısının tüm aşamalarına kadar müvekkillerimizi temsil ediyor; uyuşmazlığın niteliğine göre Anayasa Mahkemesi ve Avrupa İnsan Hakları Mahkemesi\'ne bireysel başvuru yollarını da yürütüyoruz. Vergi ziyaı ve usulsüzlük cezalarının yanı sıra vergi kaçakçılığı suçlarına ilişkin soruşturma ve ceza yargılamalarında, idari ve cezai süreçleri bir arada ele alarak danışmanlık ve temsil hizmeti sunuyoruz.',
+            'Vergi incelemesi sonrasında doğan uyuşmazlıklarda, dava öncesi çözüm yollarından vergi yargısının tüm aşamalarına kadar müvekkillerimizi temsil ediyor; uyuşmazlığın niteliğine göre Anayasa Mahkemesi ve Avrupa İnsan Hakları Mahkemesine bireysel başvuru yollarını da yürütüyoruz. Vergi ziyaı ve usulsüzlük cezalarının yanı sıra vergi kaçakçılığı suçlarına ilişkin soruşturma ve ceza yargılamalarında, idari ve cezai süreçleri bir arada ele alarak danışmanlık ve temsil hizmeti sunuyoruz.',
           ],
           kapsam: [
             'Vergi incelemesi öncesinde mevcut uygulamaları ve potansiyel risk alanlarını değerlendiriyor;',
@@ -76,11 +76,11 @@ export const icerik = {
             'İnceleme tutanaklarını, bilgi taleplerini ve inceleme elemanının değerlendirmelerini hukuki ve teknik açıdan inceliyor;',
             'Transfer fiyatlandırması, gerçek lehtar, dijital iş yeri, daimi temsilci, finansman, istisna ve indirim uygulamaları gibi konularda savunma stratejileri oluşturuyor;',
             'Gönüllü uyum yazısı, izaha davet, tarhiyat öncesi ve sonrası uzlaşma ile rapor değerlendirme komisyonu süreçlerini yürütüyor;',
-            'Çifte vergilendirmeyi önleme anlaşmalarından kaynaklanan uyuşmazlıklarda karşılıklı anlaşma usulü dahil idari çözüm yollarını değerlendiriyor;',
+            'Çifte vergilendirmeyi önleme anlaşmalarından kaynaklanan uyuşmazlıklarda karşılıklı anlaşma usulü dâhil idari çözüm yollarını değerlendiriyor;',
             'Vergi ve ceza ihbarnameleri ile diğer vergisel idari işlemlere karşı dava açıyor;',
             'Vergi mahkemeleri, bölge idare mahkemeleri ve Danıştay önündeki yargılama süreçlerini takip ediyor;',
-            'Vergi kaçakçılığı suçlarına ilişkin soruşturma ve ceza yargılamalarında müvekkillerimizi temsil ediyor; idari vergi uyuşmazlığı ile ceza sürecini birbiriyle uyumlu şekilde yürütüyoruz.',
-            'Uygun uyuşmazlıklarda Anayasa Mahkemesi ve Avrupa İnsan Hakları Mahkemesi\'ne bireysel başvuru yolunu değerlendiriyor ve takip ediyor;',
+            'Vergi kaçakçılığı suçlarına ilişkin soruşturma ve ceza yargılamalarında müvekkillerimizi temsil ediyor; idari vergi uyuşmazlığı ile ceza sürecini birbiriyle uyumlu şekilde yürütüyor;',
+            'Uygun uyuşmazlıklarda Anayasa Mahkemesi ve Avrupa İnsan Hakları Mahkemesine bireysel başvuru yolunu değerlendiriyor ve takip ediyor;',
             'Vergi affı, yeniden yapılandırma ve varlık barışı gibi geçici düzenlemelerin devam eden inceleme ve uyuşmazlıklara etkisini analiz ediyoruz.',
           ],
         },
@@ -89,13 +89,13 @@ export const icerik = {
           ozet: 'Menşe, gümrük kıymeti ve tarife sınıflandırmasına ilişkin değerlendirmeler, ithalat maliyetlerinin yanı sıra geçmiş dönemlere yönelik önemli riskler doğurabilmektedir. İthalat ve ihracat yapılarını gümrük ve vergi mevzuatı bakımından inceliyor; yatırım teşvik belgesi kapsamındaki ithalat işlemleri, sonradan kontrol, ek tahakkuk, idari para cezası, itiraz ve dava süreçlerinde müvekkillerimize destek oluyoruz.',
           paragraflar: [
             'Gümrük ve dış ticaret düzenlemeleri, ithalat ve ihracat işlemlerinin maliyetini, zamanlamasını ve sürdürülebilirliğini doğrudan etkiler. Eşyanın menşei, gümrük kıymeti veya tarife sınıflandırmasına ilişkin farklı bir değerlendirme, geçmiş dönemlere yönelik yüksek tutarlı ek tahakkuklara ve idari para cezalarına neden olabilir. Bu nedenle gümrük pozisyonunun işlem öncesinde doğru kurulması, uyuşmazlık çıktıktan sonra yürütülecek savunma kadar önemlidir.',
-            'İthalat ve ihracat yapılarını, tedarik ve lisans sözleşmelerini, grup içi işlemlerini ve ilgili ödeme akışlarını gümrük ve vergi mevzuatıyla birlikte değerlendiriyoruz. Böylece ticari model ile gümrük beyanları arasında tutarlılık sağlanmasına ve benimsenen pozisyonun olası bir denetimde savunulabilir hale getirilmesine destek oluyoruz.',
-            'Danışmanlık ve uyuşmazlık deneyimimizi birlikte kullanarak, gümrük risklerinin işlem öncesinde tespit edilmesini ve uyuşmazlık halinde teknik temeli güçlü bir savunma oluşturulmasını amaçlıyoruz.',
+            'İthalat ve ihracat yapılarını, tedarik ve lisans sözleşmelerini, grup içi işlemlerini ve ilgili ödeme akışlarını gümrük ve vergi mevzuatıyla birlikte değerlendiriyoruz. Böylece ticari model ile gümrük beyanları arasında tutarlılık sağlanmasına ve benimsenen pozisyonun olası bir denetimde savunulabilir hâle getirilmesine destek oluyoruz.',
+            'Danışmanlık ve uyuşmazlık deneyimimizi birlikte kullanarak, gümrük risklerinin işlem öncesinde tespit edilmesini ve uyuşmazlık hâlinde teknik temeli güçlü bir savunma oluşturulmasını amaçlıyoruz.',
           ],
           kapsam: [
             'Eşyanın gümrük tarife istatistik pozisyonunu değerlendiriyor ve bağlayıcı tarife bilgisi başvurularını hazırlıyor;',
             'Menşe kuralları, tercihli menşe uygulamaları ve menşe belgeleri konusunda danışmanlık sunuyor;',
-            'Gümrük kıymetine dahil edilmesi gereken bedelleri, grup içi ödemeleri, lisans ve royalti ödemelerini inceliyor;',
+            'Gümrük kıymetine dâhil edilmesi gereken bedelleri, grup içi ödemeleri, lisans ve royalti ödemelerini inceliyor;',
             'Transfer fiyatlandırması uygulamalarının gümrük kıymeti üzerindeki etkisini değerlendiriyor;',
             'İthalat ve ihracat yapılarının gümrük ve dış ticaret mevzuatına uygunluğunu inceliyor;',
             'Muafiyet, istisna ve özel gümrük rejimlerinden yararlanma koşullarını değerlendiriyor;',
@@ -110,8 +110,8 @@ export const icerik = {
           slug: 'sirketler-ve-ticaret-hukuku', ad: 'Şirketler ve Ticaret Hukuku',
           ozet: 'Şirketlerin kuruluşundan günlük faaliyetlerine, sermaye yapısından pay sahipleri arasındaki ilişkilere kadar kurumsal hayatın her aşaması sağlam bir hukuki zemine ihtiyaç duyar. Kuruluş, sermaye ve pay yapısı değişiklikleri, genel kurul ve yönetim kurulu süreçleri, pay sahipleri sözleşmeleri, kurumsal yönetim ve ticari sözleşmeler konusunda hukuki, mali ve vergisel sonuçları birlikte gözeterek destek sunuyoruz.',
           paragraflar: [
-            'Şirketlerin kuruluşundan günlük faaliyetlerinden ticari ilişkilerine; sermaye yapısından pay sahipleri arasındaki ilişkilere kadar kurumsal hayatın her aşaması sağlam ve güncel bir hukuki zemine ihtiyaç duyar. Şirketler hukukuna bağlı dokümantasyonun ve imzalanan sözleşmelerin ticari gerçeklik ve hukuki gerekliliklerle uyumlu olmaması; karar alma, yatırım, kâr dağıtımı ve pay devri süreçlerinde ve aynı zamanda şirketlerin ticari ilişkilerinde önemli uyuşmazlıklara ve hak kayıplarına yol açabilir.',
-            'Şirket kuruluşu, yönetim ve temsil yapılarının oluşturulması, pay sahipleri arasındaki ilişkilerin düzenlenmesi, günlük ticari faaliyetlerin ve üçüncü kişilerle olan ticari ilişkilerinin yürütülmesi konularında sürekli hukuki destek sunuyoruz. Kurumsal belgeleri ve karar süreçlerini şirketin faaliyetleriyle uyumlu hale getiriyor; sermaye işlemleri, grup içi düzenlemeler, ticari sözleşmeler ve kâr dağıtımı gibi konuları şirketler hukuku başta olmak üzere ilgili düzenlemelerin bütünü içinde ele alıyoruz.',
+            'Şirketlerin kuruluşundan günlük faaliyetlerine ve ticari ilişkilerine; sermaye yapısından pay sahipleri arasındaki ilişkilere kadar kurumsal hayatın her aşaması sağlam ve güncel bir hukuki zemine ihtiyaç duyar. Şirketler hukukuna bağlı dokümantasyonun ve imzalanan sözleşmelerin ticari gerçeklik ve hukuki gerekliliklerle uyumlu olmaması; karar alma, yatırım, kâr dağıtımı ve pay devri süreçlerinde ve aynı zamanda şirketlerin ticari ilişkilerinde önemli uyuşmazlıklara ve hak kayıplarına yol açabilir.',
+            'Şirket kuruluşu, yönetim ve temsil yapılarının oluşturulması, pay sahipleri arasındaki ilişkilerin düzenlenmesi, günlük ticari faaliyetlerin ve üçüncü kişilerle olan ticari ilişkilerinin yürütülmesi konularında sürekli hukuki destek sunuyoruz. Kurumsal belgeleri ve karar süreçlerini şirketin faaliyetleriyle uyumlu hâle getiriyor; sermaye işlemleri, grup içi düzenlemeler, ticari sözleşmeler ve kâr dağıtımı gibi konuları şirketler hukuku başta olmak üzere ilgili düzenlemelerin bütünü içinde ele alıyoruz.',
           ],
           kapsam: [
             'Şirket kuruluşu, şube ve irtibat bürosu açılışı ile Türkiye\'ye giriş modelleri konusunda danışmanlık veriyor;',
@@ -152,7 +152,7 @@ export const icerik = {
         },
         {
           slug: 'varlik-ve-servet-yonetimi', ad: 'Varlık ve Servet Yönetimi',
-          ozet: 'Gerçek kişilerin, girişimcilerin ve aile şirketlerinin varlık yapıları özel bir hukuki ve vergisel planlama gerektirir. Özel müvekkillerin Türkiye’deki ve yurt dışındaki varlık ve gelir yapılarını değerlendiriyor; vergi mukimliği, beyan yükümlülükleri, aile şirketlerinin yönetimi, miras planlaması ve varlıkların nesiller arası devri konularında müvekkillerimize danışmanlık sunuyoruz.',
+          ozet: 'Gerçek kişilerin, girişimcilerin ve aile şirketlerinin varlık yapıları özel bir hukuki ve vergisel planlama gerektirir. Özel müvekkillerin Türkiye\'deki ve yurt dışındaki varlık ve gelir yapılarını değerlendiriyor; vergi mukimliği, beyan yükümlülükleri, aile şirketlerinin yönetimi, miras planlaması ve varlıkların nesiller arası devri konularında müvekkillerimize danışmanlık sunuyoruz.',
           paragraflar: [
             'Gerçek kişilerin, girişimcilerin ve aile şirketlerinin varlık yapıları; şirketlerden farklı hukuki, vergisel ve kişisel öncelikler içerir. Varlıkların korunması, gelirlerin doğru yapılandırılması ve sonraki nesillere devri, yalnızca miras hukuku kapsamında değil; şirketler hukuku, vergi hukuku ve uluslararası düzenlemelerle birlikte ele alınmalıdır.',
             'Özel müvekkillerimize ve aile şirketlerine, varlık ve ortaklık yapılarının planlanması, nesiller arası geçişin hazırlanması ve beyan yükümlülüklerinin yönetilmesi konularında danışmanlık sunuyoruz. Aile içi ilişkilerin ve ticari ihtiyaçların hassasiyetini gözeterek, uygulanabilir ve uzun vadeli çözümler geliştiriyoruz.',
@@ -190,7 +190,7 @@ export const icerik = {
             'Rakiplerle bilgi paylaşımı, sektör dernekleri nezdindeki temaslar, ortak satın alma ve satış düzenlemeleri ile diğer yatay iş birliklerini rekabet hukuku bakımından değerlendiriyor;',
             'Hâkim durum, ayrımcı uygulamalar, bağlama, indirim sistemleri ve teşebbüsler arası anlaşmalardan kaynaklanabilecek rekabet hukuku riskleri konusunda danışmanlık sunuyor;',
             'Birleşme, devralma ve ortak girişim işlemlerinin Rekabet Kuruluna bildirim yükümlülüğünü değerlendiriyor ve gerekli izin süreçlerini yürütüyor;',
-            'Rekabet Kurumu inceleme ve soruşturmalarında, yerinde incelemelerde ve bilgi taleplerinin yanıtlanmasında müvekkillerimize destek oluyor; rekabet hukukuna uyum programları ve şirket içi eğitimler hazırlıyoruz.',
+            'Rekabet Kurumu inceleme ve soruşturmalarında, yerinde incelemelerde ve bilgi taleplerinin yanıtlanmasında müvekkillerimize destek oluyor; rekabet hukukuna uyum programları ve şirket içi eğitimler hazırlıyor;',
             'Kişisel veri işleme faaliyetlerini, aydınlatma metinlerini, açık rıza süreçlerini ve veri işleyenlerle yapılan sözleşmeleri değerlendiriyor;',
             'Kişisel veri ihlali şüphesi bulunan olaylarda hukuki durum tespiti ve müdahale sürecine destek oluyoruz.',
           ],
@@ -208,7 +208,7 @@ export const icerik = {
             'Dava ve tahkim süreçlerine hazırlık kapsamında delillerin güvence altına alınmasını ve gerekli bildirimlerin yapılmasını sağlıyor;',
             'İhtiyati tedbir, ihtiyati haciz ve diğer geçici hukuki koruma yollarını değerlendiriyor ve yürütüyor;',
             'Müzakere, arabuluculuk ve sulh süreçlerini yürütüyor;',
-            'Ticaret mahkemeleri ve diğer adli yargı mercileri önündeki davaları, kanun yolu aşamaları dahil olmak üzere takip ediyor;',
+            'Ticaret mahkemeleri ve diğer adli yargı mercileri önündeki davaları, kanun yolu aşamaları dâhil olmak üzere takip ediyor;',
             'Yerel ve uluslararası, kurumsal ve ad hoc tahkim yargılamalarında müvekkillerimizi temsil ediyor;',
             'Yabancı mahkeme ve hakem kararlarının tanınması ve tenfizi ile hakem kararlarının iptali süreçlerini yürütüyor;',
             'İdari işlemlere karşı idari başvuru ve dava süreçlerini yürütüyor; düzenleyici kurumlar ve diğer kamu otoriteleri nezdinde müvekkillerimizi temsil ediyor;',
@@ -245,10 +245,10 @@ export const icerik = {
           foto: '/marka/ekip/eren-akarca.jpg', linkedin: 'https://www.linkedin.com/in/hüseyin-eren-akarca/',
           ozet: 'Vergi hukuku, uluslararası vergilendirme, şirketler hukuku ve birleşme-devralmalar alanlarında çalışıyor; çok uluslu şirketlerin Türkiye\'deki yatırım, yeniden yapılandırma, vergi incelemesi ve yargılama süreçlerinde kapsamlı deneyime sahip.',
           paragraflar: [
-            'Hüseyin Eren Akarca, Ankara Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığı\'nda başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığı\'nda çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
+            'Hüseyin Eren Akarca, Ankara Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığında başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığında çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
             'Uzmanlık alanları arasında vergi hukuku, uluslararası vergilendirme, yatırım teşvikleri, dijital ekonomi, transfer fiyatlandırması, doğrudan ve dolaylı vergiler, şirketler hukuku, sözleşmeler hukuku, birleşme ve devralmalar, rekabet hukuku ile kişisel verilerin korunması hukuku yer almaktadır. Çok uluslu şirketlerin Türkiye\'deki yatırım süreçleri, yeniden yapılandırmaları, vergi incelemeleri, idari başvuru süreçleri ve yargılamalarında kapsamlı deneyime sahiptir.',
             'Uluslararası vergilendirmede matrah aşındırma ve kâr kaydırmanın önlenmesi, gerçek lehtarlık ve dijital hizmetlerin vergilendirilmesi konularında yayınları ve akademik konferans sunumları bulunmaktadır. Vergi hukuku, rekabet hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler vermektedir.',
-            'Mesleki çalışmalarının yanı sıra ulusal ve uluslararası kurgusal dava yarışmalarında Ankara Üniversitesi takımlarına uzun yıllardır koçluk ve mentörlük yapmaktadır.',
+            'Mesleki çalışmalarının yanı sıra ulusal ve uluslararası kurgusal dava yarışmalarında Ankara Üniversitesi takımlarına uzun yıllardır koçluk ve mentorluk yapmaktadır.',
           ],
           egitim: [
             'İstanbul Bilgi Üniversitesi — İşletme Hukuku yüksek lisansı (LL.M.)',
@@ -269,8 +269,8 @@ export const icerik = {
           foto: '/marka/ekip/ata-sahanturk.jpg', linkedin: '', // TODO: Ata'nın LinkedIn adresi girilecek
           ozet: 'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması ve gümrük hukuku alanlarında çalışıyor; çok uluslu dijital şirketlerin vergi uyum süreçleri, vergi incelemeleri ve vergi davalarında kapsamlı deneyime sahip.',
           paragraflar: [
-            'Atahan Şahantürk, Dokuz Eylül Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığı\'nda başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığı\'nda çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
-            'Uzmanlık alanları arasında uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması, doğrudan ve dolaylı vergiler, gümrük hukuku, sözleşmeler hukuku ile kişisel verilerin korunması hukuku yer almaktadır. Çok uluslu dijital şirketlerin Türkiye\'deki vergi uyum süreçlerinde, sanal iş yeri ve daimi temsilci tartışmalarında, transfer fiyatlandırması konulu vergi incelemelerinde, vergi davalarında ve küresel tamamlayıcı kurumlar vergisi (OECD Pillar II) düzenlemelerine uyum süreçlerinde kapsamlı deneyime sahiptir.',
+            'Atahan Şahantürk, Dokuz Eylül Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığında başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığında çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
+            'Uzmanlık alanları arasında uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması, doğrudan ve dolaylı vergiler, gümrük hukuku, sözleşmeler hukuku ile kişisel verilerin korunması hukuku yer almaktadır. Çok uluslu dijital şirketlerin Türkiye\'deki vergi uyum süreçlerinde, sanal iş yeri ve daimi temsilci tartışmalarında, transfer fiyatlandırması konulu vergi incelemelerinde, vergi davalarında ve küresel tamamlayıcı kurumlar vergisi (OECD Pillar 2) düzenlemelerine uyum süreçlerinde kapsamlı deneyime sahiptir.',
             'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi ve gümrük hukuku başta olmak üzere uzmanlık alanlarına ilişkin kurum içi sunumlar gerçekleştirmiş; vergi hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler vermiştir.',
             'Yapay zekâ projeleriyle hukuk pratiğini modernize eden çalışmalar yürütmekte; edindiği teknolojik birikimi uygulamalı öğrenme süreçlerine ve yeni nesil hukuk teknolojilerine yansıtmaktadır.',
           ],
@@ -323,7 +323,7 @@ export const icerik = {
       hatalar: {
         eposta: 'Geçerli bir e-posta adresi yazın.',
         cvTur: 'Yalnızca PDF, DOC veya DOCX yükleyebilirsiniz.',
-        cvBoyut: 'Dosya 10 MB’tan büyük olamaz.',
+        cvBoyut: 'Dosya 10 MB\'tan büyük olamaz.',
         genel: 'Başvuru gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin.',
       },
       tesekkur: {
@@ -349,216 +349,444 @@ export const icerik = {
   },
 
   en: {
-    kod: 'en',
-    kokYol: '/en/',
-    digerDil: { etiket: 'TR', yol: '/' },
-    menu: [
-      { ad: 'About', capa: 'hakkimizda' },
-      { ad: 'Practice Areas', capa: 'calisma-alanlari' },
-      { ad: 'Publications', capa: 'yayinlar' },
-      { ad: 'Our Team', capa: 'ekibimiz' },
-      { ad: 'Contact', capa: 'iletisim' },
-      { ad: 'Careers', capa: 'kariyer' },
+    "kod": "en",
+    "kokYol": "/en/",
+    "digerDil": {
+      "etiket": "TR",
+      "yol": "/"
+    },
+    "menu": [
+      {
+        "ad": "About Us",
+        "capa": "hakkimizda"
+      },
+      {
+        "ad": "Practice Areas",
+        "capa": "calisma-alanlari"
+      },
+      {
+        "ad": "Publications",
+        "capa": "yayinlar"
+      },
+      {
+        "ad": "Our Team",
+        "capa": "ekibimiz"
+      },
+      {
+        "ad": "Contact",
+        "capa": "iletisim"
+      },
+      {
+        "ad": "Careers",
+        "capa": "kariyer"
+      }
     ],
-    hero: {
-      etiket: 'Istanbul · Türkiye',
-      baslik: 'Practical solutions in tax and customs law.',
-      donen: ['Tax planning.', 'Tax audits.', 'Customs and trade.', 'Corporate law.', 'Mergers and acquisitions.', 'Dispute resolution.'],
-      sabit: 'Practical solutions.',
-      metin: 'As an independent law firm, we advise domestic and international clients on their operations in Türkiye and abroad, and represent them in disputes.',
-    },
-    yaklasim: {
-      etiket: 'About',
-      baslik: 'A clear view on complex matters. The same rigour and responsibility at every stage.',
-      paragraflar: [
-        'Akarca Şahantürk is a law partnership focused on tax and customs law. Both partners built their careers in Türkiye\'s top-ranked tax practices, working to the standard of international law firms.',
-        'Beyond tax and customs, we support clients in corporate and commercial law, mergers and acquisitions, investment law and dispute resolution.',
-        'Our work is organised around the client\'s interest. In technically demanding commercial matters and disputes, we deliver the same depth in Turkish and in English.',
+    "hero": {
+      "etiket": "Istanbul · Türkiye",
+      "baslik": "In tax and customs law, practical solutions.",
+      "donen": [
+        "In tax planning,",
+        "In tax audits,",
+        "In customs and foreign trade,",
+        "In corporate law,",
+        "In mergers and acquisitions,",
+        "In dispute resolution,"
       ],
-      baglanti: 'Our practice areas',
+      "sabit": "practical solutions.",
+      "metin": "As an independent law firm, we provide advisory and dispute resolution services to Turkish and foreign clients for their operations in Türkiye and abroad."
     },
-    alanlar: {
-      etiket: 'Practice Areas',
-      baslik: 'Deep expertise, an integrated approach.',
-      metin: 'From advisory work to dispute resolution, we are by your side at every stage of your business.',
-      hepsi: 'All practice areas',
-      altBaslik: 'What we do in this area',
-      liste: [
-        {
-          slug: 'tax-law', ad: 'Tax Law',
-          ozet: 'Tax planning, audit and compliance advisory, wealth management, and the administrative and judicial stages of tax disputes.',
-          giris: 'The tax consequence of a commercial decision is often as decisive as the decision itself. We stay involved from planning through to dispute.',
-          alt: [
-            { ad: 'Tax planning', metin: 'We set out the tax effect of a planned transaction in advance and structure the options the legislation offers in line with the client\'s appetite for risk.' },
-            { ad: 'Tax compliance and audit advisory', metin: 'A tax audit is the largest financial risk most companies face, and its outcome is largely shaped by choices made during the process. We manage audits and cross-audits, build the defence strategy and handle invitation-to-explain and settlement stages.' },
-            { ad: 'Wealth management', metin: 'The assets of individuals and family businesses call for a different kind of tax planning from that of companies. We plan asset and income structures, and manage intergenerational transfers and filing obligations.' },
-            { ad: 'Tax dispute resolution', metin: 'Challenging assessments and penalties is a technical process running from administrative applications to the Council of State. We handle administrative applications, tax court and Council of State proceedings, and tax-related criminal files.' },
-          ],
-        },
-        {
-          slug: 'customs-law', ad: 'Customs Law',
-          ozet: 'Advisory on customs valuation, tariff classification and origin; objections and litigation against assessments and penalties.',
-          giris: 'Origin, customs value and tariff classification are the most frequent sources of large retrospective assessments. We build the position before a dispute arises, and defend it when one does.',
-          alt: [
-            { ad: 'Customs advisory', metin: 'Whether an import structure complies with customs legislation is a position that can be established before any dispute. We review import structures for compliance and make valuation, origin and classification positions defensible in advance.' },
-            { ad: 'Customs dispute resolution', metin: 'We handle objections and litigation against assessments and administrative fines based on origin, customs value and tariff classification.' },
-          ],
-        },
-        {
-          slug: 'investment-incentives', ad: 'Investment Incentives',
-          ozet: 'Eligibility, certification processes and incentive-related disputes for R&D, technopark, investment and export incentives.',
-          giris: 'R&D, technopark, investment and export incentives can be clawed back later when the conditions of eligibility are set up incorrectly.',
-          alt: [
-            { ad: 'Eligibility assessment', metin: 'We establish at the outset which incentives a planned investment or activity can benefit from, and on what conditions.' },
-            { ad: 'Certification processes', metin: 'We prepare and run investment incentive certificate, R&D centre and technopark applications.' },
-            { ad: 'Incentive-related disputes', metin: 'We handle administrative and judicial proceedings against claw-back claims and alleged breaches of incentive conditions.' },
-          ],
-        },
-        {
-          slug: 'corporate-law', ad: 'Corporate Law',
-          ozet: 'Incorporation, share and capital structure, general assemblies; the tax design of mergers, transfers and spin-offs; internal investigations.',
-          giris: 'From incorporation to share transfers, from general assemblies to shareholder relations, every stage of corporate life needs a sound legal footing.',
-          alt: [
-            { ad: 'Corporate law', metin: 'We support clients in incorporation, changes to capital and share structure, general assembly processes, and partnership and shareholder agreements.' },
-            { ad: 'Restructuring and investment advisory', metin: 'In mergers, transfers and spin-offs, tax is both a major cost item and a factor that shapes the transaction itself. We set out the options with their tax consequences, design the structure and sequence of steps accordingly, and stay involved in implementation.' },
-            { ad: 'Internal investigations', metin: 'A suspected breach of legislation or company policy calls for a fast and well-run investigation. We conduct internal reviews, identify issues and gaps, and help design and implement the way forward.' },
-          ],
-        },
-        {
-          slug: 'commercial-disputes-and-arbitration', ad: 'Commercial Disputes and Arbitration',
-          ozet: 'Litigation and arbitration in commercial and administrative disputes; strategy and risk assessment before a dispute arises.',
-          giris: 'Most commercial disputes are won or lost by decisions taken before proceedings begin.',
-          alt: [
-            { ad: 'Litigation and arbitration', metin: 'We conduct litigation and arbitration in commercial and administrative disputes, including commercial and investment arbitration.' },
-            { ad: 'Pre-dispute strategy', metin: 'We provide strategy and risk assessment before a dispute arises, and evaluate negotiation and settlement options.' },
-          ],
-        },
+    "yaklasim": {
+      "etiket": "About Us",
+      "baslik": "A clear view on complex matters. The same rigour and the same responsibility at every stage.",
+      "paragraflar": [
+        "Akarca Şahantürk supports its clients primarily in tax and customs law, as well as in mergers and acquisitions, corporate and commercial law, private clients and wealth management, competition law, personal data protection, compliance and internal investigations, and dispute resolution.",
+        "With the client's interest at the centre of its services, Akarca Şahantürk becomes part of its clients' journey through the tailored solutions it provides, in Turkish and in English, in commercial processes and disputes that require technical expertise."
       ],
+      "baglanti": "Our practice areas"
     },
-    yayinlar: {
-      etiket: 'Publications',
-      baslik: 'We follow developments and share our perspective.',
-      hepsi: 'All publications',
-      kok: '/en/publications/',
-      turler: [
-        { anahtar: 'duyuru', ad: 'Announcements', tanim: 'Short notices on legislative changes.' },
-        { anahtar: 'bulten', ad: 'Newsletters', tanim: 'Periodic round-ups and agenda summaries.' },
-        { anahtar: 'makale', ad: 'Articles', tanim: 'In-depth pieces on a single subject.' },
-      ],
-      bos: 'No publications under this heading yet.',
-    },
-    ekip: {
-      etiket: 'Our Team',
-      baslik: 'The people behind the expertise.',
-      metin: 'A team that listens, understands and is always by your side.',
-      hepsi: 'Our team',
-      kok: '/en/team/',
-      basliklar: { ozet: 'In brief', egitim: 'Education', diger: 'Publications and other work' },
-      liste: [
+    "alanlar": {
+      "etiket": "Practice Areas",
+      "baslik": "In-depth expertise, a holistic approach.",
+      "metin": "From advisory to dispute resolution, we stand by you at every stage of your business.",
+      "hepsi": "All practice areas",
+      "altBaslik": "Our work in this area includes",
+      "liste": [
         {
-          slug: 'eren-akarca', ad: 'Hüseyin Eren Akarca', kisaAd: 'Eren Akarca', rol: 'Founding Partner',
-          eposta: 'eren@akarcasahanturk.com', telefon: '+90 541 584 24 89',
-          foto: '/marka/ekip/eren-akarca.jpg', linkedin: 'https://www.linkedin.com/in/hüseyin-eren-akarca/',
-          ozet: 'Works on tax and customs disputes and international tax advisory. He has represented multinational companies in digital permanent establishment, beneficial ownership, transfer pricing and digital services tax disputes before all levels of the administrative judiciary, the Constitutional Court and the European Court of Human Rights.',
-          kariyer: [
-            'Esin Attorney Partnership (member firm of Baker McKenzie International) — Associate, tax disputes and advisory',
-            'PwC Türkiye / GSG Attorneys at Law — Associate and legal intern, tax disputes',
+          "slug": "tax-planning-and-advisory",
+          "ad": "Tax Planning and Advisory",
+          "ozet": "The tax consequences of a commercial transaction directly affect its cost and feasibility. We evaluate investment, financing, profit distribution, cross-border transaction and restructuring options together with their legal, financial and commercial consequences, and advise our clients on matters ranging from day-to-day tax practice to transfer pricing and international taxation.",
+          "paragraflar": [
+            "Tax is one of the most important factors directly affecting the cost, feasibility and long-term consequences of a commercial decision. Transactions such as investments, financing, restructurings or profit distributions, as well as commercial activities carried out with third parties, must be planned not only in a legally valid manner but also with their tax consequences in mind. The tax burden and risks that emerge after a transaction has been implemented can, in most cases, be managed through proper planning at the outset.",
+            "The complex and constantly changing nature of tax legislation also means that companies need regular legal support in their day-to-day operations. We assess our clients' existing and planned activities within the framework of Turkish tax legislation, international tax regulations and the current practice of the tax administration, and set out the alternatives together with their legal, financial and commercial consequences."
           ],
-          egitim: [
-            'Istanbul Bilgi University — LL.M. in Business Law',
-            'Anadolu University — International Relations',
-            'Ankara University Faculty of Law',
-          ],
-          diger: [
-            'Beneficial Ownership: Its Emergence, Development and an Overview in Tax Inspections and Judicial Decisions in Türkiye — Vergi Dünyası, December 2023',
-            'Next Generation Management: Transfer of Family Company Shares to an Investment Fund — April 2023',
-            'Willem C. Vis International Commercial Arbitration Moot — coach of the Ankara University team (2021–2025), team member (2016–2018)',
-            'ISTAC Future Arbitration Counsel Moot — team coach (2019–2022)',
-          ],
-          diller: 'Turkish (native), English (fluent)',
+          "kapsam": [
+            "Assessing the tax consequences of investment, financing, profit distribution, service and licence models;",
+            "Carrying out tax planning for company formations, share transfers, mergers, demergers and restructurings;",
+            "Providing opinions on corporate income tax, value added tax, withholding tax, stamp tax, banking and insurance transactions tax and other direct and indirect taxes;",
+            "Reviewing cross-border transactions in light of double taxation treaties and beneficial ownership rules;",
+            "Advising on transfer pricing policies, intra-group services, financing transactions and advance pricing agreements;",
+            "Assessing digital services tax, the VAT regime for electronic services (KDV-3) and other tax obligations relating to digital business models;",
+            "Reviewing the tax structure of employee share option plans and employee benefits;",
+            "Analysing the impact of the domestic and global minimum top-up corporate tax (Pillar 2) rules on corporate structures and on mergers and acquisitions;",
+            "Assessing, from a tax perspective, the conditions for benefiting from R&D centres, technology development zones, free zones, export support schemes and investment incentives;",
+            "Monitoring the impact of legislative changes on our clients' activities and advising on day-to-day tax matters."
+          ]
         },
         {
-          slug: 'ata-sahanturk', ad: 'Atahan Şahantürk', kisaAd: 'Ata Şahantürk', rol: 'Founding Partner',
-          eposta: 'atahan@akarcasahanturk.com', telefon: '+90 532 130 18 99',
-          foto: '/marka/ekip/ata-sahanturk.jpg', linkedin: '',
-          ozet: 'Works on the taxation of the digital economy, transfer pricing and tax audits. He has represented global technology companies against assessments based on digital services tax, VAT-3 and virtual permanent establishment claims, and advised on advance pricing agreement procedures and OECD Pillar II rules.',
-          kariyer: [
-            'PwC Türkiye / GSG Attorneys at Law — Senior Associate, Dispute Resolution (2023–)',
-            'PwC Türkiye / GSG Attorneys at Law — Associate, Tax Disputes (2021–2023)',
-            'PwC Türkiye / GSG Attorneys at Law — Legal Intern (2020–2021)',
+          "slug": "tax-audits-and-disputes",
+          "ad": "Tax Audits and Disputes",
+          "ozet": "In correspondence with the tax administration, in invitation-to-explanation procedures and during a tax audit, the information and documents submitted and the defence approach adopted determine the course of the audit and of any dispute that may follow. We manage all administrative and judicial processes with a holistic strategy and with care, from tax audits and cross-audits to the invitation to explanation, settlement and report evaluation stages, and from the tax courts to higher-instance appeals.",
+          "paragraflar": [
+            "A tax audit is one of the most significant financial and legal risks a company may face. The increasing intensity of audits and differing interpretations of tax practice may expose taxpayers to high-value assessments and administrative fines. We evaluate the basis of each assessment, the available administrative and judicial remedies, the evidentiary position and the potential financial consequences together, and develop a strategy suited to the client's commercial priorities and risk profile.",
+            "The information and documents submitted during an audit, the explanations given and the defence approach adopted determine not only the outcome of the audit but also the course of any administrative and judicial disputes that may follow. We therefore treat the tax audit as the starting point of a potential dispute, and ensure that a strategy suited to this is developed and implemented.",
+            "In disputes arising after a tax audit, we represent our clients from pre-litigation remedies through all stages of the tax judiciary and, depending on the nature of the dispute, also pursue individual applications to the Constitutional Court and the European Court of Human Rights. In addition to tax loss and procedural penalties, we provide advisory and representation services in investigations and criminal proceedings concerning tax evasion offences, handling the administrative and criminal processes together."
           ],
-          egitim: [
-            'Marmara University — Master\'s in Financial Law (2021)',
-            'Dokuz Eylül University Faculty of Law (2018)',
-            'London School of English — Legal English programme',
-          ],
-          diger: [
-            'PwC Türkiye Xpedition Programme — one of nine senior associates selected',
-          ],
-          diller: 'Turkish (native), English (fluent)',
+          "kapsam": [
+            "Assessing existing practices and potential risk areas before a tax audit;",
+            "Managing the flow of information and documents during tax audits and cross-audits;",
+            "Reviewing audit minutes, information requests and the tax inspector's assessments from a legal and technical perspective;",
+            "Developing defence strategies on matters such as transfer pricing, beneficial ownership, digital permanent establishment, permanent representative, financing, exemption and deduction practices;",
+            "Conducting voluntary compliance letter, invitation to explanation, pre- and post-assessment settlement and report evaluation commission procedures;",
+            "Assessing administrative remedies, including the mutual agreement procedure, in disputes arising from double taxation treaties;",
+            "Filing lawsuits against tax and penalty notices and other administrative acts of a tax nature;",
+            "Conducting proceedings before the tax courts, the regional administrative courts and the Council of State;",
+            "Representing our clients in investigations and criminal proceedings concerning tax evasion offences, and conducting the administrative tax dispute and the criminal process in a coordinated manner;",
+            "Assessing and pursuing individual applications to the Constitutional Court and the European Court of Human Rights in suitable disputes;",
+            "Analysing the impact of temporary measures such as tax amnesties, restructuring schemes and asset repatriation programmes on ongoing audits and disputes."
+          ]
         },
+        {
+          "slug": "international-trade-and-customs",
+          "ad": "International Trade and Customs",
+          "ozet": "Assessments of origin, customs value and tariff classification may give rise not only to import costs but also to significant risks for past periods. We review import and export structures under customs and tax legislation, and support our clients in import transactions under investment incentive certificates and in post-clearance control, additional assessment, administrative fine, objection and litigation processes.",
+          "paragraflar": [
+            "Customs and foreign trade regulations directly affect the cost, timing and sustainability of import and export transactions. A different assessment of the origin, customs value or tariff classification of goods may lead to high-value additional assessments and administrative fines for past periods. Establishing the correct customs position before the transaction is therefore as important as the defence to be conducted once a dispute has arisen.",
+            "We evaluate import and export structures, supply and licence agreements, intra-group transactions and the related payment flows together under customs and tax legislation. In this way, we help ensure consistency between the commercial model and the customs declarations, and help make the position adopted defensible in a potential audit.",
+            "Drawing on our combined advisory and dispute experience, we aim to identify customs risks before the transaction and, in the event of a dispute, to build a defence with a strong technical foundation."
+          ],
+          "kapsam": [
+            "Assessing the customs tariff statistical position of goods and preparing binding tariff information applications;",
+            "Advising on rules of origin, preferential origin arrangements and certificates of origin;",
+            "Reviewing the amounts to be included in the customs value, intra-group payments, and licence and royalty payments;",
+            "Assessing the impact of transfer pricing practices on customs value;",
+            "Reviewing the compliance of import and export structures with customs and foreign trade legislation;",
+            "Assessing the conditions for benefiting from reliefs, exemptions and special customs procedures;",
+            "Supporting import transactions under investment incentive certificates and customs duty exemptions;",
+            "Managing the information and document process in post-clearance controls and customs audits;",
+            "Reviewing the impact of additional customs duties, additional financial obligations, surveillance measures and other foreign trade measures;",
+            "Conducting administrative objection procedures against additional assessment and administrative fine decisions;",
+            "Filing lawsuits in customs disputes and conducting the litigation process."
+          ]
+        },
+        {
+          "slug": "corporate-and-commercial-law",
+          "ad": "Corporate and Commercial Law",
+          "ozet": "From the formation of a company to its day-to-day operations, and from its capital structure to the relationships among its shareholders, every stage of corporate life requires a solid legal foundation. We provide support on formations, changes in capital and share structure, general assembly and board of directors processes, shareholders' agreements, corporate governance and commercial contracts, taking the legal, financial and tax consequences into account together.",
+          "paragraflar": [
+            "From the formation of a company to its day-to-day operations and commercial relationships, and from its capital structure to the relationships among its shareholders, every stage of corporate life requires a solid and up-to-date legal foundation. Corporate documentation and executed agreements that are not aligned with commercial reality and legal requirements may lead to significant disputes and loss of rights in decision-making, investment, profit distribution and share transfer processes, as well as in the company's commercial relationships.",
+            "We provide ongoing legal support on company formation, the establishment of management and representation structures, the regulation of relationships among shareholders, and the conduct of day-to-day commercial activities and commercial relationships with third parties. We align corporate documents and decision-making processes with the company's activities, and address matters such as capital transactions, intra-group arrangements, commercial contracts and profit distribution within the body of applicable regulations, corporate law first and foremost."
+          ],
+          "kapsam": [
+            "Advising on company formation, the opening of branches and liaison offices, and market entry models for Türkiye;",
+            "Drafting and negotiating sales, supply, distribution, franchise, service, licence and other commercial agreements;",
+            "Drafting and updating articles of association and internal company regulations;",
+            "Carrying out capital increases and reductions and other transactions relating to the capital structure;",
+            "Assessing share transfers and changes in the shareholding structure together with their legal, commercial and tax consequences;",
+            "Preparing general assembly and board of directors meetings, resolutions and registration processes;",
+            "Drafting and negotiating shareholders' agreements, joint venture agreements and other arrangements among shareholders;",
+            "Structuring corporate governance, representation and binding authority structures, and signing authorities;",
+            "Reviewing intra-group service, financing and cost-sharing agreements from a corporate law and commercial practice perspective;",
+            "Supporting the decision-making and implementation processes for profit distribution, reserves and other payments to shareholders;",
+            "Managing trade registry transactions and corporate record-keeping."
+          ]
+        },
+        {
+          "slug": "mergers-acquisitions-and-corporate-restructurings",
+          "ad": "Mergers, Acquisitions and Corporate Restructurings",
+          "ozet": "In mergers, acquisitions and restructurings, the chosen roadmap determines the tax burden of the transaction, the allocation of liabilities and the post-transaction corporate structure. We compare alternative transaction models with their legal and tax consequences; conduct the due diligence, agreement, approval, signing and closing processes; and assess the impact of investment incentives and international tax rules on the transaction structure.",
+          "paragraflar": [
+            "Mergers and acquisitions require the joint assessment of interrelated areas such as corporate law, contracts, financing, competition law, employment law, regulatory requirements and tax. Whether the transaction is carried out through a share transfer, an asset transfer, a merger, a demerger or another restructuring model directly affects the allocation of liabilities, the purchase price and security mechanisms, the required approvals, the financing method and the post-transaction corporate structure.",
+            "We provide support from the planning of the investment or restructuring through to signing, closing and post-transaction integration. We conduct the legal due diligence process, reflect the risks in the transaction documents, negotiate the agreements and coordinate the necessary approvals and filings. By comparing alternative transaction models with their commercial, legal and tax consequences, we ensure that the chosen structure is workable."
+          ],
+          "kapsam": [
+            "Assessing share transfer, asset transfer, merger, demerger and conversion alternatives;",
+            "Planning the structure, timetable, allocation of liabilities and required approvals of the transaction;",
+            "Advising on domestic and cross-border investment and partnership models;",
+            "Coordinating tax and financial due diligence alongside legal due diligence;",
+            "Conducting legal due diligence processes and ensuring that the risks identified are reflected in the transaction documents;",
+            "Drafting and negotiating share purchase, shareholders', joint venture and investment agreements;",
+            "Assessing purchase price, price adjustment, security, representations and warranties, and indemnification mechanisms together with their legal and commercial consequences;",
+            "Supporting the necessary approval, notification and filing processes before the Competition Authority, the trade registry and other competent authorities;",
+            "Coordinating signing, closing and post-transaction integration steps;",
+            "Restructuring shareholder, financing and group structures from the perspective of corporate law, contracts and financing regulations;",
+            "Analysing the impact of the global and domestic minimum top-up corporate tax (Pillar 2) and other international tax rules on the transaction structure;",
+            "Assessing investment incentives, R&D centres, technology development zones and free zone arrangements as part of the investment structure;",
+            "Supporting incentive applications, certificate processes and discussions with the relevant public authorities."
+          ]
+        },
+        {
+          "slug": "asset-and-wealth-management",
+          "ad": "Asset and Wealth Management",
+          "ozet": "The asset structures of individuals, entrepreneurs and family businesses require specific legal and tax planning. We assess the asset and income structures of private clients in Türkiye and abroad, and advise our clients on tax residency, reporting obligations, the governance of family businesses, succession planning and the transfer of assets between generations.",
+          "paragraflar": [
+            "The asset structures of individuals, entrepreneurs and family businesses involve legal, tax and personal priorities that differ from those of companies. The protection of assets, the proper structuring of income and the transfer of assets to the next generations must be addressed not only under inheritance law, but together with corporate law, tax law and international regulations.",
+            "We advise our private clients and family businesses on the planning of asset and ownership structures, the preparation of the transition between generations and the management of reporting obligations. Mindful of the sensitivity of family relationships and commercial needs, we develop workable and long-term solutions."
+          ],
+          "kapsam": [
+            "Assessing asset and income structures in Türkiye and abroad from a legal and tax perspective;",
+            "Advising on tax residency and cross-border reporting obligations;",
+            "Reviewing the ownership and governance structure of family businesses;",
+            "Structuring share transfers and partnership relationships among family members;",
+            "Carrying out intergenerational transfer and succession planning;",
+            "Assessing the legal and tax consequences of inheritance, gift and other gratuitous transfers;",
+            "Providing legal support on wills and estate planning;",
+            "Reviewing the tax consequences, for individual shareholders, of profit distributions, capital reductions and other payments to shareholders;",
+            "Supporting the assessment of companies, partnerships and asset structures abroad in light of economic substance and beneficial ownership rules;",
+            "Reviewing the tax obligations arising from the acquisition, holding and transfer of real estate;",
+            "Assessing the conditions for benefiting from asset repatriation, tax amnesty and restructuring schemes, and conducting the processes for benefiting from them;",
+            "Supporting the structuring of corporate governance, decision-making and relationships among shareholders in family businesses."
+          ]
+        },
+        {
+          "slug": "compliance-and-internal-investigations",
+          "ad": "Compliance and Internal Investigations",
+          "ozet": "A suspected breach of legislation or of internal company policies calls for a prompt, independent and confidential investigation. We assess companies' compliance structures, conduct internal investigations, identify issues and deficiencies, and establish the roadmap to be followed. Depending on the nature of the matter, we address together the risks arising from competition law, personal data protection, tax and corporate law, and advise on full compliance with the relevant obligations.",
+          "paragraflar": [
+            "Companies' compliance with the legislation governing their activities and with their own internal policies and procedures is important for fulfilling legal responsibilities and for managing financial and reputational risks. An effective compliance structure requires risks to be identified in advance, policies and procedures to be designed around the company's activities, employees to be informed, and implementation to be reviewed regularly. Where a suspected breach arises, the investigation must be conducted without delay, independently and in accordance with due process.",
+            "We provide ongoing advice on establishing and developing compliance programmes, drafting policies and procedures, risk assessments and in-house training. We examine internal reports and allegations, and determine the corrective measures and implementation steps for the issues identified. In our work, we address corporate law, tax law, competition law and personal data protection regulations together, depending on the nature of the matter."
+          ],
+          "kapsam": [
+            "Conducting legal risk assessments of company activities and internal processes;",
+            "Drafting and updating compliance policies and procedures;",
+            "Conducting internal investigations into whistleblower reports, irregularities or alleged breaches of internal company policies;",
+            "Preparing investigation reports setting out the findings and legal assessments reached in internal investigations;",
+            "Developing corrective measures and implementation roadmaps for the deficiencies identified;",
+            "Assessing compliance risks arising from tax and accounting records;",
+            "Reviewing distribution, dealership, franchise, supply and similar commercial relationships with regard to resale price maintenance, exclusivity, non-compete obligations, territorial and customer restrictions, and online sales conditions;",
+            "Assessing information exchange with competitors, contacts within trade associations, joint purchasing and selling arrangements and other horizontal cooperation under competition law;",
+            "Advising on competition law risks that may arise from dominant position, discriminatory practices, tying, rebate schemes and agreements between undertakings;",
+            "Assessing the obligation to notify mergers, acquisitions and joint ventures to the Competition Board, and conducting the necessary clearance processes;",
+            "Supporting our clients in Competition Authority inquiries and investigations, on-site inspections and responses to information requests, and preparing competition law compliance programmes and in-house training;",
+            "Assessing personal data processing activities, privacy notices, explicit consent processes and agreements with data processors;",
+            "Supporting the legal fact-finding and response process in incidents involving a suspected personal data breach."
+          ]
+        },
+        {
+          "slug": "dispute-resolution",
+          "ad": "Dispute Resolution",
+          "ozet": "The outcome of a dispute is often shaped by decisions taken before litigation or arbitration begins. We represent our clients in commercial and administrative disputes and in domestic and international arbitration proceedings, and manage the entire process, from pre-litigation risk assessment to negotiation and mediation, and from interim relief to the enforcement of judgments and awards.",
+          "paragraflar": [
+            "The outcome of a dispute is often shaped by decisions taken before the litigation or arbitration process begins. Securing evidence in time, the content of the notices to be served on the counterparty and, where necessary, recourse to protective measures such as preliminary injunctions or precautionary attachments directly determine the client's position at later stages. A favourable court judgment or arbitral award, in turn, produces results only to the extent that it can be effectively enforced and the receivable actually collected.",
+            "We therefore do not reduce disputes to a single stage, but address the entire dispute resolution process as a whole: from pre-litigation assessment and preparation to alternative dispute resolution methods, and from litigation and arbitration proceedings to the enforcement of the decision and the collection of the receivable. In every dispute, we also evaluate the future of the relationship between the parties, and build the strategy suited to the client's priorities on that assessment.",
+            "In commercial and administrative disputes, we represent our clients before the civil and administrative courts, in domestic and international arbitration proceedings, and before the enforcement and bankruptcy offices. We evaluate the different areas of law touched upon by the dispute within the same strategy, and conduct the litigation, arbitration and enforcement processes in a coordinated manner."
+          ],
+          "kapsam": [
+            "Assessing the legal position, risks and prospects of recovery before a dispute;",
+            "Securing evidence and serving the necessary notices in preparation for litigation and arbitration;",
+            "Assessing and pursuing preliminary injunctions, precautionary attachments and other interim relief measures;",
+            "Conducting negotiation, mediation and settlement processes;",
+            "Handling cases before the commercial courts and other civil courts, including the appellate stages;",
+            "Representing our clients in domestic and international, institutional and ad hoc arbitration proceedings;",
+            "Conducting proceedings for the recognition and enforcement of foreign court judgments and arbitral awards, and for the setting aside of arbitral awards;",
+            "Conducting administrative applications and lawsuits against administrative acts, and representing our clients before regulatory bodies and other public authorities;",
+            "Pursuing the enforcement of court judgments and arbitral awards, and the collection of receivables;",
+            "Protecting our clients' rights in lawsuits and objection proceedings arising from enforcement and bankruptcy law, and in concordat and bankruptcy proceedings;",
+            "Reporting regularly on litigation and enforcement files, and reflecting the experience gained from disputes in contracts and internal processes."
+          ]
+        }
+      ]
+    },
+    "yayinlar": {
+      "etiket": "Publications",
+      "baslik": "We follow developments and share our perspective.",
+      "hepsi": "All publications",
+      "kok": "/en/publications/",
+      "turler": [
+        {
+          "anahtar": "duyuru",
+          "ad": "Announcements",
+          "tanim": "Brief publications on current developments."
+        },
+        {
+          "anahtar": "bulten",
+          "ad": "Newsletters",
+          "tanim": "Comprehensive publications on current developments."
+        },
+        {
+          "anahtar": "makale",
+          "ad": "Articles",
+          "tanim": "Publications on a specific topic."
+        }
       ],
+      "bos": "There are no publications under this heading yet."
     },
-    iletisim: {
-      etiket: 'Contact',
-      baslik: 'Let us look at the matter together.',
-      metin: 'Use the form, email us, or call the office.',
-      alanlar: { eposta: 'Email', telefon: 'Telephone', adres: 'Address' },
-      form: { ad: 'Full name', eposta: 'Email', konu: 'Subject', mesaj: 'Briefly, your matter', gonder: 'Request a meeting', dugme: 'Meeting request', gonderiliyor: 'Sending…', tesekkur: 'Your message has reached us; we will get back to you shortly.', hata: 'The message could not be sent. Please try again in a few minutes or call us.', zorunlu: 'Please fill in the name, email and message fields.' },
-      harita: 'Show on map',
-    },
-    kariyer: {
-      etiket: 'Careers',
-      baslik: 'Would you like to work with us?',
-      metin: 'We invite colleagues who take ownership of their work to become part of our team.',
-      dugme: 'Join Us',
-      yol: '/en/apply/',
-    },
-    basvuru: {
-      etiket: 'Careers',
-      baslik: 'Would you like to work with us?',
-      metin: 'Fill in the form and attach your CV. Your application goes directly to the founding partners; we will get in touch when a suitable position opens.',
-      geri: 'Back to home',
-      alanlar: {
-        ad: 'Full name', adIpucu: 'Your first and last name',
-        eposta: 'Email', epostaIpucu: 'name@example.com',
-        telefon: 'Phone', telefonIpucu: '+90 5xx xxx xx xx',
-        pozisyon: 'Position you are applying for', pozisyonSec: 'Select',
-        pozisyonlar: ['Lawyer', 'Trainee lawyer', 'Summer internship / student', 'Other'],
-        mesaj: 'Cover note', mesajIpucu: 'Tell us briefly about yourself and why you would like to work with us.',
-        cv: 'CV / résumé', cvIpucu: 'PDF, DOC or DOCX · up to 10 MB', cvSec: 'Choose file', cvYok: 'No file selected yet',
-        onay: 'I have read the',
-        onayBaglanti: 'Privacy Notice',
-        onaySon: ' on the processing of my personal data for the purpose of evaluating my application.',
-        gonder: 'Submit application', gonderiliyor: 'Sending…',
+    "ekip": {
+      "etiket": "Our Team",
+      "baslik": "The people behind the expertise.",
+      "metin": "A team that listens to you, understands you and is always by your side.",
+      "hepsi": "Our Team",
+      "kok": "/en/team/",
+      "basliklar": {
+        "ozet": "In brief",
+        "egitim": "Education",
+        "diger": "Publications and other work"
       },
-      zorunlu: 'This field is required.',
-      hatalar: {
-        eposta: 'Please enter a valid email address.',
-        cvTur: 'Only PDF, DOC or DOCX files are accepted.',
-        cvBoyut: 'The file cannot exceed 10 MB.',
-        genel: 'The application could not be sent. Please try again in a few minutes.',
-      },
-      tesekkur: {
-        baslik: 'We have received your application.',
-        metin: 'Thank you for your interest. We will review your application and contact you when there is a suitable opening.',
-      },
+      "liste": [
+        {
+          "slug": "eren-akarca",
+          "ad": "Hüseyin Eren Akarca",
+          "kisaAd": "Eren Akarca",
+          "rol": "Founding Partner",
+          "eposta": "eren@akarcasahanturk.com",
+          "telefon": "+90 541 584 24 89",
+          "foto": "/marka/ekip/eren-akarca.jpg",
+          "linkedin": "https://www.linkedin.com/in/hüseyin-eren-akarca/",
+          "ozet": "Works in tax law, international taxation, corporate law and mergers and acquisitions; has extensive experience in the investment, restructuring, tax audit and litigation processes of multinational companies in Türkiye.",
+          "paragraflar": [
+            "Hüseyin Eren Akarca is a graduate of Ankara University Faculty of Law. He began his legal career at Gago Türkmen Attorney Partnership within PwC Türkiye and continued his practice at Esin Attorney Partnership within Baker McKenzie Istanbul. He founded Akarca Şahantürk in 2026.",
+            "His areas of expertise include tax law, international taxation, investment incentives, the digital economy, transfer pricing, direct and indirect taxes, corporate law, contract law, mergers and acquisitions, competition law and personal data protection law. He has extensive experience in the investment processes, restructurings, tax audits, administrative application processes and litigation of multinational companies in Türkiye.",
+            "He has publications and academic conference presentations on the prevention of base erosion and profit shifting in international taxation, beneficial ownership and the taxation of digital services. He delivers corporate training and seminars in tax law, competition law and personal data protection law.",
+            "Alongside his professional work, he has for many years coached and mentored Ankara University teams in national and international moot court competitions."
+          ],
+          "egitim": [
+            "Istanbul Bilgi University — LL.M. in Business Law",
+            "Anadolu University — International Relations",
+            "Ankara University Faculty of Law"
+          ],
+          "diger": [
+            "Beneficial Ownership: Its Emergence, Development and Treatment in Tax Audits and Court Decisions in Türkiye — Vergi Dünyası, December 2023",
+            "Transfer of Family Company Shares to an Investment Fund — April 2023",
+            "Academic conference presentations on international taxation, beneficial ownership and the taxation of digital services",
+            "Willem C. Vis International Commercial Arbitration Moot — Ankara University team coach (2021–2025), participant (2016–2018)",
+            "ISTAC Future Arbitration Lawyer Competition — team coach (2019–2022)"
+          ]
+        },
+        {
+          "slug": "ata-sahanturk",
+          "ad": "Atahan Şahantürk",
+          "kisaAd": "Ata Şahantürk",
+          "rol": "Founding Partner",
+          "eposta": "atahan@akarcasahanturk.com",
+          "telefon": "+90 532 130 18 99",
+          "foto": "/marka/ekip/ata-sahanturk.jpg",
+          "linkedin": "",
+          "ozet": "Works in international taxation, taxation of the digital economy, transfer pricing and customs law; has extensive experience in the tax compliance processes, tax audits and tax litigation of multinational digital companies.",
+          "paragraflar": [
+            "Atahan Şahantürk is a graduate of Dokuz Eylül University Faculty of Law. He began his legal career at Gago Türkmen Attorney Partnership within PwC Türkiye and continued his practice at Esin Attorney Partnership within Baker McKenzie Istanbul. He founded Akarca Şahantürk in 2026.",
+            "His areas of expertise include international taxation, taxation of the digital economy, transfer pricing, direct and indirect taxes, customs law, contract law and personal data protection law. He has extensive experience in the tax compliance processes of multinational digital companies in Türkiye, in virtual permanent establishment and permanent representative debates, in transfer pricing tax audits, in tax litigation and in compliance processes relating to the global minimum top-up corporate tax (OECD Pillar 2) rules.",
+            "He has delivered in-house presentations on his areas of expertise, in particular international taxation, taxation of the digital economy and customs law, and has provided corporate training and seminars in tax law and personal data protection law.",
+            "He carries out work that modernises legal practice through artificial intelligence projects, and brings the technological expertise he has acquired to applied learning processes and next-generation legal technologies."
+          ],
+          "egitim": [
+            "Marmara University — Master's degree in Fiscal Law",
+            "Dokuz Eylül University Faculty of Law"
+          ],
+          "diger": [
+            "In-house presentations on international taxation, taxation of the digital economy and customs law",
+            "Corporate training and seminars in tax law and personal data protection law",
+            "PwC Türkiye Xpedition Programme — one of nine senior associates selected"
+          ]
+        }
+      ]
     },
-    altbilgi: {
-      haklar: '© 2026 Akarca Şahantürk Attorney Partnership. All rights reserved.',
-      baglantilar: [
-        { ad: 'Careers', yol: '/en/#kariyer' },
-        { ad: 'Privacy Notice', yol: '/en/privacy/' },
-        { ad: 'Cookie Policy', yol: '/en/cookie-policy/' },
+    "iletisim": {
+      "etiket": "Contact",
+      "baslik": "Let's address the matter together.",
+      "metin": "To request a meeting, you can fill in the form, send us an e-mail or call our office.",
+      "alanlar": {
+        "eposta": "E-mail",
+        "telefon": "Telephone",
+        "adres": "Address"
+      },
+      "form": {
+        "ad": "Full name",
+        "eposta": "E-mail",
+        "konu": "Subject",
+        "mesaj": "Briefly, your matter",
+        "gonder": "Send meeting request",
+        "dugme": "Meeting request",
+        "gonderiliyor": "Sending…",
+        "tesekkur": "We have received your message and will get back to you as soon as possible.",
+        "hata": "Your message could not be sent. Please try again in a few minutes or call us.",
+        "zorunlu": "Please fill in the name, e-mail and message fields."
+      },
+      "harita": "Show on map"
+    },
+    "kariyer": {
+      "etiket": "Careers",
+      "baslik": "Would you like to work with us?",
+      "metin": "We invite responsible colleagues to become part of our team.",
+      "dugme": "Join Us",
+      "yol": "/en/apply/"
+    },
+    "basvuru": {
+      "etiket": "Careers",
+      "baslik": "Would you like to work with us?",
+      "metin": "Fill in the form and attach your CV. Your application goes directly to the founding partners; we will contact you when there is a suitable position.",
+      "geri": "Back to home page",
+      "alanlar": {
+        "ad": "Full name",
+        "adIpucu": "Your first and last name",
+        "eposta": "E-mail",
+        "epostaIpucu": "name@example.com",
+        "telefon": "Telephone",
+        "telefonIpucu": "05xx xxx xx xx",
+        "pozisyon": "Position you are applying for",
+        "pozisyonSec": "Select",
+        "pozisyonlar": [
+          "Lawyer",
+          "Trainee lawyer",
+          "Summer internship / student",
+          "Other"
+        ],
+        "mesaj": "Cover letter",
+        "mesajIpucu": "Tell us briefly about yourself and why you would like to work with us.",
+        "cv": "Curriculum vitae (CV)",
+        "cvIpucu": "PDF, DOC or DOCX · up to 10 MB",
+        "cvSec": "Choose file",
+        "cvYok": "No file selected yet",
+        "onay": "I have read the",
+        "onayBaglanti": "Privacy Notice",
+        "onaySon": " regarding the processing of my personal data for the purpose of evaluating my application.",
+        "gonder": "Submit application",
+        "gonderiliyor": "Sending…"
+      },
+      "zorunlu": "This field is required.",
+      "hatalar": {
+        "eposta": "Enter a valid e-mail address.",
+        "cvTur": "Only PDF, DOC or DOCX files can be uploaded.",
+        "cvBoyut": "The file cannot be larger than 10 MB.",
+        "genel": "The application could not be sent. Please try again in a few minutes."
+      },
+      "tesekkur": {
+        "baslik": "We have received your application.",
+        "metin": "Thank you for your interest. We will review your application and contact you when appropriate."
+      }
+    },
+    "altbilgi": {
+      "haklar": "© 2026 Akarca Şahantürk Attorney Partnership. All rights reserved.",
+      "baglantilar": [
+        {
+          "ad": "Careers",
+          "yol": "/en/#kariyer"
+        },
+        {
+          "ad": "Privacy Notice",
+          "yol": "/en/privacy/"
+        },
+        {
+          "ad": "Cookie Policy",
+          "yol": "/en/cookie-policy/"
+        }
       ],
-      linkedin: 'LinkedIn',
+      "linkedin": "LinkedIn"
     },
-    cerezUyari: {
-      metin: 'This site uses only the cookies required for it to function.',
-      kabul: 'Understood',
-      detay: 'Cookie Policy',
+    "cerezUyari": {
+      "metin": "This site uses only the cookies required for it to function.",
+      "kabul": "Understood",
+      "detay": "Cookie Policy"
     },
-    geri: 'Go back',
+    "geri": "Go back"
   },
 } as const;
 

@@ -3,11 +3,12 @@ import AlanDetay from '../../sayfalar/AlanDetay.astro';
 import { icerik } from '../../data/icerik';
 
 export async function getStaticPaths() {
-  return icerik.tr.alanlar.liste.map((a) => ({
+  // Aynı sıradaki İngilizce sayfa, hreflang için
+  return icerik.tr.alanlar.liste.map((a, i) => ({
     params: { slug: a.slug },
-    props: { alan: a },
+    props: { alan: a, alternatif: '/en/practice-areas/' + icerik.en.alanlar.liste[i].slug + '/' },
   }));
 }
-const { alan } = Astro.props;
+const { alan, alternatif } = Astro.props;
 ---
-<AlanDetay dil="tr" alan={alan} />
+<AlanDetay dil="tr" alan={alan} alternatif={alternatif} />
