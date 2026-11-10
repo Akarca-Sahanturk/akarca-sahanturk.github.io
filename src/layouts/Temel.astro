@@ -16,7 +16,7 @@ interface Props {
   alternatif?: string;   /* diğer dildeki karşılık sayfanın yolu (hreflang) */
 }
 const { baslik, aciklama = '', dil = 'tr', acilis = false, tema = 'koyu', alternatif } = Astro.props;
-const tamBaslik = baslik === 'Akarca Şahantürk' ? baslik : baslik + ' — Akarca Şahantürk';
+const tamBaslik = baslik === 'Akarca Sahanturk' ? baslik : baslik + ' — Akarca Sahanturk';
 
 /* Site adresi: astro.config'teki `site` (şimdilik GitHub Pages). Alan adı bağlanınca yalnızca orası değişir. */
 const kok = (Astro.site ?? new URL(buro.alanAdi)).href.replace(/\/$/, '');
@@ -61,7 +61,7 @@ const yapisalVeri = {
   {trYolu && <link rel="alternate" hreflang="tr" href={kok + trYolu} />}
   {enYolu && <link rel="alternate" hreflang="en" href={kok + enYolu} />}
   {trYolu && <link rel="alternate" hreflang="x-default" href={kok + trYolu} />}
-  <meta property="og:site_name" content="Akarca Şahantürk" />
+  <meta property="og:site_name" content="Akarca Sahanturk" />
   <meta property="og:title" content={tamBaslik} />
   <meta property="og:description" content={aciklama} />
   <meta property="og:type" content="website" />

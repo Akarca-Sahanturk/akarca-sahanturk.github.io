@@ -28,17 +28,17 @@ export const icerik = {
     },
     yaklasim: {
       etiket: 'Hakkımızda',
-      baslik: 'Karmaşık meselelerde net bir bakış. Her aşamada aynı titizlik, aynı sorumluluk.',
+      baslik: 'Her aşamada aynı titizlik, aynı sorumluluk.',
       paragraflar: [
-        'Akarca Şahantürk, vergi ve gümrük hukuku başta olmak üzere; birleşme ve devralmalar, şirketler ve ticaret hukuku, özel müvekkiller ve servet yönetimi, rekabet hukuku, kişisel verilerin korunması, uyum ve kurum içi soruşturmalar ile uyuşmazlık çözümü alanlarında müvekkillerine destek olmaktadır.',
-        'Hizmetlerinin odağında müvekkilin menfaati olan Akarca Şahantürk, teknik uzmanlık gerektiren ticari süreçlerde ve uyuşmazlıklarda Türkçe ve İngilizce dillerinde sağladığı özgün çözümlerle müvekkillerinin yolculuğunun bir parçası olmaktadır.',
+        'Akarca Sahanturk, vergi ve gümrük hukuku başta olmak üzere; birleşme ve devralmalar, şirketler ve ticaret hukuku, varlık ve servet yönetimi, rekabet hukuku, kişisel verilerin korunması, uyum ve kurum içi soruşturmalar ile uyuşmazlık çözümü alanlarında müvekkillerine destek olmaktadır.',
+        'Hizmetlerinin odağında müvekkillerinin menfaati olan Akarca Sahanturk, teknik uzmanlık gerektiren ticari süreçlerde ve uyuşmazlıklarda Türkçe ve İngilizce dillerinde sağladığı özgün çözümlerle müvekkillerinin yolculuğunun bir parçası olmaktadır.',
       ],
       baglanti: 'Çalışma alanlarımız',
     },
     alanlar: {
       etiket: 'Çalışma Alanlarımız',
       baslik: 'Derinlemesine uzmanlık, bütüncül bir yaklaşım.',
-      metin: 'Danışmanlıktan uyuşmazlık çözümüne, işinizin her aşamasında yanınızdayız.',
+      metin: 'Danışmanlıktan uyuşmazlık çözümüne, faaliyetlerinizin her aşamasında yanınızdayız.',
       hepsi: 'Tüm çalışma alanları',
       altBaslik: 'Bu kapsamda özellikle',
       liste: [
@@ -221,8 +221,8 @@ export const icerik = {
     },
     yayinlar: {
       etiket: 'Yayınlarımız',
-      baslik: 'Gelişmeleri izliyor, bakış açımızı paylaşıyoruz.',
-      hepsi: 'Tüm yayınlar',
+      baslik: 'Bakış açımızı paylaşıyoruz.',
+      hepsi: 'Tüm yayınlarımız',
       kok: '/yayinlar/',
       turler: [
         { anahtar: 'duyuru', ad: 'Duyurular', tanim: 'Güncel gelişmeler hakkında özet yayınlar.' },
@@ -233,78 +233,52 @@ export const icerik = {
     },
     ekip: {
       etiket: 'Ekibimiz',
-      baslik: 'Uzmanlığın arkasındaki insanlar.',
-      metin: 'Sizi dinleyen, anlayan ve daima yanınızda olan bir ekip.',
+      geri: 'Ekibimiz',
+      baslik: 'Bizi tanıyın.',
+      metin: 'Dinleyen, anlayan ve daima yanınızda olan bir ekip.',
       hepsi: 'Ekibimiz',
       kok: '/ekip/',
-      basliklar: { ozet: 'Kısaca', egitim: 'Eğitim', diger: 'Yayınlar ve diğer çalışmalar' },
+      basliklar: { ozet: 'Kısaca', egitim: 'Eğitim', diger: 'Akademik yayın ve tebliğler' },
       liste: [
         {
-          slug: 'eren-akarca', ad: 'Hüseyin Eren Akarca', kisaAd: 'Eren Akarca', rol: 'Kurucu Ortak',
+          slug: 'eren-akarca', ad: 'Hüseyin Eren Akarca', kisaAd: 'Hüseyin Eren Akarca', rol: 'Ortak',
           eposta: 'eren@akarcasahanturk.com', telefon: '+90 541 584 24 89',
           foto: '/marka/ekip/eren-akarca.jpg', linkedin: 'https://www.linkedin.com/in/hüseyin-eren-akarca/',
           ozet: 'Vergi hukuku, uluslararası vergilendirme, şirketler hukuku ve birleşme-devralmalar alanlarında çalışıyor; çok uluslu şirketlerin Türkiye\'deki yatırım, yeniden yapılandırma, vergi incelemesi ve yargılama süreçlerinde kapsamlı deneyime sahip.',
-          paragraflar: [
-            'Hüseyin Eren Akarca, Ankara Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığında başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığında çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
-            'Uzmanlık alanları arasında vergi hukuku, uluslararası vergilendirme, yatırım teşvikleri, dijital ekonomi, transfer fiyatlandırması, doğrudan ve dolaylı vergiler, şirketler hukuku, sözleşmeler hukuku, birleşme ve devralmalar, rekabet hukuku ile kişisel verilerin korunması hukuku yer almaktadır. Çok uluslu şirketlerin Türkiye\'deki yatırım süreçleri, yeniden yapılandırmaları, vergi incelemeleri, idari başvuru süreçleri ve yargılamalarında kapsamlı deneyime sahiptir.',
-            'Uluslararası vergilendirmede matrah aşındırma ve kâr kaydırmanın önlenmesi, gerçek lehtarlık ve dijital hizmetlerin vergilendirilmesi konularında yayınları ve akademik konferans sunumları bulunmaktadır. Vergi hukuku, rekabet hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler vermektedir.',
-            'Mesleki çalışmalarının yanı sıra ulusal ve uluslararası kurgusal dava yarışmalarında Ankara Üniversitesi takımlarına uzun yıllardır koçluk ve mentorluk yapmaktadır.',
-          ],
-          egitim: [
-            'İstanbul Bilgi Üniversitesi — İşletme Hukuku yüksek lisansı (LL.M.)',
-            'Anadolu Üniversitesi — Uluslararası İlişkiler',
-            'Ankara Üniversitesi Hukuk Fakültesi',
-          ],
-          diger: [
-            'Gerçek Lehtar: Ortaya Çıkışı, Gelişimi ve Türkiye\'deki Vergi İncelemeleri ile Yargı Kararlarında Konuya Bakış — Vergi Dünyası, Aralık 2023',
-            'Aile Şirketi Hisselerinin Yatırım Fonuna Devri — Nisan 2023',
-            'Uluslararası vergilendirme, gerçek lehtarlık ve dijital hizmetlerin vergilendirilmesi konularında akademik konferans sunumları',
-            'Willem C. Vis Uluslararası Ticari Tahkim Yarışması — Ankara Üniversitesi takım koçu (2021–2025), yarışmacı (2016–2018)',
-            'ISTAC Geleceğin Tahkim Avukatı Yarışması — takım koçu (2019–2022)',
-          ],
+          paragraflar: ["Hüseyin Eren Akarca, Ankara Üniversitesi Hukuk Fakültesi mezunudur. Bilgi Üniversitesi Hukuk Fakültesinde yüksek lisans eğitimine devam etmektedir. Kariyerine vergi ve gümrük hukuku alanında başlamış ve uzun yıllar bu alanda çalışmaya devam etmiştir. 2026 yılında Akarca Sahanturk'u kurmuştur.", "Uzmanlık alanları arasında vergi ve gümrük hukuku, uluslararası vergilendirme, yatırım teşvikleri, transfer fiyatlandırması, şirketler hukuku, sözleşmeler hukuku, birleşme ve devralmalar ile uyuşmazlık çözümü bulunmaktadır. Rekabet hukuku ve kişisel verilerin korunması hukuku alanlarında da deneyime sahiptir.", "Şirket yeniden yapılandırmaları, kurumsal yönetim, ticari sözleşmelerin hazırlanması, incelenmesi ve müzakeresi, yatırım teşvik mevzuatı ile Türk vergi mevzuatına ve küresel tamamlayıcı kurumlar vergisi (OECD Pillar 2) düzenlemelerine uyum dâhil olmak üzere, çok uluslu ve yerel şirketlere Türkiye'deki yatırım süreçlerinde vergi hukuku, kurumsal yönetim, şirketler hukuku ve sözleşmeler hukuku alanlarında danışmanlık vermektedir. Ayrıca gerçek kişi müvekkillerine varlık yönetimi ve miras planlaması konularında hukuki destek sunmaktadır. Müvekkillerini vergi incelemelerinde, idari başvuru süreçlerinde, idari yargıda ve hukuk yargısında temsil etmektedir.", "Mesleki çalışmalarının yanı sıra ulusal ve uluslararası kurgusal dava yarışmalarında Ankara Üniversitesi öğrencilerine uzun yıllardır koçluk ve mentorluk yapmaktadır."],
+          egitim: ["Bilgi Üniversitesi Hukuk Fakültesi — Yüksek Lisans", "Ankara Üniversitesi Hukuk Fakültesi — Lisans"],
+          diger: ["Uluslararası Vergilendirmede Bir Reform Aracı Olarak Matrah Aşındırma ve Kâr Kaydırmanın Engellenmesine Yönelik Vergi Anlaşmaları ile İlgili Önlemlerin Uygulanmasına İlişkin Çok Taraflı Sözleşme — Mali Hukukta Güncel Gelişmeler, 21. Yüzyılda Hukukun Dönüşümü Sempozyumu, Ankara Üniversitesi Hukuk Fakültesi", "Gerçek Lehtar: Ortaya Çıkışı, Gelişimi ve Türkiye'deki Vergi İncelemeleri ile Yargı Kararlarında Konuya Bakış — Vergi Dünyası Dergisi, Aralık 2023"],
         },
         {
-          slug: 'ata-sahanturk', ad: 'Atahan Şahantürk', kisaAd: 'Ata Şahantürk', rol: 'Kurucu Ortak',
+          slug: 'ata-sahanturk', ad: 'Atahan Şahantürk', kisaAd: 'Atahan Şahantürk', rol: 'Ortak',
           eposta: 'atahan@akarcasahanturk.com', telefon: '+90 532 130 18 99',
           foto: '/marka/ekip/ata-sahanturk.jpg', linkedin: '', // TODO: Ata'nın LinkedIn adresi girilecek
           ozet: 'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması ve gümrük hukuku alanlarında çalışıyor; çok uluslu dijital şirketlerin vergi uyum süreçleri, vergi incelemeleri ve vergi davalarında kapsamlı deneyime sahip.',
-          paragraflar: [
-            'Atahan Şahantürk, Dokuz Eylül Üniversitesi Hukuk Fakültesi mezunudur. Hukuk kariyerine PwC Türkiye bünyesindeki Gago Türkmen Avukatlık Ortaklığında başlamış, ardından Baker McKenzie İstanbul bünyesindeki Esin Avukatlık Ortaklığında çalışmalarını sürdürmüştür. 2026 yılında Akarca Şahantürk\'ü kurmuştur.',
-            'Uzmanlık alanları arasında uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması, doğrudan ve dolaylı vergiler, gümrük hukuku, sözleşmeler hukuku ile kişisel verilerin korunması hukuku yer almaktadır. Çok uluslu dijital şirketlerin Türkiye\'deki vergi uyum süreçlerinde, sanal iş yeri ve daimi temsilci tartışmalarında, transfer fiyatlandırması konulu vergi incelemelerinde, vergi davalarında ve küresel tamamlayıcı kurumlar vergisi (OECD Pillar 2) düzenlemelerine uyum süreçlerinde kapsamlı deneyime sahiptir.',
-            'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi ve gümrük hukuku başta olmak üzere uzmanlık alanlarına ilişkin kurum içi sunumlar gerçekleştirmiş; vergi hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler vermiştir.',
-            'Yapay zekâ projeleriyle hukuk pratiğini modernize eden çalışmalar yürütmekte; edindiği teknolojik birikimi uygulamalı öğrenme süreçlerine ve yeni nesil hukuk teknolojilerine yansıtmaktadır.',
-          ],
-          egitim: [
-            'Marmara Üniversitesi — Mali Hukuk yüksek lisansı',
-            'Dokuz Eylül Üniversitesi Hukuk Fakültesi',
-          ],
-          diger: [
-            'Uluslararası vergilendirme, dijital ekonominin vergilendirilmesi ve gümrük hukuku konularında kurum içi sunumlar',
-            'Vergi hukuku ve kişisel verilerin korunması hukuku alanlarında kurumlara yönelik eğitim ve seminerler',
-            'PwC Türkiye Xpedition Programı — seçilen dokuz kıdemli avukattan biri',
-          ],
+          paragraflar: ["Atahan Şahantürk, Dokuz Eylül Üniversitesi Hukuk Fakültesi mezunudur. Marmara Üniversitesi Hukuk Fakültesinde mali hukuk alanında yüksek lisans programını tamamlamıştır. Kariyerine vergi ve gümrük hukuku alanında başlamış ve uzun yıllar bu alanda çalışmaya devam etmiştir. 2026 yılında Akarca Sahanturk'u kurmuştur.", "Uzmanlık alanları arasında vergi ve gümrük hukuku, uluslararası vergilendirme, dijital ekonominin vergilendirilmesi, transfer fiyatlandırması, şirketler hukuku ve sözleşmeler hukuku bulunmaktadır. Kişisel verilerin korunması hukuku alanında da deneyime sahiptir.", "Başta çok uluslu dijital şirketler olmak üzere müvekkillerine, vergi ve gümrük mevzuatına uyum alanında danışmanlık vermekte, Türkiye'deki faaliyetleriyle bağlantılı şirketler hukuku ve sözleşmeler hukuku konularında da hukuki destek sunmaktadır. Vergi ve gümrük alanındaki çalışmaları, küresel tamamlayıcı kurumlar vergisi (OECD Pillar 2) düzenlemelerine uyumu, vergi ve gümrük idareleriyle yürütülen yazışmaları ve idari başvuruların takibini kapsamaktadır. Şirketler hukuku ve sözleşmeler hukuku alanındaki çalışmaları, kurumsal yönetim süreçlerini ve ticari sözleşmelerin hazırlanması, incelenmesi ve müzakeresini kapsamaktadır. Müvekkillerini vergi incelemelerinde, idari başvuru süreçlerinde, idari yargıda ve hukuk yargısında temsil etmektedir.", "Mesleki çalışmalarının yanı sıra yapay zekâ ve diğer hukuk teknolojilerinin avukatlık pratiğinde kullanımına yönelik projeler yürütmektedir."],
+          egitim: ["Marmara Üniversitesi Hukuk Fakültesi — Mali Hukuk Yüksek Lisans", "Dokuz Eylül Üniversitesi Hukuk Fakültesi — Lisans"],
+          diger: [],
         },
       ],
     },
     iletisim: {
       etiket: 'İletişim',
-      baslik: 'Konuyu birlikte ele alalım.',
-      metin: 'Görüşme talepleri için formu doldurabilir, bize e-posta gönderebilir veya ofisimizi arayabilirsiniz.',
+      baslik: 'Bize ulaşın.',
+      metin: 'Görüşme talepleriniz için formu doldurabilir, bize e-posta gönderebilir veya ofisimizi arayabilirsiniz.',
       alanlar: { eposta: 'E-posta', telefon: 'Telefon', adres: 'Adres' },
-      form: { ad: 'Ad Soyad', eposta: 'E-posta', konu: 'Konu', mesaj: 'Kısaca konunuz', gonder: 'Görüşme talebi gönder', dugme: 'Görüşme talebi', gonderiliyor: 'Gönderiliyor…', tesekkur: 'Mesajınız bize ulaştı; en kısa sürede dönüş yapacağız.', hata: 'Mesaj gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin ya da bizi arayın.', zorunlu: 'Lütfen ad, e-posta ve mesaj alanlarını doldurun.' },
+      form: { ad: 'Ad Soyad', eposta: 'E-posta', konu: 'Konu', mesaj: 'Mesajınız', gonder: 'Görüşme talebi gönder', dugme: 'Görüşme talebi', gonderiliyor: 'Gönderiliyor…', tesekkur: 'Mesajınız bize ulaştı; en kısa sürede dönüş yapacağız.', hata: 'Mesaj gönderilemedi. Lütfen birkaç dakika sonra tekrar deneyin ya da bizi arayın.', zorunlu: 'Lütfen ad, e-posta ve mesaj alanlarını doldurun.' },
       harita: 'Haritada göster',
     },
     kariyer: {
       etiket: 'Kariyer',
       baslik: 'Birlikte çalışmak ister misiniz?',
-      metin: 'Sorumluluk sahibi meslektaşlarımızı ekibimizin bir parçası olmaya davet ediyoruz.',
+      metin: 'Sorumluluk sahibi, öğrenmeye ve paylaşmaya açık meslektaşlarımızı ekibimizin bir parçası olmaya davet ediyoruz.',
       dugme: 'Bize Katılın',
       yol: '/basvuru/',
     },
     basvuru: {
       etiket: 'Kariyer',
       baslik: 'Birlikte çalışmak ister misiniz?',
-      metin: 'Formu doldurun, özgeçmişinizi ekleyin. Başvurunuz doğrudan kurucu ortaklara ulaşır; uygun bir pozisyon olduğunda sizinle iletişime geçeriz.',
+      metin: 'Formu doldurun, özgeçmişinizi ekleyin. Başvurunuz doğrudan bize ulaşacaktır. Uygun bir pozisyon olduğunda sizinle mutlaka iletişime geçeceğiz.',
       geri: 'Ana sayfaya dön',
       alanlar: {
         ad: 'Ad Soyad', adIpucu: 'Adınız ve soyadınız',
@@ -332,7 +306,7 @@ export const icerik = {
       },
     },
     altbilgi: {
-      haklar: '© 2026 Akarca Şahantürk Avukatlık Ortaklığı. Tüm hakları saklıdır.',
+      haklar: '© 2026 Akarca Şahantürk Hukuk Bürosu. Tüm hakları saklıdır.',
       baglantilar: [
         { ad: 'Kariyer', yol: '/#kariyer' },
         { ad: 'KVKK Aydınlatma Metni', yol: '/kvkk/' },
@@ -393,23 +367,23 @@ export const icerik = {
         "In dispute resolution,"
       ],
       "sabit": "practical solutions.",
-      "metin": "As an independent law firm, we provide advisory and dispute resolution services to Turkish and foreign clients for their operations in Türkiye and abroad."
+      "metin": "As an independent law office, we provide advisory and dispute resolution services to Turkish and cross-border clients for their operations in Türkiye and abroad."
     },
     "yaklasim": {
       "etiket": "About Us",
-      "baslik": "A clear view on complex matters. The same rigour and the same responsibility at every stage.",
+      "baslik": "The same diligence and the same responsibility at every step.",
       "paragraflar": [
-        "Akarca Şahantürk supports its clients primarily in tax and customs law, as well as in mergers and acquisitions, corporate and commercial law, private clients and wealth management, competition law, personal data protection, compliance and internal investigations, and dispute resolution.",
-        "With the client's interest at the centre of its services, Akarca Şahantürk becomes part of its clients' journey through the tailored solutions it provides, in Turkish and in English, in commercial processes and disputes that require technical expertise."
+        "Akarca Sahanturk supports its clients primarily in tax and customs law, as well as in mergers and acquisitions, corporate and commercial law, asset and wealth management, competition law, personal data protection, compliance and internal investigations, and dispute resolution.",
+        "With its clients' interests at the centre of its services, Akarca Sahanturk becomes part of its clients' journey through the tailored solutions it provides, in Turkish and in English, in commercial processes and disputes that require technical expertise."
       ],
       "baglanti": "Our practice areas"
     },
     "alanlar": {
       "etiket": "Practice Areas",
       "baslik": "In-depth expertise, a holistic approach.",
-      "metin": "From advisory to dispute resolution, we stand by you at every stage of your business.",
+      "metin": "From advisory to dispute resolution, we stand by you at every stage of your activities.",
       "hepsi": "All practice areas",
-      "altBaslik": "Our work in this area includes",
+      "altBaslik": "Our experience especially includes",
       "liste": [
         {
           "slug": "tax-planning-and-advisory",
@@ -437,9 +411,9 @@ export const icerik = {
           "ad": "Tax Audits and Disputes",
           "ozet": "In correspondence with the tax administration, in invitation-to-explanation procedures and during a tax audit, the information and documents submitted and the defence approach adopted determine the course of the audit and of any dispute that may follow. We manage all administrative and judicial processes with a holistic strategy and with care, from tax audits and cross-audits to the invitation to explanation, settlement and report evaluation stages, and from the tax courts to higher-instance appeals.",
           "paragraflar": [
-            "A tax audit is one of the most significant financial and legal risks a company may face. The increasing intensity of audits and differing interpretations of tax practice may expose taxpayers to high-value assessments and administrative fines. We evaluate the basis of each assessment, the available administrative and judicial remedies, the evidentiary position and the potential financial consequences together, and develop a strategy suited to the client's commercial priorities and risk profile.",
-            "The information and documents submitted during an audit, the explanations given and the defence approach adopted determine not only the outcome of the audit but also the course of any administrative and judicial disputes that may follow. We therefore treat the tax audit as the starting point of a potential dispute, and ensure that a strategy suited to this is developed and implemented.",
-            "In disputes arising after a tax audit, we represent our clients from pre-litigation remedies through all stages of the tax judiciary and, depending on the nature of the dispute, also pursue individual applications to the Constitutional Court and the European Court of Human Rights. In addition to tax loss and procedural penalties, we provide advisory and representation services in investigations and criminal proceedings concerning tax evasion offences, handling the administrative and criminal processes together."
+            "A tax audit is one of the most significant financial and legal risks a company may face. The increasing intensity of audits and differing interpretations of tax practice may expose taxpayers to high-value assessments and administrative fines. We evaluate the basis of each assessment, the available administrative and judicial remedies, the evidentiary position and the potential financial consequences together, developing strategies suited to the client's commercial priorities and risk profile.",
+            "Information and documents submitted during an audit, the explanations provided and the defence approach adopted determine not only the outcome of the audit but also the course of any administrative proceedings or disputes that may follow. We therefore treat the tax audit as the starting point of a potential dispute, and ensure that a strategy suited to this is developed and implemented.",
+            "In disputes arising after a tax audit, we represent the clients from pre-litigation remedies through all stages of the tax judiciary and, depending on the nature of the dispute, also pursue individual applications to the Constitutional Court and the European Court of Human Rights. In addition to tax loss and procedural penalties, we provide advisory and representation services in investigations and criminal proceedings concerning tax evasion offences, handling the administrative and criminal processes together."
           ],
           "kapsam": [
             "Assessing existing practices and potential risk areas before a tax audit;",
@@ -450,7 +424,7 @@ export const icerik = {
             "Assessing administrative remedies, including the mutual agreement procedure, in disputes arising from double taxation treaties;",
             "Filing lawsuits against tax and penalty notices and other administrative acts of a tax nature;",
             "Conducting proceedings before the tax courts, the regional administrative courts and the Council of State;",
-            "Representing our clients in investigations and criminal proceedings concerning tax evasion offences, and conducting the administrative tax dispute and the criminal process in a coordinated manner;",
+            "Representing the clients in investigations and criminal proceedings concerning tax evasion offences, and conducting the administrative tax dispute and the criminal process in a coordinated manner;",
             "Assessing and pursuing individual applications to the Constitutional Court and the European Court of Human Rights in suitable disputes;",
             "Analysing the impact of temporary measures such as tax amnesties, restructuring schemes and asset repatriation programmes on ongoing audits and disputes."
           ]
@@ -530,7 +504,7 @@ export const icerik = {
           "ozet": "The asset structures of individuals, entrepreneurs and family businesses require specific legal and tax planning. We assess the asset and income structures of private clients in Türkiye and abroad, and advise our clients on tax residency, reporting obligations, the governance of family businesses, succession planning and the transfer of assets between generations.",
           "paragraflar": [
             "The asset structures of individuals, entrepreneurs and family businesses involve legal, tax and personal priorities that differ from those of companies. The protection of assets, the proper structuring of income and the transfer of assets to the next generations must be addressed not only under inheritance law, but together with corporate law, tax law and international regulations.",
-            "We advise our private clients and family businesses on the planning of asset and ownership structures, the preparation of the transition between generations and the management of reporting obligations. Mindful of the sensitivity of family relationships and commercial needs, we develop workable and long-term solutions."
+            "We advise the private clients and family businesses on the planning of asset and ownership structures, the preparation of the transition between generations and the management of reporting obligations. Mindful of the sensitivity of family relationships and commercial needs, we develop workable and long-term solutions."
           ],
           "kapsam": [
             "Assessing asset and income structures in Türkiye and abroad from a legal and tax perspective;",
@@ -566,7 +540,7 @@ export const icerik = {
             "Assessing information exchange with competitors, contacts within trade associations, joint purchasing and selling arrangements and other horizontal cooperation under competition law;",
             "Advising on competition law risks that may arise from dominant position, discriminatory practices, tying, rebate schemes and agreements between undertakings;",
             "Assessing the obligation to notify mergers, acquisitions and joint ventures to the Competition Board, and conducting the necessary clearance processes;",
-            "Supporting our clients in Competition Authority inquiries and investigations, on-site inspections and responses to information requests, and preparing competition law compliance programmes and in-house training;",
+            "Supporting the clients in Competition Authority inquiries and investigations, on-site inspections and responses to information requests, and preparing competition law compliance programmes and in-house training;",
             "Assessing personal data processing activities, privacy notices, explicit consent processes and agreements with data processors;",
             "Supporting the legal fact-finding and response process in incidents involving a suspected personal data breach."
           ]
@@ -578,7 +552,7 @@ export const icerik = {
           "paragraflar": [
             "The outcome of a dispute is often shaped by decisions taken before the litigation or arbitration process begins. Securing evidence in time, the content of the notices to be served on the counterparty and, where necessary, recourse to protective measures such as preliminary injunctions or precautionary attachments directly determine the client's position at later stages. A favourable court judgment or arbitral award, in turn, produces results only to the extent that it can be effectively enforced and the receivable actually collected.",
             "We therefore do not reduce disputes to a single stage, but address the entire dispute resolution process as a whole: from pre-litigation assessment and preparation to alternative dispute resolution methods, and from litigation and arbitration proceedings to the enforcement of the decision and the collection of the receivable. In every dispute, we also evaluate the future of the relationship between the parties, and build the strategy suited to the client's priorities on that assessment.",
-            "In commercial and administrative disputes, we represent our clients before the civil and administrative courts, in domestic and international arbitration proceedings, and before the enforcement and bankruptcy offices. We evaluate the different areas of law touched upon by the dispute within the same strategy, and conduct the litigation, arbitration and enforcement processes in a coordinated manner."
+            "In commercial and administrative disputes, we represent the clients before the civil and administrative courts, in domestic and international arbitration proceedings, and before the enforcement and bankruptcy offices. We evaluate the different areas of law touched upon by the dispute within the same strategy, and conduct the litigation, arbitration and enforcement processes in a coordinated manner."
           ],
           "kapsam": [
             "Assessing the legal position, risks and prospects of recovery before a dispute;",
@@ -586,11 +560,11 @@ export const icerik = {
             "Assessing and pursuing preliminary injunctions, precautionary attachments and other interim relief measures;",
             "Conducting negotiation, mediation and settlement processes;",
             "Handling cases before the commercial courts and other civil courts, including the appellate stages;",
-            "Representing our clients in domestic and international, institutional and ad hoc arbitration proceedings;",
+            "Representing the clients in domestic and international, institutional and ad hoc arbitration proceedings;",
             "Conducting proceedings for the recognition and enforcement of foreign court judgments and arbitral awards, and for the setting aside of arbitral awards;",
-            "Conducting administrative applications and lawsuits against administrative acts, and representing our clients before regulatory bodies and other public authorities;",
+            "Conducting administrative applications and lawsuits against administrative acts, and representing the clients before regulatory bodies and other public authorities;",
             "Pursuing the enforcement of court judgments and arbitral awards, and the collection of receivables;",
-            "Protecting our clients' rights in lawsuits and objection proceedings arising from enforcement and bankruptcy law, and in concordat and bankruptcy proceedings;",
+            "Protecting the clients' rights in lawsuits and objection proceedings arising from enforcement and bankruptcy law, and in concordat and bankruptcy proceedings;",
             "Reporting regularly on litigation and enforcement files, and reflecting the experience gained from disputes in contracts and internal processes."
           ]
         }
@@ -598,8 +572,8 @@ export const icerik = {
     },
     "yayinlar": {
       "etiket": "Publications",
-      "baslik": "We follow developments and share our perspective.",
-      "hepsi": "All publications",
+      "baslik": "We share our perspective.",
+      "hepsi": "All our publications",
       "kok": "/en/publications/",
       "turler": [
         {
@@ -622,76 +596,50 @@ export const icerik = {
     },
     "ekip": {
       "etiket": "Our Team",
-      "baslik": "The people behind the expertise.",
-      "metin": "A team that listens to you, understands you and is always by your side.",
+      "geri": "Team",
+      "baslik": "Get to know us.",
+      "metin": "A team that listens, understands and is always by your side.",
       "hepsi": "Our Team",
       "kok": "/en/team/",
       "basliklar": {
         "ozet": "In brief",
         "egitim": "Education",
-        "diger": "Publications and other work"
+        "diger": "Academic publications and papers"
       },
       "liste": [
         {
           "slug": "eren-akarca",
           "ad": "Hüseyin Eren Akarca",
-          "kisaAd": "Eren Akarca",
-          "rol": "Founding Partner",
+          "kisaAd": "Hüseyin Eren Akarca",
+          "rol": "Partner",
           "eposta": "eren@akarcasahanturk.com",
           "telefon": "+90 541 584 24 89",
           "foto": "/marka/ekip/eren-akarca.jpg",
           "linkedin": "https://www.linkedin.com/in/hüseyin-eren-akarca/",
           "ozet": "Works in tax law, international taxation, corporate law and mergers and acquisitions; has extensive experience in the investment, restructuring, tax audit and litigation processes of multinational companies in Türkiye.",
-          "paragraflar": [
-            "Hüseyin Eren Akarca is a graduate of Ankara University Faculty of Law. He began his legal career at Gago Türkmen Attorney Partnership within PwC Türkiye and continued his practice at Esin Attorney Partnership within Baker McKenzie Istanbul. He founded Akarca Şahantürk in 2026.",
-            "His areas of expertise include tax law, international taxation, investment incentives, the digital economy, transfer pricing, direct and indirect taxes, corporate law, contract law, mergers and acquisitions, competition law and personal data protection law. He has extensive experience in the investment processes, restructurings, tax audits, administrative application processes and litigation of multinational companies in Türkiye.",
-            "He has publications and academic conference presentations on the prevention of base erosion and profit shifting in international taxation, beneficial ownership and the taxation of digital services. He delivers corporate training and seminars in tax law, competition law and personal data protection law.",
-            "Alongside his professional work, he has for many years coached and mentored Ankara University teams in national and international moot court competitions."
-          ],
-          "egitim": [
-            "Istanbul Bilgi University — LL.M. in Business Law",
-            "Anadolu University — International Relations",
-            "Ankara University Faculty of Law"
-          ],
-          "diger": [
-            "Beneficial Ownership: Its Emergence, Development and Treatment in Tax Audits and Court Decisions in Türkiye — Vergi Dünyası, December 2023",
-            "Transfer of Family Company Shares to an Investment Fund — April 2023",
-            "Academic conference presentations on international taxation, beneficial ownership and the taxation of digital services",
-            "Willem C. Vis International Commercial Arbitration Moot — Ankara University team coach (2021–2025), participant (2016–2018)",
-            "ISTAC Future Arbitration Lawyer Competition — team coach (2019–2022)"
-          ]
+          "paragraflar": ["Hüseyin Eren Akarca is a graduate of Ankara University Faculty of Law and is pursuing a master's degree at Istanbul Bilgi University Faculty of Law. He began his career in tax and customs law and continued to practise in this field for many years. He founded Akarca Sahanturk in 2026.", "His areas of expertise include tax and customs law, international taxation, investment incentives, transfer pricing, corporate law, contract law, mergers and acquisitions, and dispute resolution. He also has experience in competition law and personal data protection law.", "He advises multinational and domestic companies on tax law, corporate governance, corporate law and contract law in their investment processes in Türkiye, including corporate restructurings, corporate governance, the drafting, review and negotiation of commercial agreements, investment incentive legislation, and compliance with Turkish tax legislation and the global minimum top-up corporate tax (OECD Pillar 2) rules. He also provides legal support to individual clients on wealth management and succession planning. He represents clients in tax audits, administrative application processes, and before the administrative and civil courts.", "Alongside his professional work, he has for many years coached and mentored Ankara University students in national and international moot court competitions."],
+          "egitim": ["Istanbul Bilgi University Faculty of Law — Master's degree", "Ankara University Faculty of Law — Bachelor's degree"],
+          "diger": ["The Multilateral Convention to Implement Tax Treaty Related Measures to Prevent Base Erosion and Profit Shifting as a Reform Instrument in International Taxation — Current Developments in Fiscal Law, Symposium on the Transformation of Law in the 21st Century, Ankara University Faculty of Law", "Beneficial Ownership: Its Emergence, Development and Treatment in Tax Audits and Court Decisions in Türkiye — Vergi Dünyası, December 2023"]
         },
         {
           "slug": "ata-sahanturk",
           "ad": "Atahan Şahantürk",
-          "kisaAd": "Ata Şahantürk",
-          "rol": "Founding Partner",
+          "kisaAd": "Atahan Şahantürk",
+          "rol": "Partner",
           "eposta": "atahan@akarcasahanturk.com",
           "telefon": "+90 532 130 18 99",
           "foto": "/marka/ekip/ata-sahanturk.jpg",
           "linkedin": "",
           "ozet": "Works in international taxation, taxation of the digital economy, transfer pricing and customs law; has extensive experience in the tax compliance processes, tax audits and tax litigation of multinational digital companies.",
-          "paragraflar": [
-            "Atahan Şahantürk is a graduate of Dokuz Eylül University Faculty of Law. He began his legal career at Gago Türkmen Attorney Partnership within PwC Türkiye and continued his practice at Esin Attorney Partnership within Baker McKenzie Istanbul. He founded Akarca Şahantürk in 2026.",
-            "His areas of expertise include international taxation, taxation of the digital economy, transfer pricing, direct and indirect taxes, customs law, contract law and personal data protection law. He has extensive experience in the tax compliance processes of multinational digital companies in Türkiye, in virtual permanent establishment and permanent representative debates, in transfer pricing tax audits, in tax litigation and in compliance processes relating to the global minimum top-up corporate tax (OECD Pillar 2) rules.",
-            "He has delivered in-house presentations on his areas of expertise, in particular international taxation, taxation of the digital economy and customs law, and has provided corporate training and seminars in tax law and personal data protection law.",
-            "He carries out work that modernises legal practice through artificial intelligence projects, and brings the technological expertise he has acquired to applied learning processes and next-generation legal technologies."
-          ],
-          "egitim": [
-            "Marmara University — Master's degree in Fiscal Law",
-            "Dokuz Eylül University Faculty of Law"
-          ],
-          "diger": [
-            "In-house presentations on international taxation, taxation of the digital economy and customs law",
-            "Corporate training and seminars in tax law and personal data protection law",
-            "PwC Türkiye Xpedition Programme — one of nine senior associates selected"
-          ]
+          "paragraflar": ["Atahan Şahantürk is a graduate of Dokuz Eylül University Faculty of Law and holds a master's degree in fiscal law from Marmara University Faculty of Law. He began his career in tax and customs law and continued to practise in this field for many years. He founded Akarca Sahanturk in 2026.", "His areas of expertise include tax and customs law, international taxation, taxation of the digital economy, transfer pricing, corporate law and contract law. He also has experience in personal data protection law.", "He advises clients, multinational digital companies in particular, on compliance with tax and customs legislation, and also provides legal support on corporate law and contract law matters connected with their activities in Türkiye. His work in tax and customs covers compliance with the global minimum top-up corporate tax (OECD Pillar 2) rules, correspondence with the tax and customs authorities, and the follow-up of administrative applications. His work in corporate law and contract law covers corporate governance processes and the drafting, review and negotiation of commercial agreements. He represents clients in tax audits, administrative application processes, and before the administrative and civil courts.", "Alongside his professional work, he runs projects on the use of artificial intelligence and other legal technologies in legal practice."],
+          "egitim": ["Marmara University Faculty of Law — Master's degree in Fiscal Law", "Dokuz Eylül University Faculty of Law — Bachelor's degree"],
+          "diger": []
         }
       ]
     },
     "iletisim": {
       "etiket": "Contact",
-      "baslik": "Let's address the matter together.",
+      "baslik": "Get in touch.",
       "metin": "To request a meeting, you can fill in the form, send us an e-mail or call our office.",
       "alanlar": {
         "eposta": "E-mail",
@@ -702,7 +650,7 @@ export const icerik = {
         "ad": "Full name",
         "eposta": "E-mail",
         "konu": "Subject",
-        "mesaj": "Briefly, your matter",
+        "mesaj": "Your message",
         "gonder": "Send meeting request",
         "dugme": "Meeting request",
         "gonderiliyor": "Sending…",
@@ -714,15 +662,15 @@ export const icerik = {
     },
     "kariyer": {
       "etiket": "Careers",
-      "baslik": "Would you like to work with us?",
-      "metin": "We invite responsible colleagues to become part of our team.",
+      "baslik": "Would you mind working with us?",
+      "metin": "We invite responsible colleagues who are open to learning and sharing to become part of our team.",
       "dugme": "Join Us",
       "yol": "/en/apply/"
     },
     "basvuru": {
       "etiket": "Careers",
-      "baslik": "Would you like to work with us?",
-      "metin": "Fill in the form and attach your CV. Your application goes directly to the founding partners; we will contact you when there is a suitable position.",
+      "baslik": "Would you mind working with us?",
+      "metin": "Fill in the form and attach your CV. Your application will reach us directly. When there is a suitable position, we will be sure to contact you.",
       "geri": "Back to home page",
       "alanlar": {
         "ad": "Full name",
@@ -764,7 +712,7 @@ export const icerik = {
       }
     },
     "altbilgi": {
-      "haklar": "© 2026 Akarca Şahantürk Attorney Partnership. All rights reserved.",
+      "haklar": "© 2026 Akarca Şahantürk Law Office. All rights reserved.",
       "baglantilar": [
         {
           "ad": "Careers",
@@ -792,7 +740,7 @@ export const icerik = {
 
 // Büro bilgileri — tek yerde. Kaynak: Tanıtım Özeti künyesi.
 export const buro = {
-  ad: 'Akarca Şahantürk Avukatlık Ortaklığı',
+  ad: 'Akarca Şahantürk Hukuk Bürosu',
   telefon: '+90 212 366 57 19',
   eposta: 'info@akarcasahanturk.com',
   adresSatirlari: ['Ferko Signature, Büyükdere Caddesi No: 175/7', '34394 Şişli / İstanbul'],

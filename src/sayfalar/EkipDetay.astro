@@ -7,7 +7,7 @@ const b = m.ekip.basliklar;
 ---
 <Temel baslik={kisi.ad} aciklama={kisi.ozet} dil={dil}>
   <section class="bolum bolum--kisa">
-    <a class="ustBaglanti gir" href={m.kokYol + '#ekibimiz'}>&larr; {m.ekip.etiket}</a>
+    <a class="ustBaglanti gir" href={m.kokYol + '#ekibimiz'}>&larr; {(m.ekip as any).geri ?? m.ekip.etiket}</a>
 
     <div class="ust">
       <div class="portreKutu gir">
@@ -29,7 +29,7 @@ const b = m.ekip.basliklar;
 
     <div class="bloklar">
       <div class="blok gir"><h2>{b.egitim}</h2><ul>{kisi.egitim.map((x: string) => <li>{x}</li>)}</ul></div>
-      <div class="blok gir"><h2>{b.diger}</h2><ul>{kisi.diger.map((x: string) => <li>{x}</li>)}</ul></div>
+      {kisi.diger.length > 0 && <div class="blok gir"><h2>{b.diger}</h2><ul>{kisi.diger.map((x: string) => <li>{x}</li>)}</ul></div>}
     </div>
   </section>
 </Temel>
